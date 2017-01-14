@@ -1,0 +1,7 @@
+numpy # Quickly calculate masked arrays
+matplotlib # Display an array
+gdal # Open a map (.tif) file to array
+pyqt4 # Create gui
+
+# Installing gdal: https://sandbox.idre.ucla.edu/sandbox/tutorials/installing-gdal-for-windows
+# Installing pyqt4: http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4
