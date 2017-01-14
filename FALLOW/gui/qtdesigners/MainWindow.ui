@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>693</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FALLOW</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/MainWindowIcons/icon/transparent/ICRAF.png</normaloff>:/MainWindowIcons/icon/transparent/ICRAF.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QFrame" name="frame">
+        <property name="minimumSize">
+         <size>
+          <width>500</width>
+          <height>600</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/background/IMG_7136(s).jpg);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QTextEdit" name="textEdit">
+         <property name="geometry">
+          <rect>
+           <x>550</x>
+           <y>0</y>
+           <width>231</width>
+           <height>181</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/background/text_background.jpg);</string>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#00ff00;&quot;&gt;FALLOW&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;FALLOW (Forest, Agroforest, Low-value Lands Or Waste?) model was designed (van Noordwijk, 2001) to simulate land-cover change at landscape level driven by stakeholder decisions on labour and land allocation, and its consequence to local people's income and carbon storage in the landscape.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Maps"/>
+   <addaction name="separator"/>
+   <addaction name="action_Social"/>
+   <addaction name="action_Economy"/>
+   <addaction name="action_Biophysics"/>
+   <addaction name="action_Other"/>
+   <addaction name="separator"/>
+   <addaction name="action_Input_Timeseries"/>
+   <addaction name="separator"/>
+   <addaction name="action_Play"/>
+   <addaction name="action_Pause"/>
+   <addaction name="action_Stop"/>
+   <addaction name="separator"/>
+   <addaction name="action_Result"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuInput">
+    <property name="title">
+     <string>Input</string>
+    </property>
+    <addaction name="action_Maps"/>
+    <addaction name="action_Input_Timeseries"/>
+   </widget>
+   <widget class="QMenu" name="menuSimulation">
+    <property name="title">
+     <string>Simulation</string>
+    </property>
+    <addaction name="action_Play"/>
+    <addaction name="action_Pause"/>
+    <addaction name="action_Stop"/>
+   </widget>
+   <widget class="QMenu" name="menuResult">
+    <property name="title">
+     <string>Result</string>
+    </property>
+    <addaction name="action_Result"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHelp"/>
+   </widget>
+   <widget class="QMenu" name="menuLanguages">
+    <property name="title">
+     <string>Languages</string>
+    </property>
+    <addaction name="actionEnglish"/>
+    <addaction name="actionVietnamese"/>
+   </widget>
+   <widget class="QMenu" name="menuProject">
+    <property name="title">
+     <string>Project</string>
+    </property>
+    <addaction name="actionOpen_project"/>
+    <addaction name="actionCreate_new_project"/>
+    <addaction name="actionClone_project"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionLand_cover"/>
+   </widget>
+   <addaction name="menuProject"/>
+   <addaction name="menuInput"/>
+   <addaction name="menuSimulation"/>
+   <addaction name="menuResult"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuLanguages"/>
+  </widget>
+  <action name="action_Maps">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/MainWindowIcons/icon/map.png</normaloff>
+     <normalon>:/MainWindowIcons/icon/global.png</normalon>:/MainWindowIcons/icon/map.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Maps</string>
+   </property>
+   <property name="toolTip">
+    <string>Input Maps</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="action_Biophysics">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/MainWindowIcons/icon/transparent/environment.png</normaloff>
+     <normalon>:/MainWindowIcons/icon/environment.png</normalon>:/MainWindowIcons/icon/transparent/environment.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Biophysics</string>
+   </property>
+   <property name="toolTip">
+    <string>Input Biophysics Parameters</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="action_Economy">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/MainWindowIcons/icon/economy.png</normaloff>
+     <normalon>:/MainWindowIcons/icon/dollar.png</normalon>:/MainWindowIcons/icon/economy.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Economy</string>
+   </property>
+   <property name="toolTip">
+    <string>Input Economy Parameters</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="action_Social">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/MainWindowIcons/icon/community.png</normaloff>
+     <normalon>../Resources/icon/transparent/comunitiy.png</normalon>:/MainWindowIcons/icon/community.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Social</string>
+   </property>
+   <property name="toolTip">
+    <string>Input Social Parameters</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_Input_Timeseries">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/MainWindowIcons/icon/timeseries.png</normaloff>:/MainWindowIcons/icon/timeseries.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Timeseries</string>
+   </property>
+   <property name="toolTip">
+    <string>Input Timeseries</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="action_Play">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/MainWindowIcons/icon/transparent/play.png</normaloff>:/MainWindowIcons/icon/transparent/play.png</iconset>
+   </property>
+   <property name="text">
+    <string>P&amp;lay</string>
+   </property>
+   <property name="toolTip">
+    <string>Play</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="action_Pause">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/MainWindowIcons/icon/pause.png</normaloff>:/MainWindowIcons/icon/pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Pause</string>
+   </property>
+   <property name="toolTip">
+    <string>Pause</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="action_Stop">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/MainWindowIcons/icon/stop.png</normaloff>
+     <normalon>../Resources/icon/transparent/stop.png</normalon>:/MainWindowIcons/icon/stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Stop</string>
+   </property>
+   <property name="toolTip">
+    <string>Stop</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Space</string>
+   </property>
+  </action>
+  <action name="action_Result">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/MainWindowIcons/icon/output.png</normaloff>
+     <normalon>:/MainWindowIcons/icon/Result.png</normalon>:/MainWindowIcons/icon/output.png</iconset>
+   </property>
+   <property name="text">
+    <string>Result</string>
+   </property>
+   <property name="toolTip">
+    <string>Results</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="action_Other">
+   <property name="icon">
+    <iconset>
+     <normalon>:/MainWindowIcons/icon/transparent/more.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Other</string>
+   </property>
+   <property name="toolTip">
+    <string>Input Other Parameters</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionVietnamese">
+   <property name="text">
+    <string>Vietnamese</string>
+   </property>
+  </action>
+  <action name="actionOpen_project">
+   <property name="text">
+    <string>Open project</string>
+   </property>
+  </action>
+  <action name="actionCreate_new_project">
+   <property name="text">
+    <string>Create new project</string>
+   </property>
+  </action>
+  <action name="actionClone_project">
+   <property name="text">
+    <string>Clone project</string>
+   </property>
+  </action>
+  <action name="actionLand_cover">
+   <property name="text">
+    <string>Land cover</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="background.qrc"/>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

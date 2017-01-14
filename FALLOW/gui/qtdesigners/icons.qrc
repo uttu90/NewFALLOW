@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="MainWindowIcons">
+    <file>icon/transparent/more.png</file>
+    <file>icon/transparent/environment.png</file>
+    <file>icon/transparent/ICRAF.png</file>
+    <file>icon/transparent/play.png</file>
+    <file>icon/community.png</file>
+    <file>icon/pause.png</file>
+    <file>icon/stop.png</file>
+    <file>icon/timeseries.png</file>
+    <file>icon/dollar.png</file>
+    <file>icon/output.png</file>
+    <file>icon/global.png</file>
+  </qresource>
+</RCC>

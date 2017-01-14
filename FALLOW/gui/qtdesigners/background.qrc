@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="background">
+    <file>transparent.png</file>
+    <file>IMG_7136(s) copy.jpg</file>
+    <file>text_background.jpg</file>
+    <file>G:/FALLOW/transparent_box.png</file>
+    <file>IMG_7136(s).jpg</file>
+    <file>landscape.jpg</file>
+  </qresource>
+</RCC>
