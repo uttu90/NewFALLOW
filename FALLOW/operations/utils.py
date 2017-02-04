@@ -2,15 +2,12 @@
 import numpy as np
 
 
-def total(array):
-    masked_data = np.ma.masked_where(array <= -9999, array)
-    return  np.ma.sum(masked_data)
-
-
-def standardize(array):
-    masked_data = np.ma.masked_where(array <= -9999, array)
-    max_value = masked_data.max()
-    if max_value == 0:
-        return 0.0 * max_value
-    else:
-        return masked_data/float(max_value)
+def list_dict_to_dict(list_dict, init_dict):
+    for a_dict in list_dict:
+        key = a_dict.keys()[0]
+        if isinstance(a_dict[key], dict):
+            init_dict[key] = a_dict[key]
+        else:
+            init_dict[key] = {}
+            sub_dict = init_dict[key]
+            list_dict_to_dict(a_dict[key], sub_dict)

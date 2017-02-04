@@ -2,7 +2,7 @@ import sys
 from osgeo import gdal
 import numpy as np
 from os import path
-import pcraster
+# import pcraster
 
 
 def mapopen(filename):
@@ -52,6 +52,8 @@ def arraytotal(array):
 def boolean2scalar(array):
     return 1.0 * array
 
+def scalar2boolean(array):
+    return array == 1
 
 def standardize(array):
     max_value = array.max()
@@ -72,3 +74,16 @@ def arrayfull(array, value):
 def arrayfill(array, value):
     return np.ma.filled(array, value)
 
+
+def total(array):
+    masked_data = np.ma.masked_where(array <= -9999, array)
+    return  np.ma.sum(masked_data)
+
+
+def standardize(array):
+    masked_data = np.ma.masked_where(array <= -9999, array)
+    max_value = masked_data.max()
+    if max_value == 0:
+        return 0.0 * max_value
+    else:
+        return masked_data/float(max_value)

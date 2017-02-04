@@ -31,6 +31,6 @@ root.to_json(x)
 x_root = x[0]['root']
 import json
 
-with open('maps.json', 'wb') as file:
-    json.dump(x_root, file)
+with open('xmaps.json', 'wb') as file:
+    json.dump(x_root, file, indent=2)
 # print len(root.children())

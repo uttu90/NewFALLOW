@@ -1,5 +1,4 @@
 # List of map keys
-
 maps = [
     {'Simulated area': {'Path': '', 'Descitpion': ''}},
     {'Initial landcover': {'Path': '', 'Description': ''}},
@@ -45,6 +44,18 @@ maps = [
 
     ]},
     {'Distance to factory': [
+        {'Non-timber forest products': [
+        {'Period 1': {'Path': '', 'Description': ''}},
+        {'Period 2': {'Path': '', 'Description': ''}},
+        {'Period 3': {'Path': '', 'Description': ''}},
+        {'Period 4': {'Path': '', 'Description': ''}},
+    ]},
+        {'Timber': [
+        {'Period 1': {'Path': '', 'Description': ''}},
+        {'Period 2': {'Path': '', 'Description': ''}},
+        {'Period 3': {'Path': '', 'Description': ''}},
+        {'Period 4': {'Path': '', 'Description': ''}},
+    ]},
         {'Annual crop 1': [
         {'Period 1': {'Path': '', 'Description': ''}},
         {'Period 2': {'Path': '', 'Description': ''}},
@@ -139,4 +150,26 @@ maps = [
     ]},
     {'Protected area': {'Path': '', 'Description': ''}},
     {'Disastered area': {'Path': '', 'Description': ''}},
+]
+
+def list_dict_to_dict(list_dict, init_dict):
+    for a_dict in list_dict:
+        key = a_dict.keys()[0]
+        if isinstance(a_dict[key], dict):
+            init_dict[key] = a_dict[key]
+        else:
+            init_dict[key] = {}
+            sub_dict = init_dict[key]
+            list_dict_to_dict(a_dict[key], sub_dict)
+
+x = {}
+list_dict_to_dict(maps, x)
+
+import json
+
+print json.dumps(x, indent=2)
+
+
+time_series = [
+
 ]

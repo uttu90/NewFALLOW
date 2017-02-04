@@ -161,6 +161,10 @@ livelihood_age = ['off/non-farm', 'non-timber forest product',
                                            'peak production',
                                            'post production']}, ]
 
+scname_para = ['sc1', 'sc2', 'sc3', 'sc4', 'sc5', 'sc6', 'sc7', 'sc8', 'sc9',
+               'sc10', 'sc11', 'sc12', 'sc13', 'sc14', 'sc15', 'sc16', 'sc17',
+               'sc18', 'sc19', 'sc20', 'sc21', 'sc22', 'sc23', 'sc24', 'sc25']
+
 demography_para = ['initial population', 'annual growth rate',
                    'labour fraction', 'working days',
                    'initial financial capital',
@@ -184,3 +188,6 @@ plot_factors = ['soil fertility', 'land production',
 
 storage_properties = ['demand per capita',
                       'probability to sell', 'loss fraction']
+
+agent_type = ['farmer 1', 'farmer 2']
+zclass = ['z1', 'z2', 'z3', 'z4', 'z5']
