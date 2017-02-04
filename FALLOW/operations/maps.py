@@ -87,3 +87,14 @@ def standardize(array):
         return 0.0 * max_value
     else:
         return masked_data/float(max_value)
+
+
+def load_map(maps, init_dict):
+    for key in maps.keys():
+        if 'Path' in maps[key]:
+            init_dict[key] = mapopen(maps[key]['Path'])
+            # init_dict[key] = maps[key]['Path']
+        else:
+            init_dict[key] = {}
+            sub_dict = init_dict[key]
+            load_map(maps[key], sub_dict)

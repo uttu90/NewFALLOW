@@ -28,8 +28,40 @@ maxsoilfert_map = mapopen(maps['Soil fertility']
 slope_map = mapopen(maps['Slope']['Path'])
 disaster_map = mapopen(maps['Disastered area']['Path'])
 reserve_map = mapopen(maps['Protected area']['Path'])
+sui_maps = {}
+load_map(maps['Suitable area'], sui_maps)
 
+for plant in maps['Suitable area'].keys():
+    sui_maps[plant] = mapopen(maps['Suitable area'][plant]['Path'])
 
+d_road_maps = {}
+for period in maps['Distance to road'].keys():
+    d_road_maps[period] = mapopen(maps['Distance to road'][period]['Path'])
+
+d_market_maps = {}
+for period in maps['Distance to market'].keys():
+    d_market_maps[period] = mapopen(maps['Distance to market'][period]['Path'])
+
+d_river_maps = {}
+for period in maps['Distance to river'].keys():
+    d_river_maps[period] = mapopen(maps['Distance to river'][period]['Path'])
+
+d_settlement_maps = {}
+for period in maps['Distance to settlement'].keys():
+    d_settlement_maps[period] = mapopen(maps['Distance to settlement']
+                                        [period]['Path'])
+
+d_factory_maps = {}
+for product in maps['Distance to factory'].keys():
+    d_factory_maps[product] = {}
+    for period in maps['Distance to factory'][product].keys():
+        d_factory_maps[product][period] = mapopen(maps['Distance to factory']
+                                                  [product][period]['Path'])
+
+x_factory_maps = {}
+load_map(maps['Distance to factory'], x_factory_maps)
+
+# print (json.dumps(x_factory_maps, indent=2))
 
 print 'finished'
 # Map data will exist in two types: map and array

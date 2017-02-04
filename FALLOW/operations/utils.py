@@ -1,5 +1,9 @@
 # Array operation utils
-import numpy as np
+import re
+
+
+def make_key(key):
+    return re.split(r'.?\(', key ) [0].strip().lower()
 
 
 def list_dict_to_dict(list_dict, init_dict):
