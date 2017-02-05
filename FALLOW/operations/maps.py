@@ -4,6 +4,8 @@ import numpy as np
 from os import path
 # import pcraster
 
+masked_value = -9999
+
 
 def mapopen(filename):
     if not path.isfile(filename):
@@ -12,7 +14,7 @@ def mapopen(filename):
         return gdal.Open(filename)
 
 
-def map2array(data, masked_value):
+def map2array(data, masked_value=masked_value):
     array = data.ReadAsArray().astype(np.float32)
     masked_array = np.ma.masked_where(array <= masked_value, array)
     return masked_array
@@ -52,15 +54,16 @@ def arraytotal(array):
 def boolean2scalar(array):
     return 1.0 * array
 
+
 def scalar2boolean(array):
     return array == 1
 
-def standardize(array):
-    max_value = array.max()
-    if max_value == 0:
-        return 0*array
-    else:
-        return array/max_value
+# def standardize(array):
+#     max_value = array.max()
+#     if max_value == 0:
+#         return 0*array
+#     else:
+#         return array/max_value
 
 
 def stat(mean, cv):
@@ -82,9 +85,10 @@ def total(array):
 
 def standardize(array):
     masked_data = np.ma.masked_where(array <= -9999, array)
+    masked_data = masked_data.astype(np.float32)
     max_value = masked_data.max()
     if max_value == 0:
-        return 0.0 * max_value
+        return 0.0 * masked_data
     else:
         return masked_data/float(max_value)
 
@@ -92,9 +96,18 @@ def standardize(array):
 def load_map(maps, init_dict):
     for key in maps.keys():
         if 'Path' in maps[key]:
-            init_dict[key] = mapopen(maps[key]['Path'])
-            # init_dict[key] = maps[key]['Path']
+            init_dict[key.lower()] = map2array(mapopen(maps[key]['Path']), -9999)
         else:
-            init_dict[key] = {}
-            sub_dict = init_dict[key]
+            init_dict[key.lower()] = {}
+            sub_dict = init_dict[key.lower()]
             load_map(maps[key], sub_dict)
+
+
+def standardized_maps(maps, init_dict):
+    for key in maps.keys():
+        if isinstance(maps[key], dict):
+            init_dict[key.lower()] = {}
+            sub_dict = init_dict[key.lower()]
+            standardized_maps(maps[key], sub_dict)
+        else:
+            init_dict[key] = standardize(maps[key])

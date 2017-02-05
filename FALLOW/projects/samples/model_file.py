@@ -18,52 +18,67 @@ utils.list_dict_to_dict(maps_root, maps)
 # Loading variables: from an excel file, then convert to a Python dictionary
 # Loading timeseries: from an excel file, then convert to a Python dictionary
 
-area_map = mapopen(maps['Simulated area']['Path'])
 initlanduse_map = mapopen(maps['Initial landcover']['Path'])
-subcatchment_map = mapopen(maps['Sub-catchment area']['Path'])
-logzone_map = mapopen(maps['Initial logging area']['Path'])
-soilfert_map = mapopen(maps['Soil fertility']['Initial soil fertility']['Path'])
-maxsoilfert_map = mapopen(maps['Soil fertility']
-                          ['Maximum soil fertility']['Path'])
-slope_map = mapopen(maps['Slope']['Path'])
-disaster_map = mapopen(maps['Disastered area']['Path'])
-reserve_map = mapopen(maps['Protected area']['Path'])
-sui_maps = {}
-load_map(maps['Suitable area'], sui_maps)
 
-for plant in maps['Suitable area'].keys():
-    sui_maps[plant] = mapopen(maps['Suitable area'][plant]['Path'])
+area_arr = map2array(mapopen(maps['Simulated area']['Path']))
+initlanduse_arr = map2array(mapopen(maps['Initial landcover']['Path']))
+subcatchment_arr = map2array(mapopen(maps['Sub-catchment area']['Path']))
+logzone_arr = map2array(mapopen(maps['Initial logging area']['Path']))
+soilfert_arr = map2array(mapopen(
+    maps['Soil fertility']['Initial soil fertility']['Path']))
+maxsoilfert_arr = map2array(
+    mapopen(
+        maps['Soil fertility']['Maximum soil fertility']['Path']))
+slope_arr = map2array(mapopen(maps['Slope']['Path']))
+disaster_arr = map2array(mapopen(maps['Disastered area']['Path']))
+reserve_arr = map2array(mapopen(maps['Protected area']['Path']))
 
-d_road_maps = {}
-for period in maps['Distance to road'].keys():
-    d_road_maps[period] = mapopen(maps['Distance to road'][period]['Path'])
+sui_arrs = {}
+load_map(maps['Suitable area'], sui_arrs)
 
-d_market_maps = {}
-for period in maps['Distance to market'].keys():
-    d_market_maps[period] = mapopen(maps['Distance to market'][period]['Path'])
+d_road_arrs = {}
+load_map(maps['Distance to road'], d_road_arrs)
 
-d_river_maps = {}
-for period in maps['Distance to river'].keys():
-    d_river_maps[period] = mapopen(maps['Distance to river'][period]['Path'])
+d_market_arrs = {}
+load_map(maps['Distance to market'], d_market_arrs)
 
-d_settlement_maps = {}
-for period in maps['Distance to settlement'].keys():
-    d_settlement_maps[period] = mapopen(maps['Distance to settlement']
-                                        [period]['Path'])
+d_river_arrs = {}
+load_map(maps['Distance to river'], d_river_arrs)
 
-d_factory_maps = {}
-for product in maps['Distance to factory'].keys():
-    d_factory_maps[product] = {}
-    for period in maps['Distance to factory'][product].keys():
-        d_factory_maps[product][period] = mapopen(maps['Distance to factory']
-                                                  [product][period]['Path'])
+d_settlement_arrs = {}
+load_map(maps['Distance to settlement'], d_settlement_arrs)
 
-x_factory_maps = {}
-load_map(maps['Distance to factory'], x_factory_maps)
+d_factory_arrs = {}
+load_map(maps['Distance to factory'], d_factory_arrs)
 
-# print (json.dumps(x_factory_maps, indent=2))
+# Standardized maps
 
-print 'finished'
+sd_road_arrs = {}
+standardized_maps(d_road_arrs, sd_road_arrs)
+
+sd_market_arrs = {}
+standardized_maps(d_market_arrs, sd_market_arrs)
+
+sd_river_arrs = {}
+standardized_maps(d_river_arrs, sd_river_arrs)
+
+sd_factory_arrs = {}
+standardized_maps(d_factory_arrs, sd_factory_arrs)
+
+sd_settlement_arrs = {}
+standardized_maps(d_settlement_arrs, sd_settlement_arrs)
+
+# Loading variables
+# Variables are get from readfile module
+
+disaster_time = read_file.social2['value']['time of disaster event']
+impact_of_disaster = read_file.social2['value']['impact_of_disaster']
+demography = read_file.demography['value']
+harvesting = read_file.biophysic2['harvesting prod.']
+establishment_cost = read_file.econimic1['establishment cost']
+establishment_labour = read_file.econimic1['establishment labour']
+external_labour = read_file.econimic1['external labour']
+
 # Map data will exist in two types: map and array
 # For more convenient, map type variable will be named: *_map and array variable
 # will be named *_arry
@@ -74,10 +89,10 @@ print 'finished'
 # Initial arrays
 masked_value = -9999
 
-initlanduse_arr = map2array(initlanduse_map, masked_value)
+# initlanduse_arr = map2array(initlanduse_map, masked_value)
 zerolc_arr = initlanduse_arr - initlanduse_arr
 landcoverage_arr = initlanduse_arr - initlanduse_arr
-area_arr = map2array(area_map, masked_value)
+# area_arr = map2array(area_map, masked_value)
 zero_arr = area_arr - area_arr
 initlcagestat = read_file.initial_landcover_age
 
@@ -98,8 +113,8 @@ for land in constants.land_multile_stages:
 lu_arr = initlanduse_arr - initlanduse_arr
 
 for land in constants.land_single_stage:
-    lu_arr +=(initlanduse_arr ==
-              constants.landcover_map[land])*constants.landuse_map[land]
+    lu_arr += (initlanduse_arr ==
+               constants.landcover_map[land])*constants.landuse_map[land]
 
 for land in constants.land_multile_stages:
     inverse_arr = ~(area_arr == 1)
@@ -140,18 +155,15 @@ expprob_arr = copy.deepcopy(zattrclass_arr)
 expansionprobability = {}
 newplot_arr = {}
 for livetype in constants.livelihood:
-    newplot_arr = copy.deepcopy(inverse_area_arr)
+    newplot_arr[livetype] = copy.deepcopy(inverse_area_arr)
 fireignition_arr = {}
 suitable_area_arr = {}
-
-
 
 # Initial timeseries
 firearea_ts = []
 totsecconsumptionpercapita_ts = []
 totnetincomepercapita_ts = []
-totpop_ts = []
-#totpop_ts.append(float(demographics[0]))
+totpop_ts = [demography['initial population']]
 totagb_ts = []
 totagc_ts = []
 totfinance_ts = []
@@ -208,10 +220,10 @@ init_livelihood_mv = {}
 for livetype in constants.livelihood:
     init_livelihood_mv[livetype] = 0
 
-harvestingefficiency_mv = copy.deepcopy(init_livelihood_mv)
-estcost_mv = copy.deepcopy(init_livelihood_mv)
-estlabor_mv = copy.deepcopy(init_livelihood_mv)
-extlabor_mv = copy.deepcopy(init_livelihood_mv)
+harvestingefficiency_mv = {}
+estcost_mv = {}
+estlabor_mv = {}
+extlabor_mv = {}
 
 totlabor_mv = {}
 for agent in constants.agent_type:
@@ -225,4 +237,58 @@ landfrac_mv = copy.deepcopy(labormoneyfrac_mv)
 exavail_mv = {}
 
 # lcarea = [[] for i in lutype]
+
+# Simulation
+simulation_time = 5
+
+dynamic_map = {'period 1': (0, 50),
+               'period 2': (51, 100),
+               'period 3': (101, 150),
+               'period 4': (151, 200)}
+
+for time in range(0, simulation_time):
+    balance = demography['initial financial capital']
+    totbuying = 0
+    totselling = 0
+    print "Simumation time: %s" % time
+    if time > 0:
+        totpop_ts.append(totpop_ts[time - 1])
+    if time == disaster_time:
+        disasterimpactonhuman = impact_of_disaster['to human']
+        disasterimpactonmoney = impact_of_disaster['to money capital']
+        disasterimpactonworkingday = impact_of_disaster['to working day']
+        disasterimpactzone = boolean2scalar(disaster_arr == 1)
+    else:
+        disasterimpactonhuman = 0
+        disasterimpactonmoney = 0
+        disasterimpactonworkingday = 0
+        disasterimpactzone = boolean2scalar(~(area_arr == 1))
+    for period in dynamic_map.keys():
+        if time in range(*dynamic_map[period]):
+            current_period = period
+            break
+    current_road_arr = sd_road_arrs[current_period]
+    current_river_arr = sd_river_arrs[current_period]
+    current_settlement_arr = sd_settlement_arrs[current_period]
+    current_market_arr = sd_market_arrs[current_period]
+    d_settlement_arr = d_settlement_arrs[current_period]
+    current_factory_arrs = {}
+    for plant in sd_factory_arrs.keys():
+        current_factory_arrs[plant] = sd_factory_arrs[plant][current_period]
+
+    # Incase using timeseries
+
+    for livetype in constants.livelihood:
+        harvestingefficiency_mv[livetype] = stat(
+            harvesting['mean'][livetype],
+            harvesting['cv'][livetype])
+        estcost_mv[livetype] = max(0, stat(
+            establishment_cost['mean'][livetype],
+            establishment_cost['cv'][livetype]))
+        estlabor_mv[livetype] = max(0, stat(
+            establishment_labour['mean'][livetype],
+            establishment_labour['cv'][livetype]))
+        extlabor_mv[livetype] = max(0, stat(
+            external_labour['mean'][livetype],
+            external_labour['cv'][livetype]))
 
