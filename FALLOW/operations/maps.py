@@ -96,7 +96,8 @@ def standardize(array):
 def load_map(maps, init_dict):
     for key in maps.keys():
         if 'Path' in maps[key]:
-            init_dict[key.lower()] = map2array(mapopen(maps[key]['Path']), -9999)
+            init_dict[key.lower()] = map2array(
+                mapopen(maps[key]['Path']), -9999)
         else:
             init_dict[key.lower()] = {}
             sub_dict = init_dict[key.lower()]
@@ -111,3 +112,11 @@ def standardized_maps(maps, init_dict):
             standardized_maps(maps[key], sub_dict)
         else:
             init_dict[key] = standardize(maps[key])
+
+
+def uniform(array):
+    [x, y] = array.shape
+    rm = np.random.uniform(0, 1, (x, y))
+    result = boolean2scalar(array) * rm
+    result = np.ma.masked_where(result == 0, result)
+    return result

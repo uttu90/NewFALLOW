@@ -38,6 +38,16 @@ livelihood = ['off/non-farm', 'non-timer forest product', 'timber',
               'tree-based system 3', 'tree-based system 4',
               'tree-based system 5', 'tree-based system 6',
               'tree-based system 7', 'tree-based system 8', ]
+livelihood_single_stage = {
+    'off/non-farm', 'non-timber forest product',
+    'annual crop 1', 'annual crop 2',
+    'annual crop 3', 'annual crop 4',}
+livelihood_multiple_stages = {
+    'timber', 'tree-based system 1',
+    'tree-based system 2', 'tree-based system 3', 'tree-based system 4',
+    'tree-based system 5', 'tree-based system 6',
+    'tree-based system 7', 'tree-based system 8',
+}
 livelihood_map = {'off/non-farm': 0,
                   'non-timer forest product': 1,
                   'timber': 2,
@@ -130,6 +140,11 @@ landcover_map = {
     'tree-based system 8':
         {'pioneer': 37, 'early production': 38,
          'peak production': 39, 'post production': 40}}
+
+tree_based = ['tree-based system 1', 'tree-based system 2',
+              'tree-based system 3', 'tree-based system 4',
+              'tree-based system 5', 'tree-based system 6',
+              'tree-based system 7', 'tree-based system 8', ]
 
 livelihood_age = ['off/non-farm', 'non-timber forest product',
                   {'timber': ['pioneer', 'young secondary',

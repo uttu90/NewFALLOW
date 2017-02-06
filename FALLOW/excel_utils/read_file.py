@@ -163,4 +163,4 @@ farmer_property1 = read_table(sheet, constants.farmer_property_para,
 social2 = read_table(sheet, constants.social_disaster_para,
                               3, 4,215, 216, 224)
 
-print json.dumps(social2, indent=2)
+print json.dumps(econimic1['external labour'], indent=2)
