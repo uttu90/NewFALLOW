@@ -120,3 +120,13 @@ def uniform(array):
     result = boolean2scalar(array) * rm
     result = np.ma.masked_where(result == 0, result)
     return result
+
+
+def spreadMap(array):
+    sarray = 1.0 * array
+    farr = np.ma.filled(sarray, -9999)
+    n2p = pcraster.numpy2pcr(pcraster.Nominal, farr, -9999)
+    n2p = pcraster.spread(n2p, 0, 1)
+    p2n = pcraster.pcr2numpy(n2p, -9999)
+    temp = np.ma.masked_where(p2n == -9999, p2n)
+    return temp

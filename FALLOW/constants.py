@@ -107,6 +107,7 @@ lcage = {'settlement': 'setttlement',
                                  'peak production', 'post production'],
          'tree-based system 8': ['pioneer', 'early production',
                                  'peak production', 'post production'], }
+crops = ['annual crop 1', 'annual crop 2', 'annual crop 3', 'annual crop 4']
 
 landcover_map = {
     'settlement': 0,
