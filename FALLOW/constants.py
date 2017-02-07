@@ -31,7 +31,7 @@ landuse_map = {
     'tree-based system 8': 13,
 }
 
-livelihood = ['off/non-farm', 'non-timer forest product', 'timber',
+livelihood = ['off/non-farm', 'non-timber forest product', 'timber',
               'annual crop 1', 'annual crop 2',
               'annual crop 3', 'annual crop 4',
               'tree-based system 1', 'tree-based system 2',

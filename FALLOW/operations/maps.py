@@ -2,7 +2,7 @@ import sys
 from osgeo import gdal
 import numpy as np
 from os import path
-# import pcraster
+import pcraster
 
 masked_value = -9999
 
@@ -114,7 +114,8 @@ def standardized_maps(maps, init_dict):
             init_dict[key] = standardize(maps[key])
 
 
-def uniform(array):
+def uniform(array, file_map='area.xxx'):
+    pcraster.setclone(file_map)
     [x, y] = array.shape
     rm = np.random.uniform(0, 1, (x, y))
     result = boolean2scalar(array) * rm
@@ -122,7 +123,7 @@ def uniform(array):
     return result
 
 
-def spreadMap(array):
+def spreadmap(array):
     sarray = 1.0 * array
     farr = np.ma.filled(sarray, -9999)
     n2p = pcraster.numpy2pcr(pcraster.Nominal, farr, -9999)
