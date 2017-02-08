@@ -876,7 +876,8 @@ for time in range(0, simulationtime):
             expareamoney[i].append(availablemoney[i][time] / estcost[i])
         else:
             expareamoney[i].append(0)
-        exparea[i].append(min(expareamoney[i][time], exparealabor[i][time], critzonearea[i][time]))
+        exparea[i].append(
+            min(expareamoney[i][time],exparealabor[i][time], critzonearea[i][time]))
     exparea[0].append(0)
     for i in livelihoodtype:
         for j in zclass:

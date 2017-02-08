@@ -142,7 +142,7 @@ landcover_map = {
         {'pioneer': 37, 'early production': 38,
          'peak production': 39, 'post production': 40}}
 
-tree_based = ['tree-based system 1', 'tree-based system 2',
+trees_based = ['tree-based system 1', 'tree-based system 2',
               'tree-based system 3', 'tree-based system 4',
               'tree-based system 5', 'tree-based system 6',
               'tree-based system 7', 'tree-based system 8', ]

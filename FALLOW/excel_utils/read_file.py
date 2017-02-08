@@ -161,7 +161,7 @@ farmer_property1 = read_table(sheet, constants.farmer_property_para,
                              4, 6, 209, 210, 214)
 
 social2 = read_table(sheet, constants.social_disaster_para,
-                              3, 4,215, 216, 224)
+                              3, 4, 215, 216, 224)
 
 yieldstat = biophysic1['landcover property']['yield']
 
