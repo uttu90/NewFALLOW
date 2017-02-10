@@ -193,7 +193,7 @@ social_disaster_para = [
     {'impact_of_disaster':
          ['to human', 'to money capital', 'to working day']},
     'time of disaster event',
-    {'convention':
+    {'convertion':
          ['timber volume to biomass', 'biomass to carbon']}, ]
 
 probably = ['mean', 'cv']

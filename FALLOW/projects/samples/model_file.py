@@ -95,14 +95,20 @@ expayofftolabour = (
 lctimebound = read_file.biophysic1['landcover age']['landcover age boundary']
 yieldstat = read_file.biophysic1['landcover property']['yield']
 lcprostat = read_file.biophysic1['landcover property']
+agbiomass_stat = lcprostat['aboveground biomass']['mean']['forest']
 nonlaborcoststat = read_file.economic2['non-labour cost']
 subsidy = read_file.econimic1['subsidy']
+print json.dumps(read_file.social2, indent=2)
 unitconverter = read_file.social2['value']['convertion']
-storeprop = read_file.biophysic1['storage properties']
+storeprop = read_file.biophysic2['storage properties']
 store = {}
 for livetype in constants.livelihood:
-    store[livetype] = demography[livetype] * storeprop[livetype]
+    store[livetype] = demography['initial population'] * storeprop['demand per capita'][livetype]
 spatialw = read_file.biophysic2['plot factors']
+print json.dumps(spatialw, indent=2)
+pfireuse = read_file.biophysic2['plot factors']['pfireuse']
+extensionprop = read_file.social['extension property']
+extensionsuggestion = read_file.econimic2['expected profitability ']
 
 # Map data will exist in two types: map and array
 # For more convenient, map type variable will be named: *_map and array variable
@@ -179,10 +185,10 @@ zfreq_arrs = copy.deepcopy(zattrclass_arrs)
 zexc_arrs = copy.deepcopy(zattrclass_arrs)
 expprob_arrs = copy.deepcopy(zattrclass_arrs)
 expansionprobability = {}
-newplot_arr = {}
-for livetype in constants.livelihood:
-    newplot_arr[livetype] = copy.deepcopy(inverse_area_arr)
-fireignition_arr = {}
+newplot_arrs = {}
+# for livetype in constants.livelihood:
+#     newplot_arr[livetype] = copy.deepcopy(inverse_area_arr)
+fireignition_arrs= {}
 suitable_area_arr = {}
 pyield_arrs = {}
 for livetype in constants.livelihood:
@@ -270,6 +276,7 @@ critzoneprob_mv = {}
 totlabor_mv = {}
 harvestingarea_mv = {}
 dexistingplit_arrs = {}
+exavail_mv = {}
 # for agent in constants.agent_type:
 #     totlabor_mv[agent] = 0
 
@@ -303,12 +310,12 @@ for time in range(0, simulation_time):
         disasterimpactonhuman = impact_of_disaster['to human']
         disasterimpactonmoney = impact_of_disaster['to money capital']
         disasterimpactonworkingday = impact_of_disaster['to working day']
-        disasterimpactzone = boolean2scalar(disaster_arr == 1)
+        disasterimpactzone_arr = boolean2scalar(disaster_arr == 1)
     else:
         disasterimpactonhuman = 0
         disasterimpactonmoney = 0
         disasterimpactonworkingday = 0
-        disasterimpactzone = boolean2scalar(~(area_arr == 1))
+        disasterimpactzone_arr = boolean2scalar(~(area_arr == 1))
     for period in dynamic_map.keys():
         if time in range(*dynamic_map[period]):
             current_period = period
@@ -469,7 +476,7 @@ for time in range(0, simulation_time):
     criticalzone_arr = copy.deepcopy(inverse_area_arr)
     for land_stage in constants.lcage['forest']:
         criticalzone_arr |= (
-        lc_arr == constants.landcover_map['forest'][land_stage])
+            lc_arr == constants.landcover_map['forest'][land_stage])
     for landtype in constants.trees_based:
         criticalzone_arr |= (
         lc_arr ==
@@ -772,7 +779,7 @@ for time in range(0, simulation_time):
     for livetype in constants.livelihood:
         store[livetype] = max(0,
                               store[livetype] *
-                              (1 - float(storeprop['oss fraction'][livetype])) +
+                              (1 - float(storeprop['loss fraction'][livetype])) +
                               attyield_ts[livetype][time])
 
     zfert_arr = standardize(soilfert_arr)
@@ -890,8 +897,9 @@ for time in range(0, simulation_time):
                 if zfreq_arrs[livetype][z] > 0 else 0)
 
     allnewplots_arr = copy.deepcopy(inverse_area_arr)
-    newplot = {}
+    newplot_arrs = {}
     newplotarea = {}
+    allfireignition_arr = copy.deepcopy(inverse_area_arr)
     for livetype in constants.livelihood:
         expansionprobability[livetype] = 0
         for z in constants.zclass:
@@ -901,11 +909,154 @@ for time in range(0, simulation_time):
         expansionprobability[livetype] *= scalar2boolean(
             critzone_arrs[livetype])
         randommatrix = np.random.uniform(0, 1, area_arr.shape)
-        newplot[livetype] = (
+        newplot_arrs[livetype] = (
             (randommatrix < expansionprobability[livetype]) &
             inverse_reserve_arr)
         newplotarea[livetype].append(
-            total(boolean2scalar(newplot[livetype])) * pixelsize)
-        fireignition_arr[livetype] = (mapcover(mapUniform(newplot[livetype]),
-                                    1) * area_arr) < float(pfireuse[livetype])
-        allfireignition |= fireignition[livetype]
+            total(boolean2scalar(newplot_arrs[livetype])) * pixelsize)
+        fireignition_arrs[livetype] = (
+            (arrayfill(
+                uniform(newplot_arrs[livetype]), 1) * area_arr) <
+            pfireuse[livetype])
+        allfireignition_arr |= fireignition_arrs[livetype]
+
+    allnewplots_arr = copy.deepcopy(inverse_area_arr)
+    cost = 0
+    for livetype in constants.livelihood[3:]:
+        allnewplots_arr |= newplot_arrs[livetype]
+        cost += estcost_mv[livetype] * total(newplot_arrs[livetype])
+    totestcost_ts.append(cost)
+    total_demand = {}
+    for livetype in constants.livelihood:
+        total_demand[livetype] = (
+            totpop_ts[time] * storeprop['demand per capita'][livetype])
+        price = balance/price[livetype][time] if price[livetype][time] > 0 else 0
+        remain = store[livetype] * (1 - storeprop['loss fraction'])
+        buying_ts[livetype].append(
+            min(price, max(0, (total_demand[livetype] - remain))))
+        selling_ts[livetype].append(max(0,
+                                        remain * storeprop['probably to sell']))
+        if total_demand[livetype] <= 0:
+            effective = 0
+        else:
+            effective = (
+                1 -
+                (store[livetype] +
+                 buying_ts[livetype][time] -
+                 selling_ts[livetype][time])/total_demand[livetype])
+        supplyefficiency_ts[livetype].append(effective)
+        store[livetype] = max(0, (remain + buying_ts[livetype][time] -
+                                  total_demand[livetype] -
+                                  selling_ts[livetype][time]))
+    totnetincome = max(0, totselling - totbuying - totnonlaborcosts -
+                       totlaborcosts - cost[time])
+    totsecconsumption = max(0, (
+        totnetincome * demography['secondary consumption fraction']))
+    if totpop_ts[time] > 0:
+        totnetincomepercapita_ts.append(totnetincome / totpop_ts[time])
+        totsecconsumptionpercapita_ts.append(totsecconsumption / totpop_ts[time])
+    else:
+        totnetincomepercapita_ts.append(0)
+        totsecconsumptionpercapita_ts.append(0)
+    balance = balance + totnetincome - totsecconsumption
+    balance *= 1 - (disasterimpactonmoney / 100)
+    nonselectedagricplot_arr = ((~allnewplots_arr) &
+                            (marginalagriculture_arr | marginalAF_arr))
+    dfireignition_arr = arrayfill(spreadmap(allfireignition_arr), 1e11)
+    fire_arr = (arrayfill(uniform(dfireignition_arr < 2 * np.sqrt(pixelsize)),
+                     1) < pfireescape_arr) | allfireignition_arr
+    firearea_ts.append(total(fire_arr))
+    nfptzone_arr = newplot_arrs['non-timer forest product']
+    totpop_ts[time] = (
+        (totpop_ts[time] *
+        (1 + float(demography['annual growth rate']))) *
+        (1 - (disasterimpactonhuman / 100)))
+    for livetype in constants.livelihood:
+        if usingtimeseries == 1:
+            exavail_mv[livetype] = float(ex[livetype][time])
+        else:
+            exavail_mv[livetype] = extensionprop['off/non-farm']
+    for agent in constants.agent_type:
+        for livetype in constants.livelihood:
+            if payofftolabor_ts[livetype][time] <= 0:
+                expayofftolabour[agent][livetype] = 0.0
+            else:
+                expayoff = (
+                    expayofftolabour[agent][livetype] +
+                    agentprop[agent]['alpha factor'] * (
+                        payofftolabor_ts[livetype][time] -
+                        expayofftolabour[livetype]))
+                expayofftolabour[agent][livetype] = (
+                    expayoff +
+                    agentprop[agent]['beta factor'] *
+                    exavail_mv[livetype] *
+                    extensionprop['credibility'][livetype] *
+                    extensionprop['availability'] * (
+                        extensionsuggestion['return to labour'] - expayoff))
+
+            if payofftoland_ts[livetype][time] <= 0:
+                expayofftoland[agent][livetype] = 0.0
+            else:
+                expayoff = (
+                    expayofftoland[agent][livetype] +
+                    agentprop[agent]['alpha factor'] * (
+                        payofftoland_ts[livetype][time] -
+                        expayofftoland[livetype]))
+                expayofftoland[agent][livetype] = (
+                    expayoff +
+                    agentprop[agent]['beta factor'] *
+                    exavail_mv[livetype] *
+                    extensionprop['credibility'][livetype] *
+                    extensionprop['availability'] * (
+                        extensionsuggestion['return to land'] - expayoff))
+    soil_arr = (1 + soilrecoverytime_arr) * maxsoilfert_arr - soilfert_arr
+    soilrecovery_arr = (boolean2scalar(soil_arr > 0) *
+                    np.square(maxsoilfert_arr - soilfert_arr) / soil_arr)
+    soilrecovery_arr = arrayfill(soilrecovery_arr, 0) * area_arr
+    soilfert_arr = np.minimum(
+        maxsoilfert_arr,
+        np.maximum(0,
+                   soilfert_arr + soilrecovery_arr - soildepletion_arr))
+    forest_plot = (
+        fire_arr &
+        (~allnewplots_arr) |
+        disasterimpactzone_arr |
+        nonselectedagricplot_arr)
+    plot_arr = (
+        (
+            (lu_arr == constants.landuse_map['settlement']) *
+            constants.landuse_map['settlement']) +
+        (
+            (lu_arr == constants.landuse_map['forest']) *
+            constants.landuse_map['forest']))
+    for landtype in constants.landuse[2:]:
+        plot_arr += (
+            (lu_arr == constants.landuse_map[landtype]) *
+            constants.landuse_map[landtype])
+    lu_arr = plot_arr + boolean2scalar(~(plot_arr > 0)) * lu_arr
+    age_stat = {}
+    for forest_stage in constants.lcage['forest']:
+        age_stat[forest_stage] = arraystat(
+            area_arr,
+            initlcagestat['mean']['forest'][forest_stage],
+            initlcagestat['cv']['forest'][forest_stage])
+    agebasedbiomass_arr = (
+        (agbiomass_arr > 0 &
+         agbiomass_arr < agbiomass_stat['young secondary']) *
+        age_stat['pioneer'] +
+        (agbiomass_arr > agbiomass_stat['young secondary'] &
+         agbiomass_arr < agbiomass_stat['old secondary']) *
+        age_stat['young secondary'] +
+        (agbiomass_arr > agbiomass_stat['old secondary'] &
+         agbiomass_arr < agbiomass_stat['primary']) *
+        age_stat['old secondary'] +
+        (agbiomass_arr > agbiomass_stat['primary']) *
+        age_stat['primary'])
+    destroy_arr = boolean2scalar(allnewplots_arr |
+                             fire_arr |
+                             boolean2scalar(disasterimpactzone_arr) |
+                             nonselectedagricplot_arr)
+    lcage_arr = (phzone_arr['timber'] * agebasedbiomass_arr +
+                 destroy_arr * 0.0 +
+                 (~destroy_arr) * (lcage_arr + 1))
+    totfinance_ts.append(balance)

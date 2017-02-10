@@ -144,7 +144,7 @@ biophysic1 = read_table(sheet, constants.landcover, 1, 16, 24, 27, 77)
 
 initial_landcover_age = biophysic1['landcover age']['initial landcover age']
 
-biophysic2 = read_table(sheet, constants.livelihood, 1, 13, 81, 83, 98)
+biophysic2 = read_table(sheet, constants.livelihood, 1, 14, 81, 83, 98)
 print biophysic2.keys()
 
 econimic1 = read_table(sheet, constants.livelihood, 1, 17, 102, 105, 120)
@@ -165,4 +165,4 @@ social2 = read_table(sheet, constants.social_disaster_para,
 
 yieldstat = biophysic1['landcover property']['yield']
 
-print json.dumps(yieldstat, indent=2)
+print json.dumps(social2, indent=2)
