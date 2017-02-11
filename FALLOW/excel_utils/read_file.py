@@ -147,8 +147,8 @@ initial_landcover_age = biophysic1['landcover age']['initial landcover age']
 biophysic2 = read_table(sheet, constants.livelihood, 1, 14, 81, 83, 98)
 print biophysic2.keys()
 
-econimic1 = read_table(sheet, constants.livelihood, 1, 17, 102, 105, 120)
-print econimic1.keys()
+economic1 = read_table(sheet, constants.livelihood, 1, 17, 102, 105, 120)
+print economic1.keys()
 
 economic2 = read_table(sheet, constants.livelihood_age, 3, 5, 122, 124, 175)
 
@@ -166,3 +166,27 @@ social2 = read_table(sheet, constants.social_disaster_para,
 yieldstat = biophysic1['landcover property']['yield']
 
 print json.dumps(social2, indent=2)
+
+def read_timeseries(sheet, keys_list, start_row, start_col, end_col):
+    result = {}
+    row = start_row
+    for key in keys_list:
+        result[_make_key(key)] = sheet.row_values(row,
+                                                  start_colx=start_col,
+                                                  end_colx=end_col)
+        row += 1
+
+    return result
+file_path = "C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\projects\samples\FALLOW - Input parameters.xls"
+
+book1 = wb.open_workbook(file_path)
+
+sheet1 = book1.sheet_by_name('Summary')
+
+
+price = read_timeseries(sheet1, constants.livelihood,
+                        225, 1, 101)
+extension_availability = read_timeseries(sheet1, constants.livelihood,
+                                         244, 1, 101)
+subsidy_availability = read_timeseries(sheet1, constants.livelihood,
+                                       263, 1, 101)

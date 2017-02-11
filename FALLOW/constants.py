@@ -1,18 +1,21 @@
 # Fallow constants
 
-landuse = {'settlement', 'forest',
+landuse = ['settlement', 'forest',
            'annual crop 1', 'annual crop 2',
            'annual crop 3', 'annual crop 4',
            'tree-based system 1', 'tree-based system 2',
            'tree-based system 3', 'tree-based system 4',
            'tree-based system 5', 'tree-based system 6',
-           'tree-based system 7', 'tree-based system 8', }
+           'tree-based system 7', 'tree-based system 8', ]
 
-land_single_stage = {'settlement', 'annual crop 1',
+land_single_stage = ['settlement', 'annual crop 1',
                      'annual crop 2', 'annual crop 3',
-                     'annual crop 4'}
+                     'annual crop 4']
 
-land_multile_stages = landuse - land_single_stage
+land_multile_stages = ['forest', 'tree-based system 1', 'tree-based system 2',
+                       'tree-based system 3', 'tree-based system 4',
+                       'tree-based system 5', 'tree-based system 6',
+                       'tree-based system 7', 'tree-based system 8',]
 
 landuse_map = {
     'settlement': 0,
@@ -49,7 +52,7 @@ livelihood_multiple_stages = {
     'tree-based system 7', 'tree-based system 8',
 }
 livelihood_map = {'off/non-farm': 0,
-                  'non-timer forest product': 1,
+                  'non-timber forest product': 1,
                   'timber': 2,
                   'annual crop 1': 3,
                   'annual crop 2': 4,
