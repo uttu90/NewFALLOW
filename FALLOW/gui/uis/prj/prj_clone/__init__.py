@@ -22,6 +22,7 @@ class CloneProject(QtGui.QDialog, CloneProjectUI.Ui_diagcloneprj):
                      QtCore.SIGNAL("clicked()"),
                      self.browse_destination_project)
         self.ready = True
+        self.value = None
 
     def _raise_message(self, header, message):
         msg = QtGui.QMessageBox()
@@ -66,14 +67,14 @@ class CloneProject(QtGui.QDialog, CloneProjectUI.Ui_diagcloneprj):
         self._check_blank(self.linemodeleremail, 'modeler email')
 
         if self.ready:
-            # self._create_config_file()
             self._prepare_frame()
+            self.value = str(self.linedestinationprj.text())
             super(CloneProject, self).accept()
         else:
             self.ready = True
 
-    def returnValues(self):
-        return str(self.linedestinationprj.text())
+    def return_value(self):
+        return self.value
 
 def main():
     app = QtGui.QApplication(sys.argv)

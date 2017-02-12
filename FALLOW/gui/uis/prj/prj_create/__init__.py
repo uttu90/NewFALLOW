@@ -6,6 +6,8 @@ from shutil import copy2
 from PyQt4 import QtCore, QtGui
 import NewProjectUI
 
+import json
+
 
 input_para_extension = "Excel Files (*.xls)"
 model_file_extension = "Python Files (*.py)"
@@ -28,6 +30,7 @@ class NewProject(QtGui.QDialog, NewProjectUI.Ui_diagnewprj):
                      self.browse_model_file)
         self.ready = True
         self.config = ConfigParser.RawConfigParser()
+        self.value = None
 
     def _raise_message(self, header, message):
         msg = QtGui.QMessageBox()
@@ -117,12 +120,22 @@ class NewProject(QtGui.QDialog, NewProjectUI.Ui_diagnewprj):
         if self.ready:
             self._create_config_file()
             self._prepare_frame()
+            if not os.path.isfile('projects.josn'):
+                projects = {}
+            else:
+                with open('projects.json', 'r') as file:
+                    projects = json.load(file)
+            abs_path = str(self.lineprjdirectory.text())
+            projects[os.path.basename(abs_path)] = abs_path
+            with open('projects.json', 'w') as file:
+                json.dump(projects, file)
+            self.value = str(self.lineprjdirectory.text())
             super(NewProject, self).accept()
         else:
             self.ready = True
 
-    def returnValues(self):
-        return str(self.lineprjdirectory.text())
+    def return_value(self):
+        return self.value
 
 
 def main():

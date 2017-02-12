@@ -18,6 +18,7 @@ class OpenProject(QtGui.QDialog, OpenProjectUI.Ui_openprj):
         self.connect(self.btnopenprj,
                      QtCore.SIGNAL("clicked()"),
                      self.browse_project)
+        self.value = None
         # self.lineprjdirectory.setText(project_path)
         # self.connect(self.btnprjdirectory,
 
@@ -48,8 +49,12 @@ class OpenProject(QtGui.QDialog, OpenProjectUI.Ui_openprj):
         if project:
             self.lineopenprj.setText(project)
 
-    def returnValues(self):
-        return str(self.lineopenprj.text())
+    def accept(self):
+        self.value = str(self.lineopenprj.text())
+        super(OpenProject, self).accept()
+
+    def return_value(self):
+        return self.value
 
 
 def main():
