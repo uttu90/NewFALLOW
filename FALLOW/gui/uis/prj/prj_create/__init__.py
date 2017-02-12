@@ -1,10 +1,12 @@
 import sys
 import os
 import ConfigParser
-from shutil import copy2
+import shutil
 
 from PyQt4 import QtCore, QtGui
 import NewProjectUI
+
+from FALLOW import projectManager
 
 import json
 
@@ -98,8 +100,11 @@ class NewProject(QtGui.QDialog, NewProjectUI.Ui_diagnewprj):
                                   'input_parameters.xls')
         model_file = os.path.join(str(self.lineprjdirectory.text()),
                                   'model_file.py')
-        copy2(str(self.lineinputpara.text()), input_file)
-        copy2(str(self.linemodelfile.text()), model_file)
+        try:
+            shutil.copy2(str(self.lineinputpara.text()), input_file)
+            shutil.copy2(str(self.linemodelfile.text()), model_file)
+        except shutil.Error:
+            pass
         self.config.set('project', 'input parameter', input_file)
         self.config.set('project', 'model file', model_file)
         input_dir = os.path.join(str(self.lineprjdirectory.text()), 'Input')
@@ -120,16 +125,12 @@ class NewProject(QtGui.QDialog, NewProjectUI.Ui_diagnewprj):
         if self.ready:
             self._create_config_file()
             self._prepare_frame()
-            if not os.path.isfile('projects.josn'):
-                projects = {}
-            else:
-                with open('projects.json', 'r') as file:
-                    projects = json.load(file)
-            abs_path = str(self.lineprjdirectory.text())
-            projects[os.path.basename(abs_path)] = abs_path
-            with open('projects.json', 'w') as file:
-                json.dump(projects, file)
-            self.value = str(self.lineprjdirectory.text())
+            project = self.lineprjdirectory.text()
+            projects = projectManager.get_projects()
+            project = str(project)
+            projects[os.path.basename(project)] = os.path.abspath(project)
+            projectManager.put_projects(projects)
+            self.value = project
             super(NewProject, self).accept()
         else:
             self.ready = True

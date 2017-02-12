@@ -800,7 +800,7 @@ for time in range(0, simulation_time):
     for livetype in constants.livelihood:
         store[livetype] = max(0,
                               store[livetype] *
-                              (1 - float(storeprop['loss fraction'][livetype])) +
+                              (1 - storeprop['loss fraction'][livetype]) +
                               attyield_ts[livetype][time])
 
     zfert_arr = standardize(soilfert_arr)

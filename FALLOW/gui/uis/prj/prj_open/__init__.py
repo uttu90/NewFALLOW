@@ -5,6 +5,8 @@ from shutil import copy2
 
 from PyQt4 import QtCore, QtGui
 import OpenProjectUI
+from FALLOW.gui.uis.prj import prj_list
+from FALLOW import projectManager
 
 input_para_extension = "Excel Files (*.xls)"
 model_file_extension = "Python Files (*.py)"
@@ -19,6 +21,9 @@ class OpenProject(QtGui.QDialog, OpenProjectUI.Ui_openprj):
                      QtCore.SIGNAL("clicked()"),
                      self.browse_project)
         self.value = None
+        self.connect(self.btnlistprj,
+                     QtCore.SIGNAL("clicked()"),
+                     self.list_projects)
         # self.lineprjdirectory.setText(project_path)
         # self.connect(self.btnprjdirectory,
 
@@ -48,6 +53,19 @@ class OpenProject(QtGui.QDialog, OpenProjectUI.Ui_openprj):
             QtGui.QFileDialog.ShowDirsOnly)
         if project:
             self.lineopenprj.setText(project)
+            projects = projectManager.get_projects()
+            project = str(project)
+            projects[os.path.basename(project)] = os.path.abspath(project)
+            projectManager.put_projects(projects)
+
+    def list_projects(self):
+        list_project = prj_list.ListProject(self)
+        list_project.show()
+        if list_project.exec_():
+            value = list_project.return_value()
+            if value:
+                self.project_path = str(value).split(": ")
+                self.lineopenprj.setText(self.project_path[1])
 
     def accept(self):
         self.value = str(self.lineopenprj.text())

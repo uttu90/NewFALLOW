@@ -39,14 +39,14 @@
     </rect>
    </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string>Choose project</string>
    </property>
    <widget class="QLineEdit" name="lineopenprj">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>30</y>
-      <width>291</width>
+      <width>271</width>
       <height>20</height>
      </rect>
     </property>
@@ -54,7 +54,7 @@
    <widget class="QPushButton" name="btnopenprj">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>380</x>
       <y>30</y>
       <width>75</width>
       <height>23</height>
@@ -62,6 +62,19 @@
     </property>
     <property name="text">
      <string>Browse</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnlistprj">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>30</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>List projects</string>
     </property>
    </widget>
   </widget>

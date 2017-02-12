@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6000b1e-1ac0-4208-84a3-9f9261341a32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/prj/list_project.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FALLOW/projectManager.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/MainWindow.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/prj/list_project.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/config.py" afterPath="$PROJECT_DIR$/FALLOW/config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/qtdesigners/openproject.ui" afterPath="$PROJECT_DIR$/FALLOW/gui/qtdesigners/openproject.ui" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/CloneProjectUI.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/CloneProjectUI.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/__init__.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/__init__.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/OpenProjectUI.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/OpenProjectUI.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/__init__.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" afterPath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
     </list>
     <ignored path="NewFALLOW.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,105 +37,23 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
-              <caret line="136" column="20" lean-forward="false" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
+            <state relative-caret-position="1549">
+              <caret line="94" column="34" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="41" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list_project.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/list_project.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projects.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/projects.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="48" lean-forward="false" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListProjectUI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/ListProjectUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-171">
-              <caret line="2" column="67" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewProjectUI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/NewProjectUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="77" column="100" lean-forward="false" selection-start-line="77" selection-start-column="100" selection-end-line="77" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OpenProjectUI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/OpenProjectUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/__init__.py">
+        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+            <state relative-caret-position="765">
+              <caret line="157" column="31" lean-forward="true" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -145,10 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>price_s</find>
-      <find>price_ts</find>
-      <find>profit_ts</find>
-      <find>external_labour</find>
       <find>magina</find>
       <find>expansionprobability</find>
       <find>factory</find>
@@ -173,8 +93,12 @@
       <find>lcage_arr</find>
       <find>lc_arr</find>
       <find>landcoverage_arr</find>
-      <find>returnValues</find>
       <find>listProject</find>
+      <find>copy2</find>
+      <find>config</find>
+      <find>returnValues</find>
+      <find>'application'</find>
+      <find>'current project'</find>
     </findStrings>
     <replaceStrings>
       <replace>}</replace>
@@ -189,6 +113,10 @@
       <replace>trees_based</replace>
       <replace>[livetype]</replace>
       <replace>land</replace>
+      <replace>shutil.copy2</replace>
+      <replace>return_value</replace>
+      <replace>APP</replace>
+      <replace>CURRENT_PROJECT</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -207,9 +135,7 @@
         <option value="$PROJECT_DIR$/FALLOW/projects/samples/runfile.py" />
         <option value="$PROJECT_DIR$/FALLOW/map_utils/maps.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/NewProjectUI.py" />
-        <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/CloneProjectUI.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py" />
-        <option value="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/FALLOW/Fallow/tree.py" />
@@ -224,18 +150,22 @@
         <option value="$PROJECT_DIR$/FALLOW/excel_utils/read_file.py" />
         <option value="$PROJECT_DIR$/FALLOW/projects/samples/maps.json" />
         <option value="$PROJECT_DIR$/FALLOW/constants.py" />
-        <option value="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/list_project.py" />
         <option value="$PROJECT_DIR$/FALLOW/projects/config.py" />
         <option value="$PROJECT_DIR$/FALLOW/__init__.py" />
-        <option value="$PROJECT_DIR$/FALLOW/config.py" />
         <option value="$PROJECT_DIR$/FALLOW/projectManager.py" />
-        <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/__init__.py" />
-        <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py" />
-        <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/list_project.py" />
         <option value="$PROJECT_DIR$/FALLOW/projects.json" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/__init__.py" />
+        <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/CloneProjectUI.py" />
+        <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/__init__.py" />
+        <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/__init__.py" />
+        <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py" />
+        <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/__init__.py" />
+        <option value="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
+        <option value="$PROJECT_DIR$/FALLOW/gui/uis/__init__.py" />
+        <option value="$PROJECT_DIR$/FALLOW/config.py" />
+        <option value="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" />
       </list>
     </option>
   </component>
@@ -318,22 +248,8 @@
               <option name="myItemId" value="projects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NewFALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewFALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
+              <option name="myItemId" value="samples" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,36 +268,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewFALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewFALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prj" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -406,14 +292,6 @@
               <option name="myItemId" value="uis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prj_open" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -429,79 +307,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prj_list" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewFALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewFALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prj_create" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewFALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewFALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FALLOW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prj_clone" />
+              <option name="myItemId" value="Fallow" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -516,11 +322,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis" />
+      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\prj\prj_open" />
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW" />
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\prj" />
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW" />
-      <recent name="C:\Users\UTTU\Documents\GitHub\NewFALLOW\FALLOW" />
-      <recent name="C:\Users\UTTU\Documents\GitHub\NewFALLOW" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\projects\samples" />
@@ -530,71 +336,71 @@
       <recent name="C:\Users\UTTU\Documents\GitHub\NewFALLOW\FALLOW\models" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__init__">
-    <configuration default="false" name="list_project (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.__init__ (4)">
+    <configuration default="false" name="__init__ (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/gui/uis/prj" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NewFALLOW" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/gui/uis/prj/list_project.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="config" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="__init__ (3)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NewFALLOW" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/config.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="projectManager" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="model_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/projects/samples" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NewFALLOW" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/projectManager.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="__init__ (4)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NewFALLOW" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/__init__.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -606,12 +412,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/gui/uis/input_maps" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NewFALLOW" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/__init__.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -751,19 +557,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.list_project (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.config" />
-      <item index="2" class="java.lang.String" itemvalue="Python.projectManager" />
-      <item index="3" class="java.lang.String" itemvalue="Python.__init__" />
+      <item index="0" class="java.lang.String" itemvalue="Python.__init__ (2)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.__init__ (3)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.model_file" />
+      <item index="3" class="java.lang.String" itemvalue="Python.__init__ (4)" />
       <item index="4" class="java.lang.String" itemvalue="Python.__init__ (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.__init__" />
+        <item index="0" class="java.lang.String" itemvalue="Python.__init__ (4)" />
         <item index="1" class="java.lang.String" itemvalue="Python.__init__ (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.projectManager" />
-        <item index="3" class="java.lang.String" itemvalue="Python.config" />
-        <item index="4" class="java.lang.String" itemvalue="Python.list_project (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.model_file" />
+        <item index="3" class="java.lang.String" itemvalue="Python.__init__ (3)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.__init__ (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -781,15 +587,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="744" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2763672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17898194" sideWeight="0.42285156" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20032841" sideWeight="0.4404297" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17898194" sideWeight="0.57714844" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20032841" sideWeight="0.5595703" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -821,42 +627,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_timeseries/TimeInputUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/models/utils/TableModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/PyQt4/QtGui/QFileDialog.py" />
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/MainWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="60" column="46" lean-forward="false" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/CloneProjectUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="79" column="27" lean-forward="false" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/xlrd/__init__.py" />
     <entry file="file://$PROJECT_DIR$/FALLOW/models/utils/Node.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -986,7 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3570">
           <caret line="210" column="38" lean-forward="true" selection-start-line="210" selection-start-column="38" selection-end-line="210" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,9 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1173">
           <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1012,9 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3179">
           <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,14 +784,85 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9588">
           <caret line="573" column="85" lean-forward="false" selection-start-line="573" selection-start-column="76" selection-end-line="573" selection-end-column="85" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1207">
+          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/projectManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/projects.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="48" lean-forward="false" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/ListProjectUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="67" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/list_project.py" />
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/OpenProjectUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-222">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="56" column="21" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="58" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/numpy/ma/core.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="4184" column="0" lean-forward="false" selection-start-line="4184" selection-start-column="0" selection-end-line="4184" selection-end-column="0" />
+          <caret line="851" column="0" lean-forward="false" selection-start-line="851" selection-start-column="0" selection-end-line="851" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/MainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="60" column="46" lean-forward="false" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1042,28 +875,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_timeseries/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="243" column="13" lean-forward="true" selection-start-line="243" selection-start-column="13" selection-end-line="243" selection-end-column="13" />
+        <state relative-caret-position="2329">
+          <caret line="137" column="14" lean-forward="false" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_timeseries/__init__.py">
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="137" column="14" lean-forward="true" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
+        <state relative-caret-position="1462">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/CloneProjectUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="79" column="68" lean-forward="false" selection-start-line="79" selection-start-column="68" selection-end-line="79" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="860" column="0" lean-forward="false" selection-start-line="860" selection-start-column="0" selection-end-line="860" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1084,59 +927,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18224">
-          <caret line="1078" column="45" lean-forward="false" selection-start-line="1078" selection-start-column="45" selection-end-line="1078" selection-end-column="45" />
+        <state relative-caret-position="-3111">
+          <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
           <folding>
-            <element signature="e#36#47#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/MainWindowUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1207">
-          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-306">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/projectManager.py">
+    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/setup.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_clone/__init__.py">
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/NewProjectUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+        <state relative-caret-position="425">
+          <caret line="77" column="100" lean-forward="false" selection-start-line="77" selection-start-column="100" selection-end-line="77" selection-end-column="100" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/list_project.py">
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1549">
+          <caret line="94" column="34" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/app.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1144,62 +987,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py">
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="136" column="20" lean-forward="false" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/OpenProjectUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/NewProjectUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="77" column="100" lean-forward="false" selection-start-line="77" selection-start-column="100" selection-end-line="77" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/projects.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="48" lean-forward="false" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/ListProjectUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="2" column="67" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_open/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        <state relative-caret-position="765">
+          <caret line="157" column="31" lean-forward="true" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

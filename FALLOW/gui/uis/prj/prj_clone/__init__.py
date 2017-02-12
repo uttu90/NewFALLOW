@@ -5,6 +5,8 @@ from shutil import copytree
 
 from PyQt4 import QtCore, QtGui
 import CloneProjectUI
+from FALLOW.gui.uis.prj import prj_open
+from FALLOW import projectManager
 
 input_para_extension = "Excel Files (*.xls)"
 model_file_extension = "Python Files (*.py)"
@@ -42,7 +44,12 @@ class CloneProject(QtGui.QDialog, CloneProjectUI.Ui_diagcloneprj):
             self._raise_message(header, message)
 
     def browse_original_project(self):
-        self._browse_project(self.lineoriginalprj)
+        open_prj = prj_open.OpenProject(self)
+        open_prj.show()
+        if open_prj.exec_():
+            value = open_prj.return_value()
+            if value:
+                self.lineoriginalprj.setText(value)
 
     def browse_destination_project(self):
         self._browse_project(self.linedestinationprj)
@@ -53,12 +60,14 @@ class CloneProject(QtGui.QDialog, CloneProjectUI.Ui_diagcloneprj):
             QtGui.QFileDialog.ShowDirsOnly)
         if project:
             line_edit.setText(project)
+            projects = projectManager.get_projects()
+            project = str(project)
+            projects[os.path.basename(project)] = os.path.abspath(project)
+            projectManager.put_projects(projects)
 
     def _prepare_frame(self):
         if not os.path.isdir(str(self.linedestinationprj.text())):
             os.mkdir(str(self.linedestinationprj.text()))
-        # copytree(str(self.lineoriginalprj.text()),
-        #          str(self.linedestinationprj.text()))
 
     def accept(self):
         self._check_blank(self.lineoriginalprj, 'original project')

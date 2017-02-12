@@ -77,7 +77,7 @@ class Ui_diagcloneprj(object):
         diagcloneprj.setWindowTitle(_translate("diagcloneprj", "Clone a project", None))
         self.groupBox.setTitle(_translate("diagcloneprj", "Original project", None))
         self.groupBox_2.setTitle(_translate("diagcloneprj", "Original project", None))
-        self.btnoriginalprj.setText(_translate("diagcloneprj", "Browse", None))
+        self.btnoriginalprj.setText(_translate("diagcloneprj", "Open", None))
         self.groupBox_3.setTitle(_translate("diagcloneprj", "Destination project", None))
         self.btndestinationprj.setText(_translate("diagcloneprj", "Browse", None))
         self.groupBox_4.setTitle(_translate("diagcloneprj", "Modeler", None))

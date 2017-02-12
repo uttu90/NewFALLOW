@@ -35,11 +35,14 @@ class Ui_openprj(object):
         self.groupBox.setGeometry(QtCore.QRect(20, 20, 461, 71))
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.lineopenprj = QtGui.QLineEdit(self.groupBox)
-        self.lineopenprj.setGeometry(QtCore.QRect(20, 30, 291, 20))
+        self.lineopenprj.setGeometry(QtCore.QRect(20, 30, 271, 20))
         self.lineopenprj.setObjectName(_fromUtf8("lineopenprj"))
         self.btnopenprj = QtGui.QPushButton(self.groupBox)
-        self.btnopenprj.setGeometry(QtCore.QRect(350, 30, 75, 23))
+        self.btnopenprj.setGeometry(QtCore.QRect(380, 30, 75, 23))
         self.btnopenprj.setObjectName(_fromUtf8("btnopenprj"))
+        self.btnlistprj = QtGui.QPushButton(self.groupBox)
+        self.btnlistprj.setGeometry(QtCore.QRect(300, 30, 75, 23))
+        self.btnlistprj.setObjectName(_fromUtf8("btnlistprj"))
 
         self.retranslateUi(openprj)
         QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), openprj.accept)
@@ -48,6 +51,7 @@ class Ui_openprj(object):
 
     def retranslateUi(self, openprj):
         openprj.setWindowTitle(_translate("openprj", "Open a project", None))
-        self.groupBox.setTitle(_translate("openprj", "GroupBox", None))
+        self.groupBox.setTitle(_translate("openprj", "Choose project", None))
         self.btnopenprj.setText(_translate("openprj", "Browse", None))
+        self.btnlistprj.setText(_translate("openprj", "List projects", None))
 

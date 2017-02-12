@@ -8,7 +8,7 @@ model_file_extension = "Python Files (*.py)"
 
 
 class ListProject(QtGui.QDialog, ListProjectUI.Ui_Dialog):
-    def __init__(self, parent=None, project_path="C:/"):
+    def __init__(self, parent=None):
         super(ListProject, self).__init__(parent)
         self.setupUi(self)
         self._load_project()
