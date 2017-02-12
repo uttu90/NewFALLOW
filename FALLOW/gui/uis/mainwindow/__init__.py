@@ -24,9 +24,9 @@ class MainWindow(QtGui.QMainWindow, MainWindowUI.Ui_MainWindow):
         if os.path.isfile('app.cfg'):
             self.config.read('app.cfg')
             self.project_path = self.config.get(APP, CURRENT_PROJECT)
-            current_title = 'FALLOW - ' + self.project_path
-            self.setWindowTitle(current_title)
-        self.project_path = None
+            self._update_title()
+        else:
+            self.project_path = None
 
         self.connect(self.actionVietnamese,
                      QtCore.SIGNAL('triggered()'),
@@ -158,6 +158,11 @@ class MainWindow(QtGui.QMainWindow, MainWindowUI.Ui_MainWindow):
         config_path = 'app.cfg'
         with open(config_path, 'wb') as configfile:
             self.config.write(configfile)
+        self._update_title()
+
+    def _update_title(self):
+        current_title = 'FALLOW - ' + self.project_path
+        self.setWindowTitle(current_title)
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
