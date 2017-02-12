@@ -24,6 +24,7 @@ class Node(object):
     def set_data(self, **kwargs):
         for key in kwargs.keys():
             self._data[key] = kwargs[key]
+        print self.data()
 
     def data(self):
         return self._data

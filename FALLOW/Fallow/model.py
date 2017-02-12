@@ -5,6 +5,7 @@ class TreModel(QtCore.QAbstractItemModel):
     def __init__(self, root, parent=None):
         super(TreModel, self).__init__()
         self.rootNode = root
+        self.header = ['Name', 'Path', 'Description']
 
     def rowCount(self, parent):
         if not parent.isValid():
@@ -41,7 +42,7 @@ class TreModel(QtCore.QAbstractItemModel):
 
     def flags(self, index):
         """Returns the item flags for the given index. """
-        return QtCore.Qt.ItemIsEnabled | QtCore.Qt.ItemIsSelectable
+        return QtCore.Qt.ItemIsEnabled | QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEditable
 
     def data(self, index, role):
         """Returns the data stored under the given role for the item
@@ -57,6 +58,19 @@ class TreModel(QtCore.QAbstractItemModel):
                 return QtCore.QVariant()
         else:
             return QtCore.QVariant()
+
+    def setData(self, index, value, role=QtCore.Qt.EditRole):
+        value = value.toString()
+        if index.isValid():
+            if role == QtCore.Qt.EditRole:
+                node = index.internalPointer()
+                column = index.column()
+                data = {}
+                data[self.header[column]] = value
+                print data
+                node.set_data(**data)
+                return True
+        return False
 
     def headerData(self, section, orientation, role):
         """Returns the data for the given role and section in the header

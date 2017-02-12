@@ -65,7 +65,7 @@ class TreModel(QtCore.QAbstractItemModel):
         if len(selected_node.children()) == 0:
             return self.flags[index.column()]
         else:
-            return QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled
+            return QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled | QtCore.Qt.ItemIsEditable
 
     def data(self, index, role):
         """Returns the data stored under the given role for the item
@@ -81,6 +81,20 @@ class TreModel(QtCore.QAbstractItemModel):
                 return QtCore.QVariant()
         else:
             return QtCore.QVariant()
+
+    def setData(self, index, value, role=QtCore.Qt.EditRole):
+        value = value.toString()
+        if index.isValid():
+            if role == QtCore.Qt.EditRole:
+                node = index.internalPointer()
+                column = index.column()
+                data = {}
+                data[self.header[column]] = str(value)
+                print data
+                node.set_data(**data)
+                return True
+        return False
+
 
     def headerData(self, section, orientation, role):
         """Returns the data for the given role and section in the header
