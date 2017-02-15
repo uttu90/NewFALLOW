@@ -96,9 +96,6 @@ class MainWindow(QtGui.QMainWindow, MapInputUI.Ui_MainWindow):
         self.connect(self.action_Open,
                      QtCore.SIGNAL("triggered()"),
                      self.on_open_clicked)
-        self.connect(self.action_Compare,
-                     QtCore.SIGNAL("triggered()"),
-                     self.on_Compare_Clicked)
         self.connect(self.action_Save,
                      QtCore.SIGNAL("triggered()"),
                      self.on_save_clicked)
@@ -146,6 +143,7 @@ class MainWindow(QtGui.QMainWindow, MapInputUI.Ui_MainWindow):
                 filter=filters,
                 directory=self.directory))
             active_node.set_data(Path=filename)
+            self.changed = True
             if len(active_node.children()) == 0:
                 data = active_node.data()['Path']
                 self._display_map(data, self._get_type(active_node))
@@ -223,11 +221,11 @@ class MainWindow(QtGui.QMainWindow, MapInputUI.Ui_MainWindow):
             message.show()
 
     def save(self):
-        self.changed = True
+        self.changed = False
         map_data = []
         self.root.to_json(map_data)
         with open(self.map_file, 'wb') as map_file:
-            json.dump(map_data, map_file, indent=2)
+            json.dump(map_data[0]['root'], map_file, indent=2)
 
     def format_coord(self, xdata, ydata):
         try:
@@ -239,18 +237,21 @@ class MainWindow(QtGui.QMainWindow, MapInputUI.Ui_MainWindow):
         return abc
 
     def closeEvent(self, event):
-        reply = QtGui.QMessageBox.question(
-            self,
-            'Message',
-            "Do you want to save your input before quitting?",
-            QtGui.QMessageBox.Yes,
-            QtGui.QMessageBox.No,
-            QtGui.QMessageBox.Cancel)
-        if reply == QtGui.QMessageBox.Yes:
-            self.save()
-            event.accept()
-        elif reply == QtGui.QMessageBox.Cancel:
-            event.ignore()
+        if self.changed:
+            reply = QtGui.QMessageBox.question(
+                self,
+                'Message',
+                "Do you want to save your input before quitting?",
+                QtGui.QMessageBox.Yes,
+                QtGui.QMessageBox.No,
+                QtGui.QMessageBox.Cancel)
+            if reply == QtGui.QMessageBox.Yes:
+                self.save()
+                event.accept()
+            elif reply == QtGui.QMessageBox.Cancel:
+                event.ignore()
+            else:
+                event.accept()
         else:
             event.accept()
 

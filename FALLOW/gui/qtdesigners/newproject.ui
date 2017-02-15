@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>428</height>
+    <height>542</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>380</y>
+     <y>490</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -33,7 +33,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>20</y>
+     <y>10</y>
      <width>511</width>
      <height>71</height>
     </rect>
@@ -69,7 +69,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>110</y>
+     <y>90</y>
      <width>511</width>
      <height>71</height>
     </rect>
@@ -128,20 +128,20 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>200</y>
+     <y>170</y>
      <width>511</width>
-     <height>71</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="title">
-    <string>Input paramters</string>
+    <string>Files</string>
    </property>
    <widget class="QLineEdit" name="lineinputpara">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>170</x>
       <y>30</y>
-      <width>361</width>
+      <width>201</width>
       <height>20</height>
      </rect>
     </property>
@@ -159,25 +159,12 @@
      <string>Browse</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QGroupBox" name="groupBox_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>290</y>
-     <width>511</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Model File</string>
-   </property>
    <widget class="QLineEdit" name="linemodelfile">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>361</width>
+      <x>170</x>
+      <y>70</y>
+      <width>201</width>
       <height>20</height>
      </rect>
     </property>
@@ -186,13 +173,166 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>30</y>
+      <y>70</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
      <string>Browse</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Input parameters (.xls)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Simulation (.py)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Maps (.json)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="linemapfile">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>110</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnmapfile">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>110</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Browse</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>330</y>
+     <width>511</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Options</string>
+   </property>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Simulation time (years)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="linetime">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>30</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pixel size (ha)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="linepixelsize">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Using timeseries</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>90</y>
+      <width>70</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

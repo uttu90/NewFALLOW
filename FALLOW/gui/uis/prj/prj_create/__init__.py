@@ -13,6 +13,7 @@ import json
 
 input_para_extension = "Excel Files (*.xls)"
 model_file_extension = "Python Files (*.py)"
+map_file_extension = "Json Files (*.json)"
 
 
 class NewProject(QtGui.QDialog, NewProjectUI.Ui_diagnewprj):
@@ -30,6 +31,9 @@ class NewProject(QtGui.QDialog, NewProjectUI.Ui_diagnewprj):
         self.connect(self.btnmodelfile,
                      QtCore.SIGNAL("clicked()"),
                      self.browse_model_file)
+        self.connect(self.btnmapfile,
+                     QtCore.SIGNAL("clicked()"),
+                     self.browse_map_file)
         self.ready = True
         self.config = ConfigParser.RawConfigParser()
         self.value = None
@@ -74,8 +78,13 @@ class NewProject(QtGui.QDialog, NewProjectUI.Ui_diagnewprj):
                           filters=model_file_extension,
                           line_edit=self.linemodelfile)
 
+    def browse_map_file(self):
+        self._browse_file(message='Open map file',
+                          filters=map_file_extension,
+                          line_edit=self.linemapfile)
+
     def _create_config_file(self):
-        prj_directory = self.lineprjdirectory.text()
+        prj_directory = str(self.lineprjdirectory.text())
         if not os.path.isdir(prj_directory):
             os.mkdir(prj_directory)
         config_path = os.path.join(str(prj_directory), 'project.cfg')
@@ -85,9 +94,15 @@ class NewProject(QtGui.QDialog, NewProjectUI.Ui_diagnewprj):
             pass
         self.config.set('project', 'directory', prj_directory)
         self.config.set('project', 'modeler name',
-                        self.linemodelername.text())
+                        str(self.linemodelername.text()))
         self.config.set('project', 'modeler email',
-                        self.linemodeleremail.text())
+                        str(self.linemodeleremail.text()))
+        self.config.set('project', 'Time simulation (years)',
+                        int(self.linetime.text()))
+        self.config.set('project', 'Pixel size (ha)',
+                        int(self.linepixelsize.text()))
+        self.config.set('project', 'Using timeseries',
+                        bool(self.checkBox.checkState()))
         # self.config.set('project', 'input parameter',
         #                 self.lineinputpara.text())
         # self.config.set('project', 'model file',
@@ -100,13 +115,16 @@ class NewProject(QtGui.QDialog, NewProjectUI.Ui_diagnewprj):
                                   'input_parameters.xls')
         model_file = os.path.join(str(self.lineprjdirectory.text()),
                                   'model_file.py')
+        map_file = os.path.join(str(self.lineprjdirectory.text()), 'maps.json')
         try:
             shutil.copy2(str(self.lineinputpara.text()), input_file)
             shutil.copy2(str(self.linemodelfile.text()), model_file)
+            shutil.copy2(str(self.linemapfile.text()), map_file)
         except shutil.Error:
             pass
         self.config.set('project', 'input parameter', input_file)
         self.config.set('project', 'model file', model_file)
+        self.config.set('project', 'map file', map_file)
         input_dir = os.path.join(str(self.lineprjdirectory.text()), 'Input')
         output_dir = os.path.join(str(self.lineprjdirectory.text()), 'Output')
         try:

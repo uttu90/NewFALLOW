@@ -1,6 +1,7 @@
 # Import library to use for project
 import json
 import copy
+import ConfigParser
 
 from FALLOW.operations.maps import *
 from FALLOW.excel_utils import read_file
@@ -12,6 +13,14 @@ with open('maps.json', 'rb') as file:
 
 maps = {}
 utils.list_dict_to_dict(maps_root, maps)
+
+
+# Load project config
+config = ConfigParser.RawConfigParser()
+config.read('project.cfg')
+simulation_time = config.getint('project', 'time simulation (years)')
+pixel_size = config.getint('project', 'pixel size (ha)')
+using_timeseries = config.getboolean('project', 'using timeseries')
 
 # Loading input:
 # Loading maps: from a json file, then convert to a Python dictionary
