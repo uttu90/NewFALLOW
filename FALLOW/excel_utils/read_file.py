@@ -1,15 +1,6 @@
-import xlrd as wb
-
 from FALLOW import constants
-
-import json
 import re
 
-file_path = "Book1.xls"
-
-book = wb.open_workbook(file_path)
-
-sheet = book.sheet_by_name('Sheet1')
 
 def read_multicol(sheet, start_col, col_num, start_row, end_row):
     data_list =  [sheet.col_values(i, start_rowx=start_row, end_rowx=end_row)
@@ -136,37 +127,6 @@ def read_table(sheet, key_maps, start_col, end_col,
     return d
 
 
-x = read_table(sheet, constants.landuse, 3, 5, 4, 5, 20)
-
-# print json.dumps(x, indent=2)
-
-biophysic1 = read_table(sheet, constants.landcover, 1, 16, 24, 27, 77)
-
-initial_landcover_age = biophysic1['landcover age']['initial landcover age']
-
-biophysic2 = read_table(sheet, constants.livelihood, 1, 14, 81, 83, 98)
-print biophysic2.keys()
-
-economic1 = read_table(sheet, constants.livelihood, 1, 17, 102, 105, 120)
-print economic1.keys()
-
-economic2 = read_table(sheet, constants.livelihood_age, 3, 5, 122, 124, 175)
-
-social = read_table(sheet, constants.livelihood, 3, 6, 178, 180, 195)
-
-demography = read_table(sheet, constants.demography_para, 4, 5, 199, 200, 206)
-
-
-farmer_property1 = read_table(sheet, constants.farmer_property_para,
-                             4, 6, 209, 210, 214)
-
-social2 = read_table(sheet, constants.social_disaster_para,
-                              3, 4, 215, 216, 224)
-
-yieldstat = biophysic1['landcover property']['yield']
-
-print json.dumps(social2, indent=2)
-
 def read_timeseries(sheet, keys_list, start_row, start_col, end_col):
     result = {}
     row = start_row
@@ -177,16 +137,57 @@ def read_timeseries(sheet, keys_list, start_row, start_col, end_col):
         row += 1
 
     return result
-file_path = "C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\projects\samples\FALLOW - Input parameters.xls"
 
-book1 = wb.open_workbook(file_path)
+if __name__ == '__main__':
+    import xlrd as wb
+    import json
+    file_path = "Book1.xls"
 
-sheet1 = book1.sheet_by_name('Summary')
+    book = wb.open_workbook(file_path)
+
+    sheet = book.sheet_by_name('Sheet1')
+    x = read_table(sheet, constants.landuse, 3, 5, 4, 5, 20)
+
+    # print json.dumps(x, indent=2)
+
+    biophysic1 = read_table(sheet, constants.landcover, 1, 16, 24, 27, 77)
+
+    initial_landcover_age = biophysic1['landcover age']['initial landcover age']
+
+    biophysic2 = read_table(sheet, constants.livelihood, 1, 14, 81, 83, 98)
+    print biophysic2.keys()
+
+    economic1 = read_table(sheet, constants.livelihood, 1, 17, 102, 105, 120)
+    print economic1.keys()
+
+    economic2 = read_table(sheet, constants.livelihood_age, 3, 5, 122, 124, 175)
+
+    social = read_table(sheet, constants.livelihood, 3, 6, 178, 180, 195)
+
+    demography = read_table(sheet, constants.demography_para, 4, 5, 199, 200, 206)
 
 
-price = read_timeseries(sheet1, constants.livelihood,
-                        225, 1, 101)
-extension_availability = read_timeseries(sheet1, constants.livelihood,
-                                         244, 1, 101)
-subsidy_availability = read_timeseries(sheet1, constants.livelihood,
-                                       263, 1, 101)
+    farmer_property1 = read_table(sheet, constants.farmer_property_para,
+                                 4, 6, 209, 210, 214)
+
+    social2 = read_table(sheet, constants.social_disaster_para,
+                                  3, 4, 215, 216, 224)
+
+    yieldstat = biophysic1['landcover property']['yield']
+
+    print json.dumps(social2, indent=2)
+
+
+    file_path = "C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\projects\samples\FALLOW - Input parameters.xls"
+
+    book1 = wb.open_workbook(file_path)
+
+    sheet1 = book1.sheet_by_name('Summary')
+
+
+    price = read_timeseries(sheet1, constants.livelihood,
+                            225, 1, 101)
+    extension_availability = read_timeseries(sheet1, constants.livelihood,
+                                             244, 1, 101)
+    subsidy_availability = read_timeseries(sheet1, constants.livelihood,
+                                           263, 1, 101)
