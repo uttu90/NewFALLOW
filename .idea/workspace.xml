@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6000b1e-1ac0-4208-84a3-9f9261341a32" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/excel_utils/read_file.py" afterPath="$PROJECT_DIR$/FALLOW/excel_utils/read_file.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" afterPath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
     </list>
     <ignored path="NewFALLOW.iws" />
@@ -24,18 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/models/tree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1513">
-              <caret line="91" column="54" lean-forward="false" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,10 +48,32 @@
       <file leaf-file-name="model_file.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17813">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="20">
+              <caret line="1119" column="47" lean-forward="false" selection-start-line="1119" selection-start-column="47" selection-end-line="1119" selection-end-column="47" />
               <folding>
-                <element signature="e#36#47#0" expanded="true" />
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-34">
+              <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelFile.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/ModelFile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="991" column="13" lean-forward="false" selection-start-line="991" selection-start-column="4" selection-end-line="991" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,8 +82,8 @@
       <file leaf-file-name="read_file.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/excel_utils/read_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="1740">
+              <caret line="154" column="80" lean-forward="false" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="80" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -122,16 +131,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maps.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/maps.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="643" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -143,36 +142,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ex</find>
-      <find>disasterimpactzone_arr</find>
-      <find>nonselectedagricplot_arr</find>
-      <find>destroy_arr</find>
-      <find>fire</find>
-      <find>fire_arr</find>
-      <find>lcage_arr</find>
+      <find>potyield_ts</find>
+      <find>attyield_ts</find>
+      <find>labormoneyfrac_mv</find>
+      <find>phzone_arrs</find>
+      <find>nfptzone_arr</find>
+      <find>nfpt</find>
+      <find>ntfp</find>
+      <find>ntfpzone_arr</find>
+      <find>critialzone_arr</find>
+      <find>crit</find>
+      <find>ntfpzone</find>
+      <find>initlanduse_map</find>
+      <find>firearea</find>
+      <find>totfinance</find>
+      <find>newplotarea_ts</find>
+      <find>potyield</find>
+      <find>pyield_arrs</find>
+      <find>pyield_ts</find>
+      <find>loggedtimber_arr</find>
+      <find>logged</find>
+      <find>loggedtimber</find>
+      <find>map</find>
+      <find>firemap</find>
       <find>lc_arr</find>
-      <find>landcoverage_arr</find>
-      <find>listProject</find>
-      <find>copy2</find>
-      <find>config</find>
-      <find>returnValues</find>
-      <find>'application'</find>
-      <find>'current project'</find>
-      <find>typemap</find>
-      <find>ptypename</find>
-      <find>MapsDisplay</find>
-      <find>flags</find>
-      <find>projectdirectory</find>
-      <find>prefer</find>
-      <find>Save</find>
-      <find>on_Open_Clicked</find>
-      <find>create_Plot_Frame</find>
-      <find>lineprjdirectory_2</find>
-      <find>sheet1</find>
-      <find>initial_landcover_age</find>
-      <find>read_file.</find>
-      <find>constants</find>
-      <find>constants.</find>
+      <find>fire_arr</find>
+      <find>soil</find>
+      <find>soilfert_arr</find>
+      <find>Array2Map</find>
+      <find>lu_arr</find>
+      <find>newplot_arrs</find>
     </findStrings>
     <replaceStrings>
       <replace>}</replace>
@@ -199,6 +198,11 @@
       <replace>create_plot_frame</replace>
       <replace>lineprjdirectory</replace>
       <replace>sheet</replace>
+      <replace>self.maps</replace>
+      <replace>= self.</replace>
+      <replace>phzone_arrs</replace>
+      <replace>self.pixel_size</replace>
+      <replace>pyield_ts</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -840,8 +844,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2763672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -880,13 +884,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FALLOW/projects.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="48" lean-forward="false" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_list/ListProjectUI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1038,13 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/models/data/maps.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1133,7 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1142,7 +1131,7 @@
         <state relative-caret-position="1513">
           <caret line="91" column="54" lean-forward="false" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1195,14 +1184,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/test FALLOW2/project.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1221,20 +1202,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/excel_utils/read_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="1740">
+          <caret line="154" column="80" lean-forward="false" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="80" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/ModelFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="991" column="13" lean-forward="false" selection-start-line="991" selection-start-column="4" selection-end-line="991" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17813">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="20">
+          <caret line="1119" column="47" lean-forward="false" selection-start-line="1119" selection-start-column="47" selection-end-line="1119" selection-end-column="47" />
           <folding>
-            <element signature="e#36#47#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
