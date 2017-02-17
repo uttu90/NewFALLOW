@@ -115,7 +115,6 @@ def standardized_maps(maps, init_dict):
 
 
 def uniform(array, file_map='area.xxx'):
-    pcraster.setclone(file_map)
     [x, y] = array.shape
     rm = np.random.uniform(0, 1, (x, y))
     result = boolean2scalar(array) * rm
@@ -123,7 +122,8 @@ def uniform(array, file_map='area.xxx'):
     return result
 
 
-def spreadmap(array):
+def spreadmap(array, file_map='area.xxx'):
+    pcraster.setclone(file_map)
     sarray = 1.0 * array
     farr = np.ma.filled(sarray, -9999)
     n2p = pcraster.numpy2pcr(pcraster.Nominal, farr, -9999)

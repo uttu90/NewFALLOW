@@ -13,6 +13,7 @@ from FALLOW.gui.uis.prj import prj_clone, prj_create, prj_open
 APP = 'application'
 CURRENT_PROJECT = 'current project'
 
+
 class MainWindow(QtGui.QMainWindow, MainWindowUI.Ui_MainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)

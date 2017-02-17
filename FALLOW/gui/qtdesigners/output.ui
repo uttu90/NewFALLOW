@@ -11,11 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Simulation</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_5">
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <widget class="QWidget" name="mapDisplay" native="true">
@@ -38,19 +38,19 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionTimeSeries"/>
-  </widget>
   <widget class="QDockWidget" name="dockWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
@@ -59,7 +59,10 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QListView" name="mapList"/>
+        <widget class="QTreeView" name="mapOutput"/>
+       </item>
+       <item>
+        <widget class="QTreeView" name="timeseriesOutput"/>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
@@ -92,7 +95,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="stopButton_2">
+          <widget class="QPushButton" name="stopButton">
            <property name="text">
             <string>Stop</string>
            </property>

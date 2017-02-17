@@ -1,4 +1,5 @@
 from PyQt4 import QtCore
+import os
 # Import library to use for project
 import json
 import copy
@@ -23,7 +24,7 @@ class SimulatingThread(QtCore.QThread):
         self.wait()
 
     def _loading_config(self):
-        self.config.read('project.cfg')
+        self.config.read(os.path.join(self.project, 'project.cfg'))
         self.simulation_time = self.config.getint('project',
                                                   'time simulation (years)')
         self.pixel_size = self.config.getint('project',
@@ -33,12 +34,12 @@ class SimulatingThread(QtCore.QThread):
 
     def _loading_maps(self):
         self.maps = {}
-        with open('maps.json', 'rb') as file:
+        with open(os.path.join(self.project, 'maps.json'), 'rb') as file:
             maps_root = json.load(file)
         utils.list_dict_to_dict(maps_root, self.maps)
 
     def _load_input(self):
-        input_file = "Book1.xls"
+        input_file = os.path.join(self.project, 'input_parameters.xls')
         book = wb.open_workbook(input_file)
         sheet = book.sheet_by_name('Sheet1')
         self.biophysic1 = read_file.read_table(sheet, landcover,
@@ -65,6 +66,9 @@ class SimulatingThread(QtCore.QThread):
                                                 263, 1, 101)
 
     def run(self):
+        self._loading_config()
+        self._load_input()
+        self._loading_maps()
         self.timeseries_output = {}
         self.maps_output = {}
         self.maps_output['Land cover'] = []
@@ -1109,7 +1113,7 @@ class SimulatingThread(QtCore.QThread):
                 (
                     (lu_arr == landuse_map['forest']) *
                     landuse_map['forest']) * newplot_arrs['timber'])
-            for landtype in landuse[1:]:
+            for landtype in landuse[2:]:
                 plot_arr += (
                     (lu_arr == landuse_map[landtype]) *
                     landuse_map[landtype] * newplot_arrs[landtype])
@@ -1144,3 +1148,6 @@ class SimulatingThread(QtCore.QThread):
                                 destroy_arr * 0.0 +
                                 (~destroy_arr) * (landcoverage_arr + 1))
             totfinance_ts.append(balance)
+            self.emit(QtCore.SIGNAL('update'),
+                      self.timeseries_output,
+                      self.maps_output, time)
