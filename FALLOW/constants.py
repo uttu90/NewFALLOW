@@ -354,33 +354,36 @@ output_maps_key_ref = [
     'Fire area',
     'Soil fertility',
 ]
-
 output_maps_maps = {
-    'Land cover': {
-        'value': None,
-        'description': 'Land cover',
-        'type': 'Land cover'},
-    'Land use': {
-        'value': None,
-        'description': 'Land use',
-        'type': 'Land use'},
-    'Aboveground biomass': {
-        'value': None,
-        'description': 'Aboveground biomass',
-        'type': 'Linear'},
-    'Aboveground carbon': {
-        'value': None,
-        'description': 'Aboveground carbon',
-        'type': 'Linear'},
-    'Fire area': {
-        'value': None,
-        'description': 'Fire area',
-        'type': 'Boolean'},
-    'Soil fertility': {
-        'value': None,
-        'description': 'Soil fertility',
-        'type': 'Soil fertility'},
+
 }
+
+# output_maps_maps = {
+#     'Land cover': {
+#         'value': None,
+#         'description': 'Land cover',
+#         'type': 'Land cover'},
+#     'Land use': {
+#         'value': None,
+#         'description': 'Land use',
+#         'type': 'Land use'},
+#     'Aboveground biomass': {
+#         'value': None,
+#         'description': 'Aboveground biomass',
+#         'type': 'Linear'},
+#     'Aboveground carbon': {
+#         'value': None,
+#         'description': 'Aboveground carbon',
+#         'type': 'Linear'},
+#     'Fire area': {
+#         'value': None,
+#         'description': 'Fire area',
+#         'type': 'Boolean'},
+#     'Soil fertility': {
+#         'value': None,
+#         'description': 'Soil fertility',
+#         'type': 'Soil fertility'},
+# }
 
 maps = [
     {'Simulated area': {'Path': '', 'Descitpion': '', 'Type': 'Area'}},
