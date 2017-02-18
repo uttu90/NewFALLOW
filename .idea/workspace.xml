@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6000b1e-1ac0-4208-84a3-9f9261341a32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/constants.py" afterPath="$PROJECT_DIR$/FALLOW/constants.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/models/tree.py" afterPath="$PROJECT_DIR$/FALLOW/models/tree.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" afterPath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
     </list>
     <ignored path="NewFALLOW.iws" />
@@ -47,8 +47,8 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+            <state relative-caret-position="238">
+              <caret line="24" column="64" lean-forward="false" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -69,18 +69,28 @@
       <file leaf-file-name="model_file.py" pinned="false" current-in-tab="false">
         <entry file="file://D:/test FALLOW/model_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15674">
+            <state relative-caret-position="3230">
               <caret line="933" column="32" lean-forward="false" selection-start-line="933" selection-start-column="32" selection-end-line="933" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model_file.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+      <file leaf-file-name="tree.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FALLOW/models/tree.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="71" column="30" lean-forward="false" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+              <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_file.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-14464">
+              <caret line="275" column="62" lean-forward="true" selection-start-line="275" selection-start-column="62" selection-end-line="275" selection-end-column="62" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -91,8 +101,8 @@
       <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="148" column="14" lean-forward="false" selection-start-line="148" selection-start-column="14" selection-end-line="148" selection-end-column="14" />
+            <state relative-caret-position="-286">
+              <caret line="266" column="5" lean-forward="false" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -109,7 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nfptzone_arr</find>
       <find>nfpt</find>
       <find>ntfp</find>
       <find>ntfpzone_arr</find>
@@ -139,6 +148,7 @@
       <find>spread</find>
       <find>spreadmap</find>
       <find>output</find>
+      <find>timeseries_output</find>
     </findStrings>
     <replaceStrings>
       <replace>}</replace>
@@ -215,7 +225,6 @@
         <option value="$PROJECT_DIR$/FALLOW/projects/samples/maps.json" />
         <option value="$PROJECT_DIR$/FALLOW/models/node.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/input_maps/maps.json" />
-        <option value="$PROJECT_DIR$/FALLOW/models/tree.py" />
         <option value="D:/test FALLOW/maps.json" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/NewProjectUI.py" />
@@ -224,11 +233,12 @@
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/simulation/SimulationUI.py" />
         <option value="D:/test FALLOW/project.cfg" />
-        <option value="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/operations/maps.py" />
         <option value="D:/test FALLOW/model_file.py" />
-        <option value="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
         <option value="$PROJECT_DIR$/FALLOW/constants.py" />
+        <option value="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
+        <option value="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" />
+        <option value="$PROJECT_DIR$/FALLOW/models/tree.py" />
       </list>
     </option>
   </component>
@@ -267,8 +277,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -317,8 +325,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewFALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewFALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -830,13 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/models/tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="91" column="54" lean-forward="false" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/maps.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -952,10 +973,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-286">
+          <caret line="266" column="5" lean-forward="false" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14464">
+          <caret line="275" column="62" lean-forward="true" selection-start-line="275" selection-start-column="62" selection-end-line="275" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        <state relative-caret-position="238">
+          <caret line="24" column="64" lean-forward="false" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -964,27 +1003,17 @@
     </entry>
     <entry file="file://D:/test FALLOW/model_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15674">
+        <state relative-caret-position="3230">
           <caret line="933" column="32" lean-forward="false" selection-start-line="933" selection-start-column="32" selection-end-line="933" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="148" column="14" lean-forward="false" selection-start-line="148" selection-start-column="14" selection-end-line="148" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+    <entry file="file://$PROJECT_DIR$/FALLOW/models/tree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="71" column="30" lean-forward="false" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
+          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

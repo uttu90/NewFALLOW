@@ -22,7 +22,7 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
         self.connect(self.simulation, QtCore.SIGNAL("update"),
                      self.update_result)
 
-    def update_result(self, output_maps, output_timeseries):
+    def update_result(self, output_maps, output_timeseries, time):
         print output_maps
         print output_timeseries
 

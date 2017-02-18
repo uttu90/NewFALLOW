@@ -69,14 +69,14 @@ class SimulatingThread(QtCore.QThread):
         self._loading_config()
         self._load_input()
         self._loading_maps()
-        self.timeseries_output = {}
-        self.maps_output = {}
-        self.maps_output['Land cover'] = []
-        self.maps_output['Land use'] = []
-        self.maps_output['Aboveground biomass'] = []
-        self.maps_output['Aboveground carbon'] = []
-        self.maps_output['Fire area'] = []
-        self.maps_output['Soil fertility'] = []
+        self.timeseries_output = copy.deepcopy(timeseries_maps)
+        self.maps_output = copy.deepcopy(output_maps_maps)
+        self.maps_output['Land cover']['value'] = []
+        self.maps_output['Land use']['value'] = []
+        self.maps_output['Aboveground biomass']['value'] = []
+        self.maps_output['Aboveground carbon']['value'] = []
+        self.maps_output['Fire area']['value'] = []
+        self.maps_output['Soil fertility']['value'] = []
         area_map = mapopen(self.maps['Simulated area']['Path'])
         # initlanduse_map = mapopen(self.maps['Initial landcover']['Path'])
         area_arr = map2array(area_map)
@@ -221,61 +221,64 @@ class SimulatingThread(QtCore.QThread):
         ntfpzone_arr = copy.deepcopy(inverse_area_arr)
         # Initial timeseries
         firearea_ts = []
-        self.timeseries_output['Areas affected by fire'] = firearea_ts
+        self.timeseries_output['Fire area']['value'] = firearea_ts
         totsecconsumptionpercapita_ts = []
-        self.timeseries_output['Total secondary consumption percapita'] = (
+        self.timeseries_output['Secondary consumption']['value'] = (
             totsecconsumptionpercapita_ts
         )
         totnetincomepercapita_ts = []
-        self.timeseries_output['Total net income percapita'] = totnetincomepercapita_ts
+        self.timeseries_output['Net income']['value'] = totnetincomepercapita_ts
         totpop_ts = [demography['initial population']]
         totagb_ts = []
         totagc_ts = []
         totfinance_ts = []
         totestcost_ts = []
-        self.timeseries_output['Total population'] = totpop_ts
-        self.timeseries_output['Total aboveground biomass'] = totagb_ts
-        self.timeseries_output['Total aboveground carbon'] = totagc_ts
-        self.timeseries_output['Total establishment cost'] = totestcost_ts
+        self.timeseries_output['Total population']['value'] = totpop_ts
+        self.timeseries_output['Aboveground biomass']['value'] = totagb_ts
+        self.timeseries_output['Aboveground carbon']['value'] = totagc_ts
+        self.timeseries_output['Establishment cost']['value'] = totestcost_ts
         init_livelihood_ts = {}
 
         for livetype in livelihood:
             init_livelihood_ts[livetype] = []
 
         critzonearea_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Potential area of land expansion'] = (
+        self.timeseries_output['Potential area expansion']['value'] = (
             critzonearea_ts)
         nonlaborcosts_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Total non-labour costs'] = nonlaborcosts_ts
+        self.timeseries_output['Non-labour costs']['value'] = nonlaborcosts_ts
         revenue_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Total revenue'] = revenue_ts
+        self.timeseries_output['Revenue']['value'] = revenue_ts
         payofftolabor_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Return to labour'] = payofftolabor_ts
+        self.timeseries_output['Return to labour']['value'] = payofftolabor_ts
         payofftoland_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Return to labour'] = payofftoland_ts
+        self.timeseries_output['Return to land']['value'] = payofftoland_ts
         supplyefficiency_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Supply sufficiency'] = supplyefficiency_ts
+        self.timeseries_output['Supply sufficiency']['value'] = (
+            supplyefficiency_ts)
         exparealabor_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Land expansion labour'] = exparealabor_ts
+        self.timeseries_output['Land expansion labour']['value'] = (
+            exparealabor_ts)
         expareamoney_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Land expansion budget'] = exparealabor_ts
+        self.timeseries_output['Land expansion budget']['value'] = (
+            exparealabor_ts)
         exparea_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Actual area of land expansion'] = exparea_ts
+        self.timeseries_output['Actual area expansion']['value'] = exparea_ts
         newplotarea_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['New cultivated areas'] = newplotarea_ts
+        self.timeseries_output['New cultivated areas']['value'] = newplotarea_ts
         availablelabor_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Available labour'] = availablelabor_ts
+        self.timeseries_output['Available labour']['value'] = availablelabor_ts
         availablemoney_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Available money'] = availablemoney_ts
+        self.timeseries_output['Available money']['value'] = availablemoney_ts
         buying_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Expense for buying'] = buying_ts
+        self.timeseries_output['Expense']['value'] = buying_ts
         selling_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Income from product selling'] = selling_ts
+        self.timeseries_output['Income']['value'] = selling_ts
         profit_ts = copy.deepcopy(init_livelihood_ts)
         pyield_ts = {}
-        self.timeseries_output['Potential yield'] = pyield_ts
+        self.timeseries_output['Potential yield']['value'] = pyield_ts
         attyield_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Actual yield'] = attyield_ts
+        self.timeseries_output['Actual yield']['value'] = attyield_ts
 
         scarea = {}
         scarea_ts = {}

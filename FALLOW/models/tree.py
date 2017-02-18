@@ -10,6 +10,9 @@ class TreModel(QtCore.QAbstractItemModel):
         self.header = header
         self.flags = flags
 
+    def load_from_dict(self, keys_maps, keys_list):
+        pass
+
     @staticmethod
     def load_from_file(file_name):
         try:
