@@ -87,10 +87,14 @@ class MainWindow(QtGui.QMainWindow, MapInputUI.Ui_MainWindow):
         self.directory = directory
         self.changed = False
         if os.path.isfile(self.map_file):
-            self.MapInputModel = tree.TreModel(self.map_file, HEADER, FLAGS)
+            self.MapInputModel = tree.TreModel(HEADER,
+                                               FLAGS,
+                                               file=self.map_file)
             self.MapInputTreeView.setModel(self.MapInputModel)
         else:
-            self.MapInputModel = tree.TreModel('maps.json', HEADER, FLAGS)
+            self.MapInputModel = tree.TreModel(HEADER,
+                                               FLAGS,
+                                               file='maps.json')
             self.MapInputTreeView.setModel(self.MapInputModel)
         self.root = self.MapInputModel.rootNode
         self.connect(self.action_Open,

@@ -212,115 +212,141 @@ agent_type = ['farmer 1', 'farmer 2']
 zclass = ['z1', 'z2', 'z3', 'z4', 'z5']
 
 # Output timeseries:
-timeseries_keys = [
+timeseries_key_ref = [
     'Fire area',
     'Secondary consumption',
     'Net income',
     'Population',
     'Aboveground biomass',
     'Aboveground carbon',
-    'Establisment cost',
-    'Potential area expansion',
-    'Non-labour costs',
-    'Revenue',
-    'Return to labour',
-    'Return to land',
-    'Supply sufficiency',
-    'Land expansion labour',
-    'Land expansion labour',
-    'Land expansion budget',
-    'Actual area expansion',
-    'New cultivated areas',
-    'Available labour',
-    'Available money',
-    'Expense',
-    'Income',
-    'Potential yield',
-    'Actual yield',
-    'Land cover area',
-    'Land use area',
+    'Establishment cost',
+    {'Potential area expansion': livelihood},
+    {'Non-labour costs': livelihood},
+    {'Revenue': livelihood},
+    {'Return to labour': livelihood},
+    {'Return to land': livelihood},
+    {'Supply sufficiency': livelihood},
+    {'Land expansion labour': livelihood},
+    {'Land expansion budget': livelihood},
+    {'Actual area expansion': livelihood},
+    {'New cultivated areas': livelihood},
+    {'Available labour': livelihood},
+    {'Available money': livelihood},
+    {'Expense': livelihood},
+    {'Income': livelihood},
+    {'Potential yield': livelihood},
+    {'Actual yield': livelihood},
+    {'Land cover area': landcover},
+    {'Land use area': landuse},
 ]
-
-
 timeseries_maps = {
-    'Fire area': {
-        'value': None,
-        'description': 'Area affected by fire'},
-    'Secondary consumption': {
-        'value': None,
-        'description': 'Total secondary consumption percapita'},
-    'Net income': {
-        'value': None,
-        'description': 'Total net income percapita'},
-    'Population': {
-        'value': None,
-        'description': 'Total population'},
-    'Aboveground biomass': {
-        'value': None,
-        'description': 'Total aboveground biomass'},
-    'Aboveground carbon': {
-        'value': None,
-        'description': 'Total aboveground carbon'},
-    'Establisment cost': {
-        'value': None,
-        'description': 'Total establishment cost'},
-    'Potential area expansion': {
-        'value': None,
-        'description': 'Potential area of land expansion'},
-    'Non-labour costs': {
-        'value': None,
-        'description': 'Total non-labour costs'},
-    'Revenue': {
-        'value': None,
-        'description': 'Total revenue'},
-    'Return to labour': {
-        'value': None,
-        'description': 'Return to labour'},
-    'Return to land': {
-        'value': None,
-        'description': 'Return to land'},
-    'Supply sufficiency': {
-        'value': None,
-        'description': 'Supply sufficiency'},
-    'Land expansion labour': {
-        'value': None,
-        'description': 'Land expansion labour'},
-    'Land expansion budget': {
-        'value': None,
-        'description': 'Land expansion budget'},
-    'Actual area expansion': {
-        'value': None,
-        'description': 'Actual area of land expansion'},
-    'New cultivated areas': {
-        'value': None,
-        'description': 'New cultivated areas'},
-    'Available labour': {
-        'value': None,
-        'description': 'Available labour'},
-    'Available money': {
-        'value': None,
-        'description': 'Available money'},
-    'Expense': {
-        'value': None,
-        'description': 'Expense for buying'},
-    'Income': {
-        'value': None,
-        'description': 'Income from product selling'},
-    'Potential yield': {
-        'value': None,
-        'description': 'Potential yield'},
-    'Actual yield': {
-        'value': None,
-        'description': 'Actual yield'},
-    'Land cover area': {
-        'value': None,
-        'description': 'Land cover area'},
-    'Land use area': {
-        'value': None,
-        'description': 'Land use area'},
+    'Fire area': None,
+    'Secondary consumption': None,
+    'Net income': None,
+    'Population': None,
+    'Aboveground biomass': None,
+    'Aboveground carbon': None,
+    'Establishment cost': None,
+    'Potential area expansion': None,
+    'Non-labour costs': None,
+    'Revenue': None,
+    'Return to labour': None,
+    'Return to land': None,
+    'Supply sufficiency': None,
+    'Land expansion labour': None,
+    'Land expansion budget': None,
+    'Actual area expansion': None,
+    'New cultivated areas': None,
+    'Available labour': None,
+    'Available money': None,
+    'Expense': None,
+    'Income': None,
+    'Potential yield': None,
+    'Actual yield': None,
+    'Land cover area': None,
+    'Land use area': None,
 }
 
-output_maps_keys = [
+
+# timeseries_maps = {
+#     'Fire area': {
+#         'value': None,
+#         'description': 'Area affected by fire'},
+#     'Secondary consumption': {
+#         'value': None,
+#         'description': 'Total secondary consumption percapita'},
+#     'Net income': {
+#         'value': None,
+#         'description': 'Total net income percapita'},
+#     'Population': {
+#         'value': None,
+#         'description': 'Total population'},
+#     'Aboveground biomass': {
+#         'value': None,
+#         'description': 'Total aboveground biomass'},
+#     'Aboveground carbon': {
+#         'value': None,
+#         'description': 'Total aboveground carbon'},
+#     'Establishment cost': {
+#         'value': None,
+#         'description': 'Total establishment cost'},
+#     'Potential area expansion': {
+#         'value': None,
+#         'description': 'Potential area of land expansion'},
+#     'Non-labour costs': {
+#         'value': None,
+#         'description': 'Total non-labour costs'},
+#     'Revenue': {
+#         'value': None,
+#         'description': 'Total revenue'},
+#     'Return to labour': {
+#         'value': None,
+#         'description': 'Return to labour'},
+#     'Return to land': {
+#         'value': None,
+#         'description': 'Return to land'},
+#     'Supply sufficiency': {
+#         'value': None,
+#         'description': 'Supply sufficiency'},
+#     'Land expansion labour': {
+#         'value': None,
+#         'description': 'Land expansion labour'},
+#     'Land expansion budget': {
+#         'value': None,
+#         'description': 'Land expansion budget'},
+#     'Actual area expansion': {
+#         'value': None,
+#         'description': 'Actual area of land expansion'},
+#     'New cultivated areas': {
+#         'value': None,
+#         'description': 'New cultivated areas'},
+#     'Available labour': {
+#         'value': None,
+#         'description': 'Available labour'},
+#     'Available money': {
+#         'value': None,
+#         'description': 'Available money'},
+#     'Expense': {
+#         'value': None,
+#         'description': 'Expense for buying'},
+#     'Income': {
+#         'value': None,
+#         'description': 'Income from product selling'},
+#     'Potential yield': {
+#         'value': None,
+#         'description': 'Potential yield'},
+#     'Actual yield': {
+#         'value': None,
+#         'description': 'Actual yield'},
+#     'Land cover area': {
+#         'value': None,
+#         'description': 'Land cover area'},
+#     'Land use area': {
+#         'value': None,
+#         'description': 'Land use area'},
+# }
+
+output_maps_key_ref = [
     'Land cover',
     'Land use',
     'Aboveground biomass',
@@ -333,25 +359,178 @@ output_maps_maps = {
     'Land cover': {
         'value': None,
         'description': 'Land cover',
-        'type': 'land cover'},
+        'type': 'Land cover'},
     'Land use': {
         'value': None,
         'description': 'Land use',
-        'type': 'land use'},
+        'type': 'Land use'},
     'Aboveground biomass': {
         'value': None,
         'description': 'Aboveground biomass',
-        'type': 'linear'},
+        'type': 'Linear'},
     'Aboveground carbon': {
         'value': None,
         'description': 'Aboveground carbon',
-        'type': 'linear'},
+        'type': 'Linear'},
     'Fire area': {
         'value': None,
         'description': 'Fire area',
-        'type': 'boolean'},
+        'type': 'Boolean'},
     'Soil fertility': {
         'value': None,
         'description': 'Soil fertility',
-        'type': 'soil fertility'},
+        'type': 'Soil fertility'},
 }
+
+maps = [
+    {'Simulated area': {'Path': '', 'Descitpion': '', 'Type': 'Area'}},
+    {'Initial landcover': {'Path': '', 'Description': '', 'Type': 'Land cover'}},
+    {'Sub-catchment area': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+    {'Initial logging area': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+    {'Soil fertility': [
+        {'Initial soil fertility': {'Path': '', 'Description': '', 'Type': 'Soil fertility'}},
+        {'Maximum soil fertility': {'Path': '', 'Description': '', 'Type': 'Soil fertility'}},]},
+    {'Slope': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+    {'Suitable area': [
+        {'Annual crop 1': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Annual crop 2': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Annual crop 3': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Annual crop 4': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Tree-based system 1': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Tree-based system 2': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Tree-based system 3': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Tree-based system 4': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Tree-based system 5': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Tree-based system 6': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Tree-based system 7': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+        {'Tree-based system 8': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+    ]},
+    {'Distance to road': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+    {'Distance to market': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+    {'Distance to river': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+    {'Distance to factory': [
+        {'Non-timber forest products': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+    ]},
+        {'Timber': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+    ]},
+        {'Annual crop 1': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Annual crop 2': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Annual crop 3': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Annual crop 4': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Tree-based system 1': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Tree-based system 2': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Tree-based system 3': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Tree-based system 4': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Tree-based system 5': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Tree-based system 6': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Tree-based system 7': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+        {'Tree-based system 8': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+    ]},
+    {'Distance to settlement': [
+        {'Period 1': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 2': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 3': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+        {'Period 4': {'Path': '', 'Description': '', 'Type': 'Linear'}},
+
+    ]},
+    {'Protected area': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+    {'Disastered area': {'Path': '', 'Description': '', 'Type': 'Boolean'}},
+]

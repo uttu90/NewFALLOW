@@ -2,16 +2,40 @@ from PyQt4 import QtCore
 import json
 import node
 
+from FALLOW.operations import utils
+
+
+def make_node(parent, list_dict):
+    for a_dict in list_dict:
+        key = a_dict.keys()[0]
+        if isinstance(a_dict[key], dict):
+            node.Node(key, parent, **a_dict[key])
+        elif not a_dict[key] or not isinstance(a_dict[key][0], dict):
+            node.Node(key, parent, value=a_dict[key])
+        else:
+            sub_node = node.Node(key, parent)
+            make_node(sub_node, a_dict[key])
+
 
 class TreModel(QtCore.QAbstractItemModel):
-    def __init__(self, file_name, header, flags):
+    def __init__(self, header, flags, **kwargs):
         super(TreModel, self).__init__()
-        self.rootNode = self.load_from_file(file_name)
+        if kwargs.has_key('file'):
+            self.rootNode = self.load_from_file(kwargs['file'])
+        else:
+            self.rootNode = self.load_from_dict(kwargs['key_maps'],
+                                                kwargs['key_ref'])
         self.header = header
         self.flags = flags
 
-    def load_from_dict(self, keys_maps, keys_list):
-        pass
+    @staticmethod
+    def load_from_dict(key_maps, key_ref):
+        list_dict = []
+        utils.map_to_list_dict(list_dict, key_maps, key_ref)
+        root = node.Node('root')
+        print list_dict
+        make_node(root, list_dict)
+        return root
 
     @staticmethod
     def load_from_file(file_name):
@@ -19,16 +43,6 @@ class TreModel(QtCore.QAbstractItemModel):
             with open(file_name, 'r') as data_file:
                 data_dict = json.load(data_file)
                 root = node.Node('root')
-
-                def make_node(parent, list_dict):
-                    for a_dict in list_dict:
-                        key = a_dict.keys()[0]
-                        if isinstance(a_dict[key], dict):
-                            node.Node(key, parent, **a_dict[key])
-                        else:
-                            sub_node = node.Node(key, parent)
-                            make_node(sub_node, a_dict[key])
-
                 make_node(root, data_dict)
             return root
         except IOError:

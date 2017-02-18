@@ -233,7 +233,7 @@ class SimulatingThread(QtCore.QThread):
         totagc_ts = []
         totfinance_ts = []
         totestcost_ts = []
-        self.timeseries_output['Total population']['value'] = totpop_ts
+        self.timeseries_output['Population']['value'] = totpop_ts
         self.timeseries_output['Aboveground biomass']['value'] = totagb_ts
         self.timeseries_output['Aboveground carbon']['value'] = totagc_ts
         self.timeseries_output['Establishment cost']['value'] = totestcost_ts
