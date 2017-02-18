@@ -210,3 +210,148 @@ storage_properties = ['demand per capita',
 
 agent_type = ['farmer 1', 'farmer 2']
 zclass = ['z1', 'z2', 'z3', 'z4', 'z5']
+
+# Output timeseries:
+timeseries_keys = [
+    'Fire area',
+    'Secondary consumption',
+    'Net income',
+    'Population',
+    'Aboveground biomass',
+    'Aboveground carbon',
+    'Establisment cost',
+    'Potential area expansion',
+    'Non-labour costs',
+    'Revenue',
+    'Return to labour',
+    'Return to land',
+    'Supply sufficiency',
+    'Land expansion labour',
+    'Land expansion labour',
+    'Land expansion budget',
+    'Actual area expansion',
+    'New cultivated areas',
+    'Available labour',
+    'Available money',
+    'Expense',
+    'Income',
+    'Potential yield',
+    'Actual yield',
+    'Land cover area',
+    'Land use area',
+]
+
+
+timeseries_maps = {
+    'Fire area': {
+        'value': None,
+        'description': 'Area affected by fire'},
+    'Secondary consumption': {
+        'value': None,
+        'description': 'Total secondary consumption percapita'},
+    'Net income': {
+        'value': None,
+        'description': 'Total net income percapita'},
+    'Population': {
+        'value': None,
+        'description': 'Total population'},
+    'Aboveground biomass': {
+        'value': None,
+        'description': 'Total aboveground biomass'},
+    'Aboveground carbon': {
+        'value': None,
+        'description': 'Total aboveground carbon'},
+    'Establisment cost': {
+        'value': None,
+        'description': 'Total establishment cost'},
+    'Potential area expansion': {
+        'value': None,
+        'description': 'Potential area of land expansion'},
+    'Non-labour costs': {
+        'value': None,
+        'description': 'Total non-labour costs'},
+    'Revenue': {
+        'value': None,
+        'description': 'Total revenue'},
+    'Return to labour': {
+        'value': None,
+        'description': 'Return to labour'},
+    'Return to land': {
+        'value': None,
+        'description': 'Return to land'},
+    'Supply sufficiency': {
+        'value': None,
+        'description': 'Supply sufficiency'},
+    'Land expansion labour': {
+        'value': None,
+        'description': 'Land expansion labour'},
+    'Land expansion budget': {
+        'value': None,
+        'description': 'Land expansion budget'},
+    'Actual area expansion': {
+        'value': None,
+        'description': 'Actual area of land expansion'},
+    'New cultivated areas': {
+        'value': None,
+        'description': 'New cultivated areas'},
+    'Available labour': {
+        'value': None,
+        'description': 'Available labour'},
+    'Available money': {
+        'value': None,
+        'description': 'Available money'},
+    'Expense': {
+        'value': None,
+        'description': 'Expense for buying'},
+    'Income': {
+        'value': None,
+        'description': 'Income from product selling'},
+    'Potential yield': {
+        'value': None,
+        'description': 'Potential yield'},
+    'Actual yield': {
+        'value': None,
+        'description': 'Actual yield'},
+    'Land cover area': {
+        'value': None,
+        'description': 'Land cover area'},
+    'Land use area': {
+        'value': None,
+        'description': 'Land use area'},
+}
+
+output_maps_keys = [
+    'Land cover',
+    'Land use',
+    'Aboveground biomass',
+    'Aboveground carbon',
+    'Fire area',
+    'Soil fertility',
+]
+
+output_maps_maps = {
+    'Land cover': {
+        'value': None,
+        'description': 'Land cover',
+        'type': 'land cover'},
+    'Land use': {
+        'value': None,
+        'description': 'Land use',
+        'type': 'land use'},
+    'Aboveground biomass': {
+        'value': None,
+        'description': 'Aboveground biomass',
+        'type': 'linear'},
+    'Aboveground carbon': {
+        'value': None,
+        'description': 'Aboveground carbon',
+        'type': 'linear'},
+    'Fire area': {
+        'value': None,
+        'description': 'Fire area',
+        'type': 'boolean'},
+    'Soil fertility': {
+        'value': None,
+        'description': 'Soil fertility',
+        'type': 'soil fertility'},
+}

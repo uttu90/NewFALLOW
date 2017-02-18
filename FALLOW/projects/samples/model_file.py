@@ -1151,3 +1151,4 @@ class SimulatingThread(QtCore.QThread):
             self.emit(QtCore.SIGNAL('update'),
                       self.timeseries_output,
                       self.maps_output, time)
+
