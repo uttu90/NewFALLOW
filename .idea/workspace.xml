@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6000b1e-1ac0-4208-84a3-9f9261341a32" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/constants.py" afterPath="$PROJECT_DIR$/FALLOW/constants.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" />
     </list>
     <ignored path="NewFALLOW.iws" />
@@ -27,8 +26,8 @@
       <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="218" column="5" lean-forward="true" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="15" />
+            <state relative-caret-position="3706">
+              <caret line="218" column="5" lean-forward="false" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -37,8 +36,8 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="104" column="16" lean-forward="false" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+            <state relative-caret-position="358">
+              <caret line="116" column="44" lean-forward="true" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -50,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_timeseries/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="108" column="48" lean-forward="true" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
+              <caret line="108" column="48" lean-forward="false" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -61,8 +60,8 @@
       <file leaf-file-name="model_file.py" pinned="false" current-in-tab="false">
         <entry file="file://D:/test FALLOW/model_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="138" column="45" lean-forward="false" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="45" />
+            <state relative-caret-position="290">
+              <caret line="733" column="24" lean-forward="true" selection-start-line="733" selection-start-column="24" selection-end-line="733" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -71,7 +70,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="884">
               <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding />
             </state>
@@ -91,8 +90,8 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="129" column="44" lean-forward="true" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="44" />
+            <state relative-caret-position="67">
+              <caret line="130" column="31" lean-forward="true" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="37" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -228,10 +227,10 @@
         <option value="$PROJECT_DIR$/FALLOW/operations/utils.py" />
         <option value="$PROJECT_DIR$/FALLOW/models/tree.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="D:/test FALLOW/model_file.py" />
         <option value="$PROJECT_DIR$/FALLOW/constants.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" />
+        <option value="D:/test FALLOW/model_file.py" />
       </list>
     </option>
   </component>
@@ -270,8 +269,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -396,7 +395,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Fallow" />
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="input_maps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -675,15 +682,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="744" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2763672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5078125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31034482" sideWeight="0.55566406" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31034482" sideWeight="0.55566406" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1011,7 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12002">
           <caret line="715" column="39" lean-forward="false" selection-start-line="715" selection-start-column="31" selection-end-line="715" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,7 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,7 +1038,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="884">
           <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding />
         </state>
@@ -1041,8 +1046,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="218" column="5" lean-forward="true" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="15" />
+        <state relative-caret-position="3706">
+          <caret line="218" column="5" lean-forward="false" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -1050,7 +1055,7 @@
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_timeseries/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="108" column="48" lean-forward="true" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
+          <caret line="108" column="48" lean-forward="false" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -1059,8 +1064,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="129" column="44" lean-forward="true" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="44" />
+        <state relative-caret-position="67">
+          <caret line="130" column="31" lean-forward="true" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="37" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -1069,16 +1074,16 @@
     </entry>
     <entry file="file://D:/test FALLOW/model_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="138" column="45" lean-forward="false" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="45" />
+        <state relative-caret-position="290">
+          <caret line="733" column="24" lean-forward="true" selection-start-line="733" selection-start-column="24" selection-end-line="733" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="104" column="16" lean-forward="false" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+        <state relative-caret-position="358">
+          <caret line="116" column="44" lean-forward="true" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

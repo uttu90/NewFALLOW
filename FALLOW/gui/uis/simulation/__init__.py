@@ -53,6 +53,8 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
         QtCore.QObject.connect(self.timeseriesOutput,
                                QtCore.SIGNAL("clicked (QModelIndex)"),
                                self.row_timeseries_clicked)
+        self.active_node = None
+        self.data_type = 'map'
 
     def update_result(self, output_timeseries, output_maps, time):
         self.output_map_model = tree.TreModel(HEADER, FLAGS,
@@ -63,8 +65,16 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
                                                key_maps=output_timeseries,
                                                key_ref=timeseries_key_ref)
         self.timeseriesOutput.setModel(self.output_time_model)
+        self.time = time
         self.yearNumber.display(int(time) + 1)
         self._display_timeseries(output_timeseries['Population'])
+        if self.active_node:
+            self.data = self.active_node.data()['value']
+            if self.data_type == 'map':
+                file_name = self.data[time]
+                self._display_map(file_name)
+            else:
+                self._display_timeseries(self.data)
 
     def _create_plot_frame(self):
         self.main_frame = self.mapDisplay
@@ -100,12 +110,20 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
 
     def row_map_clicked(self, index):
         self.activeIndex = index
-        active_node = index.internalPointer()
-        if len(active_node.children()) == 0:
-            pass
+        self.active_node = index.internalPointer()
+        self.data_type = 'map'
+        if len(self.active_node.children()) == 0:
+            self.data = self.active_node.data()['value']
+            file_name = self.data[self.time]
+            self._display_map(file_name)
 
     def row_timeseries_clicked(self, index):
-        pass
+        self.activeIndex = index
+        self.active_node = index.internalPointer()
+        self.data_type = 'time'
+        if len(self.active_node.children()) == 0:
+            self.data = self.active_node.data()['value']
+            self._display_timeseries(self.data)
 
     def _display_timeseries(self, array):
         self.fig.clear()
@@ -118,7 +136,6 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
         self.canvas.draw()
 
     def _display_map(self, filename, map_type=None):
-        print filename
         if filename:
             ds = gdal.Open(filename)
             band = ds.GetRasterBand(1)
