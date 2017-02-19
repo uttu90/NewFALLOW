@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6000b1e-1ac0-4208-84a3-9f9261341a32" name="Default" comment="" />
+    <list default="true" id="e6000b1e-1ac0-4208-84a3-9f9261341a32" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" afterPath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
+    </list>
     <ignored path="NewFALLOW.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
@@ -67,8 +69,18 @@
       <file leaf-file-name="model_file.py" pinned="false" current-in-tab="false">
         <entry file="file://D:/test FALLOW/model_file.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="729" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_file.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
-              <caret line="733" column="24" lean-forward="true" selection-start-line="733" selection-start-column="24" selection-end-line="733" selection-end-column="24" />
+              <caret line="1181" column="0" lean-forward="true" selection-start-line="1181" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -230,7 +242,6 @@
         <option value="D:/test FALLOW/project.cfg" />
         <option value="$PROJECT_DIR$/FALLOW/operations/maps.py" />
         <option value="$PROJECT_DIR$/FALLOW/models/__init__.py" />
-        <option value="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
         <option value="$PROJECT_DIR$/FALLOW/operations/utils.py" />
         <option value="$PROJECT_DIR$/FALLOW/models/tree.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -238,6 +249,7 @@
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" />
         <option value="D:/test FALLOW/model_file.py" />
+        <option value="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
       </list>
     </option>
   </component>
@@ -301,6 +313,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="FALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewFALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewFALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="samples" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -985,13 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="235" column="34" lean-forward="false" selection-start-line="235" selection-start-column="32" selection-end-line="235" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/operations/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1068,14 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/test FALLOW/model_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="733" column="24" lean-forward="true" selection-start-line="733" selection-start-column="24" selection-end-line="733" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -1090,6 +1109,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/test FALLOW/model_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="729" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="1181" column="0" lean-forward="true" selection-start-line="1181" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
           <folding />
         </state>
       </provider>

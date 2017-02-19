@@ -18,6 +18,7 @@ class SimulatingThread(QtCore.QThread):
     def __init__(self, project):
         super(SimulatingThread, self).__init__()
         self.project = project
+        self.model_file = os.path.join(project, 'area.xxx')
         self.config = ConfigParser.RawConfigParser()
 
     def __del__(self):
@@ -59,24 +60,25 @@ class SimulatingThread(QtCore.QThread):
         self.farmer_property1 = read_file.read_table(sheet, farmer_property_para,
                                                     4, 6, 209, 210, 214)
         self.price_ts = read_file.read_timeseries(sheet, livelihood,
-                                                  225, 1, 101)
+                                                  231, 1, 101)
         self.ex_ts = read_file.read_timeseries(sheet, livelihood,
-                                               244, 1, 101)
+                                               250, 1, 101)
         self.sub_ts = read_file.read_timeseries(sheet, livelihood,
-                                                263, 1, 101)
+                                                269, 1, 101)
 
     def run(self):
+        self.timeseries_output = copy.deepcopy(timeseries_maps)
+        self.maps_output = {}
         self._loading_config()
         self._load_input()
         self._loading_maps()
-        self.timeseries_output = copy.deepcopy(timeseries_maps)
         self.maps_output = copy.deepcopy(output_maps_maps)
-        self.maps_output['Land cover']['value'] = []
-        self.maps_output['Land use']['value'] = []
-        self.maps_output['Aboveground biomass']['value'] = []
-        self.maps_output['Aboveground carbon']['value'] = []
-        self.maps_output['Fire area']['value'] = []
-        self.maps_output['Soil fertility']['value'] = []
+        self.maps_output['Land cover'] = []
+        self.maps_output['Land use'] = []
+        self.maps_output['Aboveground biomass'] = []
+        self.maps_output['Aboveground carbon'] = []
+        self.maps_output['Fire area'] = []
+        self.maps_output['Soil fertility'] = []
         area_map = mapopen(self.maps['Simulated area']['Path'])
         # initlanduse_map = mapopen(self.maps['Initial landcover']['Path'])
         area_arr = map2array(area_map)
@@ -221,65 +223,68 @@ class SimulatingThread(QtCore.QThread):
         ntfpzone_arr = copy.deepcopy(inverse_area_arr)
         # Initial timeseries
         firearea_ts = []
-        self.timeseries_output['Fire area']['value'] = firearea_ts
+        self.timeseries_output['Fire area'] = firearea_ts
         totsecconsumptionpercapita_ts = []
-        self.timeseries_output['Secondary consumption']['value'] = (
+        self.timeseries_output['Secondary consumption'] = (
             totsecconsumptionpercapita_ts
         )
         totnetincomepercapita_ts = []
-        self.timeseries_output['Net income']['value'] = totnetincomepercapita_ts
+        self.timeseries_output['Net income'] = totnetincomepercapita_ts
         totpop_ts = [demography['initial population']]
         totagb_ts = []
         totagc_ts = []
         totfinance_ts = []
         totestcost_ts = []
-        self.timeseries_output['Population']['value'] = totpop_ts
-        self.timeseries_output['Aboveground biomass']['value'] = totagb_ts
-        self.timeseries_output['Aboveground carbon']['value'] = totagc_ts
-        self.timeseries_output['Establishment cost']['value'] = totestcost_ts
+        self.timeseries_output['Population'] = totpop_ts
+        self.timeseries_output['Aboveground biomass'] = totagb_ts
+        self.timeseries_output['Aboveground carbon'] = totagc_ts
+        self.timeseries_output['Establishment cost'] = totestcost_ts
         init_livelihood_ts = {}
 
         for livetype in livelihood:
             init_livelihood_ts[livetype] = []
 
         critzonearea_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Potential area expansion']['value'] = (
+        self.timeseries_output['Potential area expansion'] = (
             critzonearea_ts)
         nonlaborcosts_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Non-labour costs']['value'] = nonlaborcosts_ts
+        self.timeseries_output['Non-labour costs'] = nonlaborcosts_ts
         revenue_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Revenue']['value'] = revenue_ts
+        self.timeseries_output['Revenue'] = revenue_ts
         payofftolabor_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Return to labour']['value'] = payofftolabor_ts
+        self.timeseries_output['Return to labour'] = payofftolabor_ts
         payofftoland_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Return to land']['value'] = payofftoland_ts
+        self.timeseries_output['Return to land'] = payofftoland_ts
         supplyefficiency_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Supply sufficiency']['value'] = (
+        self.timeseries_output['Supply sufficiency'] = (
             supplyefficiency_ts)
         exparealabor_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Land expansion labour']['value'] = (
+        self.timeseries_output['Land expansion labour'] = (
             exparealabor_ts)
         expareamoney_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Land expansion budget']['value'] = (
+        self.timeseries_output['Land expansion budget'] = (
             exparealabor_ts)
         exparea_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Actual area expansion']['value'] = exparea_ts
+        self.timeseries_output['Actual area expansion'] = exparea_ts
         newplotarea_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['New cultivated areas']['value'] = newplotarea_ts
+        self.timeseries_output['New cultivated areas'] = newplotarea_ts
         availablelabor_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Available labour']['value'] = availablelabor_ts
+        self.timeseries_output['Available labour'] = availablelabor_ts
         availablemoney_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Available money']['value'] = availablemoney_ts
+        self.timeseries_output['Available money'] = availablemoney_ts
         buying_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Expense']['value'] = buying_ts
+        self.timeseries_output['Expense'] = buying_ts
         selling_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Income']['value'] = selling_ts
+        self.timeseries_output['Income'] = selling_ts
         profit_ts = copy.deepcopy(init_livelihood_ts)
-        pyield_ts = {}
-        self.timeseries_output['Potential yield']['value'] = pyield_ts
-        attyield_ts = copy.deepcopy(init_livelihood_ts)
-        self.timeseries_output['Actual yield']['value'] = attyield_ts
+        potyield_ts = {}
+        for livetype in livelihood:
+            potyield_ts[livetype] = []
 
+        self.timeseries_output['Potential yield'] = potyield_ts
+        attyield_ts = copy.deepcopy(init_livelihood_ts)
+        self.timeseries_output['Actual yield'] = attyield_ts
+        pyield_ts = {}
         scarea = {}
         scarea_ts = {}
         for sc in scname_para:
@@ -298,9 +303,7 @@ class SimulatingThread(QtCore.QThread):
             sclareafract_ts[sc] = copy.deepcopy(lcarea_ts)
         newplotarea = copy.deepcopy(init_livelihood_ts)
 
-        potyield_ts = {}
-        for livetype in livelihood:
-            potyield_ts[livetype] = []
+
 
         sclarea = {}
         for sc in scname_para:
@@ -469,9 +472,10 @@ class SimulatingThread(QtCore.QThread):
                          lctimebound[landtype][lcage[landtype][-1]])
                     ) *
                     landcover_map[landtype][lcage[landtype][-1]])
-            lcname = 'lancover_map[%s].tif' % str(time)
+            lcname = os.path.join(self.project,
+                                  'lancover_map[%s].tif' % str(time))
             array2map(lc_arr, lcname, area_map)
-
+            self.maps_output['Land cover'].append(lcname)
             for landtype in land_single_stage:
                 lcarea_ts[landtype].append(
                     total(boolean2scalar(
@@ -546,8 +550,8 @@ class SimulatingThread(QtCore.QThread):
                      agentprop['farmer 2']['population fraction'] *
                      landfrac_mv[livetype]['farmer 2']) * totcritzonearea)
             critzonearea_ts['off/non-farm'][time] = 0
-            randcritzone_arr = arrayfill(uniform(criticalzone_arr),
-                                         1) * area_arr
+            randcritzone_arr = (
+                arrayfill(uniform(criticalzone_arr), 1) * area_arr)
             allnewplots_arr = copy.deepcopy(inverse_area_arr)
             sumcrit_arr = (1.0 * boolean2scalar(inverse_area_arr)).astype(
                 np.float32)
@@ -592,7 +596,7 @@ class SimulatingThread(QtCore.QThread):
                 harvestingarea_mv[livetype] = (
                     total(boolean2scalar(phzone_arrs[livetype])))
                 dexistingplit_arrs[livetype] = (
-                    spreadmap(phzone_arrs[livetype])
+                    spreadmap(phzone_arrs[livetype], self.model_file)
                 )
             soildepletionrate_arr = 0.0 * area_arr
             soilrecoverytime_arr = 0.0 * area_arr
@@ -836,6 +840,10 @@ class SimulatingThread(QtCore.QThread):
             agbiomass_arr = agbiomass_arr - loggedbiomass_arr
             agbiomass_arr[agbiomass_arr < 0] = 0
             agcarbon_arr = agbiomass_arr * unitconverter['biomass to carbon']
+            agcarbon_name = os.path.join(self.project,
+                                         'agcarbon[%s].tif' % str(time))
+            array2map(agcarbon_arr, agcarbon_name, area_map)
+            self.maps_output['Aboveground carbon'].append(agcarbon_name)
             floorbiom_arr = agbiomass_arr * floorbiomassfraction_arr
             totagb_ts.append(total(agbiomass_arr))
             totagc_ts.append(total(agcarbon_arr))
@@ -1038,12 +1046,16 @@ class SimulatingThread(QtCore.QThread):
             nonselectedagricplot_arr = ((~allnewplots_arr) &
                                         (marginalagriculture_arr |
                                          marginalAF_arr))
-            dfireignition_arr = arrayfill(spreadmap(allfireignition_arr), 1e11)
+            dfireignition_arr = arrayfill(
+                spreadmap(allfireignition_arr, self.model_file), 1e11
+            )
             fire_arr = (arrayfill(
                 uniform(dfireignition_arr < 2 * np.sqrt(self.pixel_size)),
                 1) < pfireescape_arr) | allfireignition_arr
-            firename = "fire_map[%s].tif" % str(time)
+            firename = os.path.join(self.project,
+                                    "fire_map[%s].tif" % str(time))
             array2map(fire_arr, firename, area_map)
+            self.maps_output['Fire area'].append(firename)
             firearea_ts.append(total(fire_arr))
             nfptzone_arr = newplot_arrs['non-timber forest product']
             totpop_ts[time] = (
@@ -1101,9 +1113,10 @@ class SimulatingThread(QtCore.QThread):
                 maxsoilfert_arr,
                 np.maximum(0,
                            soilfert_arr + soilrecovery_arr - soildepletion_arr))
-            soilname = "Soil_map[%s].tif" % str(time)
+            soilname = os.path.join(self.project,
+                                    "Soil_map[%s].tif" % str(time))
             array2map(soilfert_arr, soilname, area_map)
-
+            self.maps_output['Soil fertility'].append(soilname)
             forest_plot_arr = (
                 scalar2boolean(fire_arr) &
                 (~allnewplots_arr) |
@@ -1123,8 +1136,10 @@ class SimulatingThread(QtCore.QThread):
             lu_arr = (plot_arr +
                       forest_plot_arr +
                       boolean2scalar(~(plot_arr > 0)) * lu_arr)
-            luname = "Landuse_map[%s].tif" % str(time)
+            luname = os.path.join(self.project,
+                                  "Landuse_map[%s].tif" % str(time))
             array2map(lu_arr, luname, area_map)
+            self.maps_output['Land use'].append(luname)
             age_stat = {}
             for forest_stage in lcage['forest']:
                 age_stat[forest_stage] = arraystat(
@@ -1143,6 +1158,11 @@ class SimulatingThread(QtCore.QThread):
                 age_stat['old secondary'] +
                 (agbiomass_arr > agbiomass_stat['primary']) *
                 age_stat['primary'])
+            agbasedbiomassname = os.path.join(self.project,
+                                              'agbasedbiomass[%s].tif'
+                                              % str(time))
+            array2map(agbiomass_arr, agbasedbiomassname, area_map)
+            self.maps_output['Aboveground biomass'].append(agbasedbiomassname)
             destroy_arr = (allnewplots_arr |
                            scalar2boolean(fire_arr) |
                            disasterimpactzone_arr |
@@ -1153,5 +1173,9 @@ class SimulatingThread(QtCore.QThread):
             totfinance_ts.append(balance)
             self.emit(QtCore.SIGNAL('update'),
                       self.timeseries_output,
-                      self.maps_output, time)
-
+                      self.maps_output,
+                      time)
+        with open('output_maps.json', 'w') as output_map_file:
+            json.dump(self.maps_output, output_map_file, indent=2)
+        with open('output_timeseries.json', 'w') as output_timeseries_file:
+            json.dump(self.timeseries_output, output_timeseries_file, indent=2)
