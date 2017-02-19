@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6000b1e-1ac0-4208-84a3-9f9261341a32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" />
-    </list>
+    <list default="true" id="e6000b1e-1ac0-4208-84a3-9f9261341a32" name="Default" comment="" />
     <ignored path="NewFALLOW.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="358">
@@ -41,6 +38,16 @@
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -377,7 +384,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="input_timeseries" />
+              <option name="myItemId" value="mainwindow" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,11 +406,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="uis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="input_maps" />
+              <option name="myItemId" value="qtdesigners" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -431,7 +434,7 @@
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\prj" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__init__ (2)">
+  <component name="RunManager" selected="Python.__init__">
     <configuration default="false" name="__init__ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -445,23 +448,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NewFALLOW" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="model_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/projects/samples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="NewFALLOW" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -513,6 +499,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NewFALLOW" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/models/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="NewFALLOW" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -653,18 +656,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.__init__ (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.model_file" />
-      <item index="2" class="java.lang.String" itemvalue="Python.__init__ (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.model_file (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.__init__ (3)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.__init__ (2)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.model_file (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.__init__ (3)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.__init__" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.__init__ (2)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.__init__ (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.__init__ (3)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.model_file (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.model_file" />
+        <item index="0" class="java.lang.String" itemvalue="Python.__init__" />
+        <item index="1" class="java.lang.String" itemvalue="Python.__init__ (2)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.__init__ (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.__init__ (3)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.model_file (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -682,7 +685,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="744" extended-state="1" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2763672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -926,13 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="38" column="41" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="39" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/test FALLOW/project.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1087,6 +1083,14 @@
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
