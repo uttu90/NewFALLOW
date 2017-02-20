@@ -87,10 +87,7 @@ p, li { white-space: pre-wrap; }
    <addaction name="action_Input_Timeseries"/>
    <addaction name="separator"/>
    <addaction name="action_Play"/>
-   <addaction name="action_Pause"/>
-   <addaction name="action_Stop"/>
    <addaction name="separator"/>
-   <addaction name="action_Result"/>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -113,14 +110,6 @@ p, li { white-space: pre-wrap; }
      <string>Simulation</string>
     </property>
     <addaction name="action_Play"/>
-    <addaction name="action_Pause"/>
-    <addaction name="action_Stop"/>
-   </widget>
-   <widget class="QMenu" name="menuResult">
-    <property name="title">
-     <string>Result</string>
-    </property>
-    <addaction name="action_Result"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -143,17 +132,9 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionCreate_new_project"/>
     <addaction name="actionClone_project"/>
    </widget>
-   <widget class="QMenu" name="menuSettings">
-    <property name="title">
-     <string>Settings</string>
-    </property>
-    <addaction name="actionLand_cover"/>
-   </widget>
    <addaction name="menuProject"/>
    <addaction name="menuInput"/>
    <addaction name="menuSimulation"/>
-   <addaction name="menuResult"/>
-   <addaction name="menuSettings"/>
    <addaction name="menuHelp"/>
    <addaction name="menuLanguages"/>
   </widget>
@@ -249,56 +230,6 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="shortcut">
     <string>Ctrl+L</string>
-   </property>
-  </action>
-  <action name="action_Pause">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>:/MainWindowIcons/icon/pause.png</normaloff>:/MainWindowIcons/icon/pause.png</iconset>
-   </property>
-   <property name="text">
-    <string>&amp;Pause</string>
-   </property>
-   <property name="toolTip">
-    <string>Pause</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+P</string>
-   </property>
-  </action>
-  <action name="action_Stop">
-   <property name="icon">
-    <iconset>
-     <normaloff>:/MainWindowIcons/icon/stop.png</normaloff>
-     <normalon>../Resources/icon/transparent/stop.png</normalon>:/MainWindowIcons/icon/stop.png</iconset>
-   </property>
-   <property name="text">
-    <string>&amp;Stop</string>
-   </property>
-   <property name="toolTip">
-    <string>Stop</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Space</string>
-   </property>
-  </action>
-  <action name="action_Result">
-   <property name="icon">
-    <iconset>
-     <normaloff>:/MainWindowIcons/icon/output.png</normaloff>
-     <normalon>:/MainWindowIcons/icon/Result.png</normalon>:/MainWindowIcons/icon/output.png</iconset>
-   </property>
-   <property name="text">
-    <string>Result</string>
-   </property>
-   <property name="toolTip">
-    <string>Results</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="action_Other">

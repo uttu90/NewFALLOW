@@ -8,6 +8,7 @@ import MainWindowUI
 from FALLOW.gui.uis import input_maps
 from FALLOW.gui.uis import input_timeseries
 from FALLOW.gui.uis.prj import prj_clone, prj_create, prj_open
+from FALLOW.gui.uis import simulation
 
 
 APP = 'application'
@@ -53,15 +54,15 @@ class MainWindow(QtGui.QMainWindow, MainWindowUI.Ui_MainWindow):
         self.connect(self.action_Play,
                      QtCore.SIGNAL('triggered()'),
                      self.on_play_click)
-        self.connect(self.action_Pause,
-                     QtCore.SIGNAL('triggered()'),
-                     self.on_pause_click)
-        self.connect(self.action_Stop,
-                     QtCore.SIGNAL('triggered()'),
-                     self.on_stop_click)
-        self.connect(self.actionLand_cover,
-                     QtCore.SIGNAL('triggered()'),
-                     self.on_land_cover_click)
+        # self.connect(self.action_Pause,
+        #              QtCore.SIGNAL('triggered()'),
+        #              self.on_pause_click)
+        # self.connect(self.action_Stop,
+        #              QtCore.SIGNAL('triggered()'),
+        #              self.on_stop_click)
+        # self.connect(self.actionLand_cover,
+        #              QtCore.SIGNAL('triggered()'),
+        #              self.on_land_cover_click)
         self.connect(self.actionHelp,
                      QtCore.SIGNAL('triggered()'),
                      self.on_help_click)
@@ -100,19 +101,10 @@ class MainWindow(QtGui.QMainWindow, MainWindowUI.Ui_MainWindow):
             time_interface.show()
 
     def on_play_click(self):
-        pass
-
-    def on_pause_click(self):
-        pass
-
-    def on_stop_click(self):
-        pass
-
-    def on_result_click(self):
-        pass
-
-    def on_land_cover_click(self):
-        pass
+        if self.project_path:
+            simulation_ui = simulation.MainWindow(self,
+                                                  project=self.project_path)
+            simulation_ui.show()
 
     def on_help_click(self):
         pass

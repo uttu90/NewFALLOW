@@ -301,7 +301,7 @@ class SimulatingThread(QtCore.QThread):
         sclareafract_ts = {}
         for sc in scname_para:
             sclareafract_ts[sc] = copy.deepcopy(lcarea_ts)
-        newplotarea = copy.deepcopy(init_livelihood_ts)
+        # newplotarea = copy.deepcopy(init_livelihood_ts)
 
 
 
@@ -990,7 +990,7 @@ class SimulatingThread(QtCore.QThread):
                 newplot_arrs[livetype] = (
                     (randommatrix < expansionprobability[livetype]) &
                     inverse_reserve_arr)
-                newplotarea[livetype].append(
+                newplotarea_ts[livetype].append(
                     total(boolean2scalar(newplot_arrs[livetype])) * self.pixel_size)
                 fireignition_arrs[livetype] = (
                     (arrayfill(

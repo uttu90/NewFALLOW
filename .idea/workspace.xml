@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6000b1e-1ac0-4208-84a3-9f9261341a32" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/qtdesigners/MainWindow.ui" afterPath="$PROJECT_DIR$/FALLOW/gui/qtdesigners/MainWindow.ui" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/MainWindowUI.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/MainWindowUI.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" afterPath="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" afterPath="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FALLOW/test FALLOW/model_file.py" afterPath="$PROJECT_DIR$/FALLOW/test FALLOW/model_file.py" />
     </list>
     <ignored path="NewFALLOW.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,21 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3706">
-              <caret line="218" column="5" lean-forward="false" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="116" column="44" lean-forward="true" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
+            <state relative-caret-position="1564">
+              <caret line="116" column="44" lean-forward="false" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -47,21 +42,31 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="-17">
+              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="output_maps.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/output_maps.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-561">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_timeseries/__init__.py">
+      <file leaf-file-name="output_timeseries.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/output_timeseries.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="108" column="48" lean-forward="false" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-2295">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,38 +74,48 @@
       <file leaf-file-name="model_file.py" pinned="false" current-in-tab="false">
         <entry file="file://D:/test FALLOW/model_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="729" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="1070" column="36" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_file.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="1178" column="1" lean-forward="true" selection-start-line="1178" selection-start-column="1" selection-end-line="1178" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="model_file.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
+        <entry file="file://$PROJECT_DIR$/FALLOW/test FALLOW/model_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="358">
               <caret line="1181" column="0" lean-forward="true" selection-start-line="1181" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="ModelFile.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/ModelFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+            <state relative-caret-position="138">
+              <caret line="895" column="12" lean-forward="false" selection-start-line="895" selection-start-column="8" selection-end-line="895" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FALLOW/operations/utils.py">
+      <file leaf-file-name="MainWindowUI.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/MainWindowUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+            <state relative-caret-position="150">
+              <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -109,8 +124,8 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="130" column="31" lean-forward="true" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="37" />
+            <state relative-caret-position="1853">
+              <caret line="130" column="31" lean-forward="false" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="37" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -129,11 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loggedtimber</find>
-      <find>map</find>
-      <find>firemap</find>
-      <find>lc_arr</find>
-      <find>fire_arr</find>
       <find>soil</find>
       <find>soilfert_arr</find>
       <find>Array2Map</find>
@@ -159,9 +169,13 @@
       <find>agcarbon</find>
       <find>mapDisplay</find>
       <find>['value']</find>
+      <find>pause</find>
+      <find>on_result_click</find>
+      <find>new</find>
+      <find>newplotarea</find>
+      <find>newplotarea_ts</find>
     </findStrings>
     <replaceStrings>
-      <replace>}</replace>
       <replace>initlanduse_arr</replace>
       <replace>initlanduse_map</replace>
       <replace>/</replace>
@@ -191,6 +205,7 @@
       <replace>self.pixel_size</replace>
       <replace>pyield_ts</replace>
       <replace>None</replace>
+      <replace>newplotarea_ts</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -199,7 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FALLOW/models/MapsInput.py" />
         <option value="$PROJECT_DIR$/FALLOW/models/TimeInput.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/input_timeseries/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/projects/samples/runfile.py" />
@@ -237,7 +251,6 @@
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/NewProjectUI.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/prj/prj_create/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/excel_utils/read_file.py" />
-        <option value="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/simulation/SimulationUI.py" />
         <option value="D:/test FALLOW/project.cfg" />
         <option value="$PROJECT_DIR$/FALLOW/operations/maps.py" />
@@ -248,8 +261,10 @@
         <option value="$PROJECT_DIR$/FALLOW/constants.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py" />
         <option value="$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py" />
+        <option value="$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py" />
         <option value="D:/test FALLOW/model_file.py" />
         <option value="$PROJECT_DIR$/FALLOW/projects/samples/model_file.py" />
+        <option value="$PROJECT_DIR$/FALLOW/test FALLOW/model_file.py" />
       </list>
     </option>
   </component>
@@ -289,7 +304,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,6 +327,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="FALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewFALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewFALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FALLOW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test FALLOW" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,26 +478,27 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="last_opened_file_path" value="D:/test FALLOW/model_file.py" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\simulation" />
-      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\projects\samples" />
-      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\prj\prj_create" />
-      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\models" />
-      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\input_maps" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\models\data" />
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis" />
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\prj\prj_open" />
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW" />
       <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\prj" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\mainwindow" />
+      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\simulation" />
+      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\projects\samples" />
+      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\gui\uis\prj\prj_create" />
+      <recent name="C:\Users\BONGBONG\Documents\GitHub\NewFALLOW\FALLOW\models" />
     </key>
   </component>
   <component name="RunManager" selected="Python.__init__">
@@ -718,13 +751,23 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2763672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5078125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.4921875" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31034482" sideWeight="0.55566406" order="2" side_tool="false" content_ui="tabs" />
@@ -737,7 +780,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.4921875" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -759,34 +801,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/MainWindowUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/setup.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/app.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1031,16 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/ModelFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12002">
-          <caret line="715" column="39" lean-forward="false" selection-start-line="715" selection-start-column="31" selection-end-line="715" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1077,7 +1081,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_timeseries/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="1683">
           <caret line="108" column="48" lean-forward="false" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -1087,8 +1091,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/input_maps/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="130" column="31" lean-forward="true" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="37" />
+        <state relative-caret-position="1853">
+          <caret line="130" column="31" lean-forward="false" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="37" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -1097,8 +1101,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/simulation/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="116" column="44" lean-forward="true" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
+        <state relative-caret-position="1564">
+          <caret line="116" column="44" lean-forward="false" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -1107,23 +1111,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        <state relative-caret-position="-17">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/output_timeseries.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2295">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/output_maps.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/gui/uis/mainwindow/MainWindowUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/ModelFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="895" column="12" lean-forward="false" selection-start-line="895" selection-start-column="8" selection-end-line="895" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://D:/test FALLOW/model_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="729" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="1070" column="36" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FALLOW/projects/samples/model_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="720">
+          <caret line="1178" column="1" lean-forward="true" selection-start-line="1178" selection-start-column="1" selection-end-line="1178" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FALLOW/test FALLOW/model_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
           <caret line="1181" column="0" lean-forward="true" selection-start-line="1181" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
           <folding />
         </state>
