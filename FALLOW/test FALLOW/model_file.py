@@ -28,6 +28,7 @@ class SimulatingThread(QtCore.QThread):
         self.config.read(os.path.join(self.project, 'project.cfg'))
         self.simulation_time = self.config.getint('project',
                                                   'time simulation (years)')
+        self.simulation_time = 1
         self.pixel_size = self.config.getint('project',
                                              'pixel size (ha)')
         self.using_timeseries = self.config.getboolean('project',
@@ -1175,7 +1176,9 @@ class SimulatingThread(QtCore.QThread):
                       self.timeseries_output,
                       self.maps_output,
                       time)
-        with open('output_maps.json', 'w') as output_map_file:
+        output_map = os.path.join(self.project, 'output_maps.json')
+        output_timeseries = os.path.join(self.project, 'output_timeseries.json')
+        with open(output_map, 'w') as output_map_file:
             json.dump(self.maps_output, output_map_file, indent=2)
-        with open('output_timeseries.json', 'w') as output_timeseries_file:
+        with open(output_timeseries, 'w') as output_timeseries_file:
             json.dump(self.timeseries_output, output_timeseries_file, indent=2)

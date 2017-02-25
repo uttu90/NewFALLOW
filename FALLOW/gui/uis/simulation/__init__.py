@@ -2,6 +2,7 @@ import sys
 import os
 import imp
 import warnings
+import time
 
 import numpy
 
@@ -47,6 +48,8 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
                      self.on_play_click)
         self.connect(self.simulation, QtCore.SIGNAL("update"),
                      self.update_result)
+        self.connect(self.simulation, QtCore.SIGNAL('finished()'),
+                     self.finish)
         QtCore.QObject.connect(self.mapOutput,
                                QtCore.SIGNAL("clicked (QModelIndex)"),
                                self.row_map_clicked)
@@ -67,6 +70,7 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
         self.timeseriesOutput.setModel(self.output_time_model)
         self.time = time
         self.yearNumber.display(int(time) + 1)
+        self.horizontalSlider.setValue(int(time) + 1)
         self._display_timeseries(output_timeseries['Population'])
         if self.active_node:
             self.data = self.active_node.data()['value']
@@ -108,14 +112,30 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
     def display(self):
         pass
 
-    def row_map_clicked(self, index):
-        self.activeIndex = index
-        self.active_node = index.internalPointer()
-        self.data_type = 'map'
-        if len(self.active_node.children()) == 0:
+    def finish(self):
+        if self.active_node:
             self.data = self.active_node.data()['value']
-            file_name = self.data[self.time]
-            self._display_map(file_name)
+            if self.data_type == 'map':
+                self._display_map_array(self.data)
+            else:
+                self._display_timeseries(self.data)
+
+    def row_map_clicked(self, index):
+        if self.simulation.isFinished():
+            self.activeIndex = index
+            self.active_node = index.internalPointer()
+            self.data_type = 'map'
+            if len(self.active_node.children()) == 0:
+                self.data = self.active_node.data()['value']
+                self._display_map_array(self.data)
+        else:
+            self.activeIndex = index
+            self.active_node = index.internalPointer()
+            self.data_type = 'map'
+            if len(self.active_node.children()) == 0:
+                self.data = self.active_node.data()['value']
+                file_name = self.data[self.time]
+                self._display_map(file_name)
 
     def row_timeseries_clicked(self, index):
         self.activeIndex = index
@@ -151,6 +171,11 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
                 aspect='equal'))
             self.canvas.draw()
             self.canvas.mpl_connect('button_press_event', self.onclick)
+
+    def _display_map_array(self, maps_array):
+        for i in range(self.time):
+            self._display_map(maps_array[i])
+            time.sleep(3)
 
     def onclick(self, event):
         if event.button == 2:

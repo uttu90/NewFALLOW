@@ -1,0 +1,20 @@
+{
+  "Fire area": [
+    "D:/test FALLOW\\fire_map[0].tif"
+  ], 
+  "Aboveground carbon": [
+    "D:/test FALLOW\\agcarbon[0].tif"
+  ], 
+  "Land cover": [
+    "D:/test FALLOW\\lancover_map[0].tif"
+  ], 
+  "Land use": [
+    "D:/test FALLOW\\Landuse_map[0].tif"
+  ], 
+  "Aboveground biomass": [
+    "D:/test FALLOW\\agbasedbiomass[0].tif"
+  ], 
+  "Soil fertility": [
+    "D:/test FALLOW\\Soil_map[0].tif"
+  ]
+}

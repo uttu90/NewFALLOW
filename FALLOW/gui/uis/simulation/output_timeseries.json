@@ -1,0 +1,988 @@
+{
+  "New cultivated areas": {
+    "tree-based system 6": [
+      0.0
+    ], 
+    "tree-based system 7": [
+      0.0
+    ], 
+    "tree-based system 4": [
+      0.0
+    ], 
+    "tree-based system 5": [
+      8.0
+    ], 
+    "tree-based system 2": [
+      0.0
+    ], 
+    "tree-based system 3": [
+      0.0
+    ], 
+    "tree-based system 1": [
+      75104.0
+    ], 
+    "annual crop 1": [
+      23576.0
+    ], 
+    "annual crop 2": [
+      3252.0
+    ], 
+    "annual crop 3": [
+      205404.0
+    ], 
+    "annual crop 4": [
+      0.0
+    ], 
+    "tree-based system 8": [
+      0.0
+    ], 
+    "off/non-farm": [
+      0.0
+    ], 
+    "non-timber forest product": [
+      0.0
+    ], 
+    "timber": [
+      0.0
+    ]
+  }, 
+  "Aboveground carbon": [
+    6493264.1664387
+  ], 
+  "Income": {
+    "tree-based system 6": [
+      0
+    ], 
+    "tree-based system 7": [
+      0
+    ], 
+    "tree-based system 4": [
+      0
+    ], 
+    "tree-based system 5": [
+      0
+    ], 
+    "tree-based system 2": [
+      0
+    ], 
+    "tree-based system 3": [
+      0
+    ], 
+    "tree-based system 1": [
+      0
+    ], 
+    "annual crop 1": [
+      1465.8528000000001
+    ], 
+    "annual crop 2": [
+      0
+    ], 
+    "annual crop 3": [
+      0
+    ], 
+    "annual crop 4": [
+      0
+    ], 
+    "tree-based system 8": [
+      0
+    ], 
+    "off/non-farm": [
+      0
+    ], 
+    "non-timber forest product": [
+      0
+    ], 
+    "timber": [
+      0
+    ]
+  }, 
+  "Potential area expansion": {
+    "tree-based system 6": [
+      0.0
+    ], 
+    "tree-based system 7": [
+      0.0
+    ], 
+    "tree-based system 4": [
+      0.0
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      0.0
+    ], 
+    "tree-based system 3": [
+      0.0
+    ], 
+    "tree-based system 1": [
+      0.0
+    ], 
+    "annual crop 1": [
+      122371.9017655739
+    ], 
+    "annual crop 2": [
+      122452.79473078127
+    ], 
+    "annual crop 3": [
+      0.0
+    ], 
+    "annual crop 4": [
+      0.0
+    ], 
+    "tree-based system 8": [
+      0.0
+    ], 
+    "off/non-farm": [
+      0
+    ], 
+    "non-timber forest product": [
+      0.0
+    ], 
+    "timber": [
+      0.0
+    ]
+  }, 
+  "Fire area": [
+    0
+  ], 
+  "Land expansion labour": {
+    "tree-based system 6": [
+      0.0
+    ], 
+    "tree-based system 7": [
+      0
+    ], 
+    "tree-based system 4": [
+      0.0
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      0
+    ], 
+    "tree-based system 3": [
+      0
+    ], 
+    "tree-based system 1": [
+      0
+    ], 
+    "annual crop 1": [
+      2400.3287078685867
+    ], 
+    "annual crop 2": [
+      3287.0361344613484
+    ], 
+    "annual crop 3": [
+      0.0
+    ], 
+    "annual crop 4": [
+      0
+    ], 
+    "tree-based system 8": [
+      0
+    ], 
+    "off/non-farm": [], 
+    "non-timber forest product": [
+      0
+    ], 
+    "timber": [
+      0
+    ]
+  }, 
+  "Return to land": {
+    "tree-based system 6": [
+      -53.702956392315365
+    ], 
+    "tree-based system 7": [
+      0
+    ], 
+    "tree-based system 4": [
+      -23.207461914704922
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      0.0
+    ], 
+    "tree-based system 3": [
+      0.0
+    ], 
+    "tree-based system 1": [
+      0
+    ], 
+    "annual crop 1": [
+      0
+    ], 
+    "annual crop 2": [
+      0
+    ], 
+    "annual crop 3": [
+      0
+    ], 
+    "annual crop 4": [
+      0
+    ], 
+    "tree-based system 8": [
+      0
+    ], 
+    "off/non-farm": [
+      0
+    ], 
+    "non-timber forest product": [
+      0.0
+    ], 
+    "timber": [
+      0
+    ]
+  }, 
+  "Actual area expansion": {
+    "tree-based system 6": [
+      0.0
+    ], 
+    "tree-based system 7": [
+      0
+    ], 
+    "tree-based system 4": [
+      0.0
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      0
+    ], 
+    "tree-based system 3": [
+      0
+    ], 
+    "tree-based system 1": [
+      0
+    ], 
+    "annual crop 1": [
+      2400.3287078685867
+    ], 
+    "annual crop 2": [
+      3287.0361344613484
+    ], 
+    "annual crop 3": [
+      0.0
+    ], 
+    "annual crop 4": [
+      0
+    ], 
+    "tree-based system 8": [
+      0
+    ], 
+    "off/non-farm": [
+      0
+    ], 
+    "non-timber forest product": [
+      0
+    ], 
+    "timber": [
+      0
+    ]
+  }, 
+  "Net income": [
+    0.0
+  ], 
+  "Secondary consumption": [
+    0.0
+  ], 
+  "Aboveground biomass": [
+    14429475.92541933
+  ], 
+  "Non-labour costs": {
+    "tree-based system 6": [
+      6551.760679862475
+    ], 
+    "tree-based system 7": [
+      0.0
+    ], 
+    "tree-based system 4": [
+      355120.5822188147
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      0.0
+    ], 
+    "tree-based system 3": [
+      0.0
+    ], 
+    "tree-based system 1": [
+      0.0
+    ], 
+    "annual crop 1": [
+      0.0
+    ], 
+    "annual crop 2": [
+      0.0
+    ], 
+    "annual crop 3": [
+      0.0
+    ], 
+    "annual crop 4": [
+      0.0
+    ], 
+    "tree-based system 8": [
+      0.0
+    ], 
+    "off/non-farm": [
+      0.0
+    ], 
+    "non-timber forest product": [
+      0.0
+    ], 
+    "timber": [
+      0.0
+    ]
+  }, 
+  "Population": [
+    8729.43
+  ], 
+  "Land expansion budget": {
+    "tree-based system 6": [
+      0.0
+    ], 
+    "tree-based system 7": [
+      0
+    ], 
+    "tree-based system 4": [
+      0.0
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      0
+    ], 
+    "tree-based system 3": [
+      0
+    ], 
+    "tree-based system 1": [
+      0
+    ], 
+    "annual crop 1": [
+      2400.3287078685867
+    ], 
+    "annual crop 2": [
+      3287.0361344613484
+    ], 
+    "annual crop 3": [
+      0.0
+    ], 
+    "annual crop 4": [
+      0
+    ], 
+    "tree-based system 8": [
+      0
+    ], 
+    "off/non-farm": [], 
+    "non-timber forest product": [
+      0
+    ], 
+    "timber": [
+      0
+    ]
+  }, 
+  "Establishment cost": [
+    23352630.16535631
+  ], 
+  "Expense": {
+    "tree-based system 6": [
+      0
+    ], 
+    "tree-based system 7": [
+      0
+    ], 
+    "tree-based system 4": [
+      0
+    ], 
+    "tree-based system 5": [
+      0
+    ], 
+    "tree-based system 2": [
+      0
+    ], 
+    "tree-based system 3": [
+      0
+    ], 
+    "tree-based system 1": [
+      0
+    ], 
+    "annual crop 1": [
+      0
+    ], 
+    "annual crop 2": [
+      0
+    ], 
+    "annual crop 3": [
+      0
+    ], 
+    "annual crop 4": [
+      0
+    ], 
+    "tree-based system 8": [
+      0
+    ], 
+    "off/non-farm": [
+      0
+    ], 
+    "non-timber forest product": [
+      0
+    ], 
+    "timber": [
+      0
+    ]
+  }, 
+  "Return to labour": {
+    "tree-based system 6": [
+      0
+    ], 
+    "tree-based system 7": [
+      0
+    ], 
+    "tree-based system 4": [
+      0
+    ], 
+    "tree-based system 5": [
+      0
+    ], 
+    "tree-based system 2": [
+      0
+    ], 
+    "tree-based system 3": [
+      0
+    ], 
+    "tree-based system 1": [
+      0
+    ], 
+    "annual crop 1": [
+      0.0
+    ], 
+    "annual crop 2": [
+      0.0
+    ], 
+    "annual crop 3": [
+      0
+    ], 
+    "annual crop 4": [
+      0
+    ], 
+    "tree-based system 8": [
+      0
+    ], 
+    "off/non-farm": [
+      0
+    ], 
+    "non-timber forest product": [
+      0
+    ], 
+    "timber": [
+      0
+    ]
+  }, 
+  "Land use area": {
+    "tree-based system 6": [
+      488.0
+    ], 
+    "tree-based system 7": [
+      0.0
+    ], 
+    "tree-based system 4": [
+      36856.0
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      34764.0
+    ], 
+    "tree-based system 3": [
+      42372.0
+    ], 
+    "tree-based system 1": [
+      5720.0
+    ], 
+    "annual crop 1": [
+      3172.0
+    ], 
+    "annual crop 2": [
+      21292.0
+    ], 
+    "annual crop 3": [
+      2124.0
+    ], 
+    "annual crop 4": [
+      0.0
+    ], 
+    "tree-based system 8": [
+      0.0
+    ], 
+    "forest": [
+      317472.0
+    ], 
+    "settlement": [
+      10956.0
+    ]
+  }, 
+  "Land cover area": {
+    "tree-based system 6": {
+      "post production": [
+        400.0
+      ], 
+      "pioneer": [
+        0.0
+      ], 
+      "peak production": [
+        84.0
+      ], 
+      "early production": [
+        4.0
+      ]
+    }, 
+    "tree-based system 7": {
+      "post production": [
+        0.0
+      ], 
+      "pioneer": [
+        0.0
+      ], 
+      "peak production": [
+        0.0
+      ], 
+      "early production": [
+        0.0
+      ]
+    }, 
+    "tree-based system 4": {
+      "post production": [
+        25980.0
+      ], 
+      "pioneer": [
+        140.0
+      ], 
+      "peak production": [
+        39764.0
+      ], 
+      "early production": [
+        5736.0
+      ]
+    }, 
+    "tree-based system 5": {
+      "post production": [
+        33944.0
+      ], 
+      "pioneer": [
+        4004.0
+      ], 
+      "peak production": [
+        4424.0
+      ], 
+      "early production": [
+        0.0
+      ]
+    }, 
+    "tree-based system 2": {
+      "post production": [
+        48.0
+      ], 
+      "pioneer": [
+        0.0
+      ], 
+      "peak production": [
+        0.0
+      ], 
+      "early production": [
+        0.0
+      ]
+    }, 
+    "tree-based system 3": {
+      "post production": [
+        0.0
+      ], 
+      "pioneer": [
+        636.0
+      ], 
+      "peak production": [
+        0.0
+      ], 
+      "early production": [
+        5036.0
+      ]
+    }, 
+    "tree-based system 1": {
+      "post production": [
+        0.0
+      ], 
+      "pioneer": [
+        0.0
+      ], 
+      "peak production": [
+        0.0
+      ], 
+      "early production": [
+        0.0
+      ]
+    }, 
+    "annual crop 1": [
+      0.0
+    ], 
+    "annual crop 2": [
+      0.0
+    ], 
+    "annual crop 3": [
+      0.0
+    ], 
+    "annual crop 4": [
+      0.0
+    ], 
+    "tree-based system 8": {
+      "post production": [
+        0.0
+      ], 
+      "pioneer": [
+        0.0
+      ], 
+      "peak production": [
+        0.0
+      ], 
+      "early production": [
+        0.0
+      ]
+    }, 
+    "forest": {
+      "pioneer": [
+        134440.0
+      ], 
+      "old secondary": [
+        14204.0
+      ], 
+      "primary": [
+        1032.0
+      ], 
+      "young secondary": [
+        167796.0
+      ]
+    }, 
+    "settlement": [
+      37544.0
+    ]
+  }, 
+  "Revenue": {
+    "tree-based system 6": [
+      0.0
+    ], 
+    "tree-based system 7": [
+      0.0
+    ], 
+    "tree-based system 4": [
+      0.0
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      0.0
+    ], 
+    "tree-based system 3": [
+      0.0
+    ], 
+    "tree-based system 1": [
+      0.0
+    ], 
+    "annual crop 1": [
+      0.0
+    ], 
+    "annual crop 2": [
+      0.0
+    ], 
+    "annual crop 3": [
+      0.0
+    ], 
+    "annual crop 4": [
+      0.0
+    ], 
+    "tree-based system 8": [
+      0.0
+    ], 
+    "off/non-farm": [
+      0.0
+    ], 
+    "non-timber forest product": [
+      0.0
+    ], 
+    "timber": [
+      0.0
+    ]
+  }, 
+  "Available labour": {
+    "tree-based system 6": [
+      0.0
+    ], 
+    "tree-based system 7": [
+      0.0
+    ], 
+    "tree-based system 4": [
+      0.0
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      0.0
+    ], 
+    "tree-based system 3": [
+      0.0
+    ], 
+    "tree-based system 1": [
+      0.0
+    ], 
+    "annual crop 1": [
+      1072439.605689015
+    ], 
+    "annual crop 2": [
+      1072439.605689015
+    ], 
+    "annual crop 3": [
+      0.0
+    ], 
+    "annual crop 4": [
+      0.0
+    ], 
+    "tree-based system 8": [
+      0.0
+    ], 
+    "off/non-farm": [
+      0.0
+    ], 
+    "non-timber forest product": [
+      0.0
+    ], 
+    "timber": [
+      0.0
+    ]
+  }, 
+  "Supply sufficiency": {
+    "tree-based system 6": [
+      0
+    ], 
+    "tree-based system 7": [
+      0
+    ], 
+    "tree-based system 4": [
+      0
+    ], 
+    "tree-based system 5": [
+      0
+    ], 
+    "tree-based system 2": [
+      0
+    ], 
+    "tree-based system 3": [
+      0
+    ], 
+    "tree-based system 1": [
+      0
+    ], 
+    "annual crop 1": [
+      0.52
+    ], 
+    "annual crop 2": [
+      0
+    ], 
+    "annual crop 3": [
+      0
+    ], 
+    "annual crop 4": [
+      0
+    ], 
+    "tree-based system 8": [
+      0
+    ], 
+    "off/non-farm": [
+      0
+    ], 
+    "non-timber forest product": [
+      0
+    ], 
+    "timber": [
+      0
+    ]
+  }, 
+  "Potential yield": {
+    "tree-based system 6": [
+      1193.1417189971382, 
+      1193.1417189971382
+    ], 
+    "tree-based system 7": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 4": [
+      672492.8985612916, 
+      672492.8985612916
+    ], 
+    "tree-based system 5": [
+      7297.198133313092, 
+      7297.198133313092
+    ], 
+    "tree-based system 2": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 3": [
+      0.0, 
+      0.0
+    ], 
+    "annual crop 4": [
+      0.0, 
+      0.0
+    ], 
+    "annual crop 1": [
+      0.0, 
+      0.0
+    ], 
+    "annual crop 2": [
+      0.0, 
+      0.0
+    ], 
+    "annual crop 3": [
+      0.0, 
+      0.0
+    ], 
+    "off/non-farm": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 8": [
+      0.0, 
+      0.0
+    ], 
+    "non-timber forest product": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 1": [
+      0.0, 
+      0.0
+    ], 
+    "timber": [
+      0.0, 
+      0.0
+    ]
+  }, 
+  "Actual yield": {
+    "tree-based system 6": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 7": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 4": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 5": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 2": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 3": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 1": [
+      0.0, 
+      0.0
+    ], 
+    "annual crop 1": [
+      0.0, 
+      0.0
+    ], 
+    "annual crop 2": [
+      0.0, 
+      0.0
+    ], 
+    "annual crop 3": [
+      0.0, 
+      0.0
+    ], 
+    "annual crop 4": [
+      0.0, 
+      0.0
+    ], 
+    "tree-based system 8": [
+      0.0, 
+      0.0
+    ], 
+    "off/non-farm": [
+      0.0, 
+      0.0
+    ], 
+    "non-timber forest product": [
+      0.0, 
+      0.0
+    ], 
+    "timber": [
+      0.0, 
+      0.0
+    ]
+  }, 
+  "Available money": {
+    "tree-based system 6": [
+      0.0
+    ], 
+    "tree-based system 7": [
+      0.0
+    ], 
+    "tree-based system 4": [
+      0.0
+    ], 
+    "tree-based system 5": [
+      0.0
+    ], 
+    "tree-based system 2": [
+      1712317500.0
+    ], 
+    "tree-based system 3": [
+      0.0
+    ], 
+    "tree-based system 1": [
+      171231750.0
+    ], 
+    "annual crop 1": [
+      3748617654.143672
+    ], 
+    "annual crop 2": [
+      3748617654.143672
+    ], 
+    "annual crop 3": [
+      0.0
+    ], 
+    "annual crop 4": [
+      0.0
+    ], 
+    "tree-based system 8": [
+      0.0
+    ], 
+    "off/non-farm": [
+      0.0
+    ], 
+    "non-timber forest product": [
+      0.0
+    ], 
+    "timber": [
+      0.0
+    ]
+  }
+}
