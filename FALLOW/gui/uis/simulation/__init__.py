@@ -56,6 +56,8 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
         QtCore.QObject.connect(self.timeseriesOutput,
                                QtCore.SIGNAL("clicked (QModelIndex)"),
                                self.row_timeseries_clicked)
+        self.horizontalSlider.setDisabled(True)
+        self.horizontalSlider.valueChanged.connect(self.timechange)
         self.active_node = None
         self.data_type = 'map'
 
@@ -112,7 +114,16 @@ class MainWindow(QtGui.QMainWindow, SimulationUI.Ui_MainWindow):
     def display(self):
         pass
 
+    def timechange(self):
+        if self.active_node:
+            self.data = self.active_node.data()['value']
+            if self.data_type == 'map':
+                year = int(self.horizontalSlider.value())
+                filename = self.data[year]
+                self._display_map(filename)
+
     def finish(self):
+        self.horizontalSlider.setDisabled(False)
         if self.active_node:
             self.data = self.active_node.data()['value']
             if self.data_type == 'map':
