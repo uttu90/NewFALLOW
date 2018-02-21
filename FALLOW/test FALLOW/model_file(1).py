@@ -3,8 +3,8 @@ import json
 import copy
 
 from FALLOW.operations.maps import *
-from FALLOW.excel_utils import read_file
-from FALLOW import constants
+from FALLOW.excel_utils import data_from_file
+from FALLOW import constants_old
 from FALLOW.operations import utils
 
 with open('maps.json', 'rb') as file:
@@ -77,47 +77,47 @@ newplot_arrs = {}
 # Loading variables
 # Variables are get from readfile module
 
-disaster_time = read_file.social2['value']['time of disaster event']
-impact_of_disaster = read_file.social2['value']['impact_of_disaster']
-demography = read_file.demography['value']
-harvesting = read_file.biophysic2['harvesting prod.']
-establishment_cost = read_file.economic1['establishment cost']
-establishment_labour = read_file.economic1['establishment labour']
-external_labour = read_file.economic1['external labour']
-agentprop = read_file.farmer_property1
-soilstat = read_file.biophysic1['soil fertility']
+disaster_time = data_from_file.social2['value']['time of disaster event']
+impact_of_disaster = data_from_file.social2['value']['impact_of_disaster']
+demography = data_from_file.demography['value']
+harvesting = data_from_file.biophysic2['harvesting prod.']
+establishment_cost = data_from_file.economic1['establishment cost']
+establishment_labour = data_from_file.economic1['establishment labour']
+external_labour = data_from_file.economic1['external labour']
+agentprop = data_from_file.farmer_property1
+soilstat = data_from_file.biophysic1['soil fertility']
 print 'tuhv' + str(json.dumps(soilstat, indent=2))
 culturaldeliberation = (
-    read_file.social['extension property']['cultural influence'])
-expayofftoland = read_file.economic1['actual profitability']['return to land']
+    data_from_file.social['extension property']['cultural influence'])
+expayofftoland = data_from_file.economic1['actual profitability']['return to land']
 expayofftolabour = (
-    read_file.economic1['actual profitability']['return to labour'])
-lctimebound = read_file.biophysic1['landcover age']['landcover age boundary']
-yieldstat = read_file.biophysic1['landcover property']['yield']
-lcprostat = read_file.biophysic1['landcover property']
+    data_from_file.economic1['actual profitability']['return to labour'])
+lctimebound = data_from_file.biophysic1['landcover age']['landcover age boundary']
+yieldstat = data_from_file.biophysic1['landcover property']['yield']
+lcprostat = data_from_file.biophysic1['landcover property']
 agbiomass_stat = lcprostat['aboveground biomass']['mean']['forest']
-nonlaborcoststat = read_file.economic2['non-labour cost']
-subsidy = read_file.economic1['subsidy']
-print json.dumps(read_file.social2, indent=2)
-unitconverter = read_file.social2['value']['convertion']
-storeprop = read_file.biophysic2['storage properties']
+nonlaborcoststat = data_from_file.economic2['non-labour cost']
+subsidy = data_from_file.economic1['subsidy']
+print json.dumps(data_from_file.social2, indent=2)
+unitconverter = data_from_file.social2['value']['convertion']
+storeprop = data_from_file.biophysic2['storage properties']
 store = {}
-for livetype in constants.livelihood:
+for livetype in constants_old.livelihood:
     store[livetype] = (demography['initial population'] *
                        storeprop['demand per capita'][livetype])
-spatialw = read_file.biophysic2['plot factors']
+spatialw = data_from_file.biophysic2['plot factors']
 print json.dumps(spatialw, indent=2)
-pfireuse = read_file.biophysic2['plot factors']['pfireuse']
-extensionprop = read_file.social['extension property']
-print read_file.economic1.keys()
-extensionsuggestion = read_file.economic1['expected profitability']
-pricestat = read_file.economic1['price']
+pfireuse = data_from_file.biophysic2['plot factors']['pfireuse']
+extensionprop = data_from_file.social['extension property']
+print data_from_file.economic1.keys()
+extensionsuggestion = data_from_file.economic1['expected profitability']
+pricestat = data_from_file.economic1['price']
 
 
 # Loading timeseries
-input_price = read_file.price
-input_ex = read_file.extension_availability
-input_sub = read_file.subsidy_availability
+input_price = data_from_file.price
+input_ex = data_from_file.extension_availability
+input_sub = data_from_file.subsidy_availability
 
 # Map data will exist in two types: map and array
 # For more convenient, map type variable will be named: *_map and array variable
@@ -134,34 +134,34 @@ zerolc_arr = initlanduse_arr - initlanduse_arr
 landcoverage_arr = initlanduse_arr - initlanduse_arr
 # area_arr = map2array(area_map, masked_value)
 zero_arr = area_arr - area_arr
-initlcagestat = read_file.initial_landcover_age
+initlcagestat = data_from_file.initial_landcover_age
 
-for land in constants.land_single_stage:
+for land in constants_old.land_single_stage:
     landcoverage_arr += (
         arrayuper(arraystat(area_arr, initlcagestat['mean'][land],
                             initlcagestat['cv'][land]), 0) *
-        boolean2scalar(initlanduse_arr == constants.landcover_map[land]))
-for land in constants.land_multile_stages:
-    for land_stage in constants.lcage[land]:
+        boolean2scalar(initlanduse_arr == constants_old.landcover_map[land]))
+for land in constants_old.land_multile_stages:
+    for land_stage in constants_old.lcage[land]:
         landcoverage_arr += (
             arrayuper(arraystat(
                 area_arr, initlcagestat['mean'][land][land_stage],
                 initlcagestat['cv'][land][land_stage]), 0) *
             boolean2scalar(initlanduse_arr ==
-                           constants.landcover_map[land][land_stage]))
+                           constants_old.landcover_map[land][land_stage]))
 
 lu_arr = initlanduse_arr - initlanduse_arr
 
-for land in constants.land_single_stage:
+for land in constants_old.land_single_stage:
     lu_arr += (initlanduse_arr ==
-               constants.landcover_map[land])*constants.landuse_map[land]
+               constants_old.landcover_map[land]) * constants_old.landuse_map[land]
 
-for land in constants.land_multile_stages:
+for land in constants_old.land_multile_stages:
     inverse_arr = ~(area_arr == 1)
-    for land_stage in constants.lcage[land]:
+    for land_stage in constants_old.lcage[land]:
         inverse_arr |= (initlanduse_arr ==
-                        constants.landcover_map[land][land_stage])
-    lu_arr += inverse_arr * constants.landuse_map[land]
+                        constants_old.landcover_map[land][land_stage])
+    lu_arr += inverse_arr * constants_old.landuse_map[land]
 
 inverse_area_arr = ~(area_arr == 1)
 # allnewplots_arr = copy.deepcopy(inverse_area_arr)
@@ -178,7 +178,7 @@ critzone_arrs = {}
 # for livetype in constants.livelihood:
 #     critzone_arrs[livetype] = copy.deepcopy(inverse_area_arr)
 phzone_arr = {}
-for livetype in constants.livelihood:
+for livetype in constants_old.livelihood:
     phzone_arr[livetype] = copy.deepcopy(inverse_area_arr)
 # lc_arr = copy.deepcopy(zerolc_arr)
 attr_arrs = {}
@@ -186,7 +186,7 @@ attr_arrs = {}
 #     attr_arr[livetype] = copy.deepcopy(zero_arr)
 zattr_arrs = copy.deepcopy(attr_arrs)
 zattrclass_arrs = {}
-for livetype in constants.livelihood:
+for livetype in constants_old.livelihood:
     zattrclass_arrs[livetype] = {}
     # for z in constants.zclass:
     #     zattrclass_arrs[livetype][z] = None
@@ -199,7 +199,7 @@ newplot_arrs = {}
 fireignition_arrs= {}
 suitable_area_arr = {}
 pyield_arrs = {}
-for livetype in constants.livelihood:
+for livetype in constants_old.livelihood:
     pyield_arrs[livetype] = {}
 nlabcosts_arrs = {}
 nfptzone_arr = copy.deepcopy(inverse_area_arr)
@@ -215,7 +215,7 @@ totestcost_ts = []
 
 init_livelihood_ts = {}
 
-for livetype in constants.livelihood:
+for livetype in constants_old.livelihood:
     init_livelihood_ts[livetype] = []
 
 critzonearea_ts = copy.deepcopy(init_livelihood_ts)
@@ -238,30 +238,30 @@ profit_ts = copy.deepcopy(init_livelihood_ts)
 attyield_ts = copy.deepcopy(init_livelihood_ts)
 scarea = {}
 scarea_ts = {}
-for sc in constants.scname_para:
+for sc in constants_old.scname_para:
     scarea_ts[sc] = []
 
 lcarea_ts = {}
-for land in constants.land_single_stage:
+for land in constants_old.land_single_stage:
     lcarea_ts[land] = []
-for land in constants.land_multile_stages:
+for land in constants_old.land_multile_stages:
     lcarea_ts[land] = {}
-    for land_stage in constants.lcage[land]:
+    for land_stage in constants_old.lcage[land]:
         lcarea_ts[land][land_stage] = []
 
 sclareafract_ts = {}
-for sc in constants.scname_para:
+for sc in constants_old.scname_para:
     sclareafract_ts[sc] = copy.deepcopy(lcarea_ts)
 newplotarea = copy.deepcopy(init_livelihood_ts)
 
 potyield_ts = {}
-for livetype in constants.livelihood:
+for livetype in constants_old.livelihood:
     potyield_ts[livetype] = []
 
 sclarea = {}
-for sc in constants.scname_para:
+for sc in constants_old.scname_para:
     sclarea[sc] = {}
-    for landtype in constants.landuse:
+    for landtype in constants_old.landuse:
         sclarea[sc][landtype] = {}
 expansionprobability = {}
 
@@ -269,16 +269,16 @@ print json.dumps(sclareafract_ts, indent=2)
 
 
 luarea_ts = {}
-for land in constants.landuse:
+for land in constants_old.landuse:
     luarea_ts[land] = []
 
 # Mediate variables
 init_livelihood_mv = {}
-for livetype in constants.livelihood:
+for livetype in constants_old.livelihood:
     init_livelihood_mv[livetype] = 0
 
 price_ts = {}
-for livetype in constants.livelihood:
+for livetype in constants_old.livelihood:
     price_ts[livetype] = []
 
 harvestingefficiency_mv = {}
@@ -294,7 +294,7 @@ exavail_mv = {}
 #     totlabor_mv[agent] = 0
 
 labormoneyfrac_mv = {}
-for livetype in constants.livelihood:
+for livetype in constants_old.livelihood:
     labormoneyfrac_mv[livetype] = {}
 
 landfrac_mv = copy.deepcopy(labormoneyfrac_mv)
@@ -311,7 +311,7 @@ dynamic_map = {'period 1': (0, 50),
                'period 2': (51, 100),
                'period 3': (101, 150),
                'period 4': (151, 200)}
-invz = constants.zclass[:-1]
+invz = constants_old.zclass[:-1]
 invz.reverse()
 
 for time in range(0, simulation_time):
@@ -345,14 +345,14 @@ for time in range(0, simulation_time):
         current_factory_arrs[plant] = sd_factory_arrs[plant][current_period]
     # Incase using timeseries
     if usingtimeseries == 1:
-        for livetype in constants.livelihood:
+        for livetype in constants_old.livelihood:
             price_ts[livetype] = input_price[livetype]
     else:
-        for livetype in constants.livelihood:
+        for livetype in constants_old.livelihood:
             price_ts[livetype].append(stat(pricestat['mean'][livetype],
                                             pricestat['cv'][livetype]))
 
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         harvestingefficiency_mv[livetype] = stat(
             harvesting['mean'][livetype],
             harvesting['cv'][livetype])
@@ -366,7 +366,7 @@ for time in range(0, simulation_time):
             external_labour['mean'][livetype],
             external_labour['cv'][livetype]))
 
-    for farmertype in constants.agent_type:
+    for farmertype in constants_old.agent_type:
         totlabor_mv[farmertype] = (
             totpop_ts[time] *
             agentprop[farmertype]['population fraction'] *
@@ -374,15 +374,15 @@ for time in range(0, simulation_time):
             demography['working days'] *
             (1 - (disasterimpactonworkingday/100.0)))
 
-    for farmertype in constants.agent_type:
+    for farmertype in constants_old.agent_type:
         sum = 0
         count = 0
-        for livetype in constants.livelihood:
+        for livetype in constants_old.livelihood:
             sum += (culturaldeliberation[livetype]*max(
                 0, expayofftolabour[farmertype][livetype]) **
                     agentprop[farmertype]['landuse priority'])
             count += 1
-        for livetype in constants.livelihood:
+        for livetype in constants_old.livelihood:
             # labormoneyfrac_mv[livetype] = {}
             labormoneyfrac_mv[livetype][farmertype] = (
                 culturaldeliberation[livetype] *
@@ -390,23 +390,23 @@ for time in range(0, simulation_time):
                 float(agentprop[farmertype]['landuse priority']/sum)
                 if sum > 0 else 1/count)
 
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         temp = 0
-        for farmertype in constants.agent_type:
+        for farmertype in constants_old.agent_type:
             temp += (labormoneyfrac_mv[livetype][farmertype] *
                      totlabor_mv[farmertype])
         temp += extlabor_mv[livetype]
         availablelabor_ts[livetype].append(temp)
 
-    for farmertype in constants.agent_type:
+    for farmertype in constants_old.agent_type:
         sum = 0
         count = 0
-        for livetype in constants.livelihood:
+        for livetype in constants_old.livelihood:
             sum += (culturaldeliberation[livetype]*max(
                 0, expayofftoland[farmertype][livetype]) **
                     agentprop[farmertype]['landuse priority'])
             count += 1
-        for livetype in constants.livelihood:
+        for livetype in constants_old.livelihood:
             # labormoneyfrac_mv[livetype] = {}
             landfrac_mv[livetype][farmertype] = (
                 culturaldeliberation[livetype] *
@@ -416,96 +416,96 @@ for time in range(0, simulation_time):
         landfrac_mv['off/non-farm'][farmertype] = 0
     current_lu_arr = lu_arr if d_settlement_arr is not None else zero_arr
     lc_arr = copy.deepcopy(zerolc_arr)
-    for landtype in constants.land_single_stage:
+    for landtype in constants_old.land_single_stage:
         lc_arr += (
-            boolean2scalar(
-                current_lu_arr == constants.landcover_map[landtype]) *
-            constants.landcover_map[landtype])
-    for landtype in constants.land_multile_stages:
-        for idx, land_stage in enumerate(constants.lcage[landtype][:-1]):
-            lc_arr += (
                 boolean2scalar(
-                    (current_lu_arr == constants.landuse_map[landtype]) &
-                    (lctimebound[landtype][land_stage] <= landcoverage_arr) &
-                    (landcoverage_arr <
-                     lctimebound[landtype][constants.lcage[landtype][idx+1]])
-                ) * constants.landcover_map[landtype][land_stage]
+                    current_lu_arr == constants_old.landcover_map[landtype]) *
+                constants_old.landcover_map[landtype])
+    for landtype in constants_old.land_multile_stages:
+        for idx, land_stage in enumerate(constants_old.lcage[landtype][:-1]):
+            lc_arr += (
+                    boolean2scalar(
+                        (current_lu_arr == constants_old.landuse_map[landtype]) &
+                        (lctimebound[landtype][land_stage] <= landcoverage_arr) &
+                        (landcoverage_arr <
+                         lctimebound[landtype][constants_old.lcage[landtype][idx + 1]])
+                ) * constants_old.landcover_map[landtype][land_stage]
             )
         lc_arr += (
-            boolean2scalar(
-                (current_lu_arr == constants.landuse_map[landtype]) &
-                (landcoverage_arr >=
-                 lctimebound[landtype][constants.lcage[landtype][-1]])
+                boolean2scalar(
+                    (current_lu_arr == constants_old.landuse_map[landtype]) &
+                    (landcoverage_arr >=
+                     lctimebound[landtype][constants_old.lcage[landtype][-1]])
             ) *
-            constants.landcover_map[landtype][constants.lcage[landtype][-1]])
+                constants_old.landcover_map[landtype][constants_old.lcage[landtype][-1]])
 
-    for landtype in constants.land_single_stage:
+    for landtype in constants_old.land_single_stage:
         lcarea_ts[landtype].append(
             total(boolean2scalar(
-                lc_arr == constants.landcover_map[landtype])) * pixelsize)
+                lc_arr == constants_old.landcover_map[landtype])) * pixelsize)
 
-    for landtype in constants.land_multile_stages:
-        for land_stage in constants.lcage[landtype]:
+    for landtype in constants_old.land_multile_stages:
+        for land_stage in constants_old.lcage[landtype]:
             lcarea_ts[landtype][land_stage].append(
-            total(boolean2scalar(
-                lc_arr == constants.landcover_map[landtype][land_stage])) *
-            pixelsize)
+                total(boolean2scalar(
+                    lc_arr == constants_old.landcover_map[landtype][land_stage])) *
+                pixelsize)
 
-    for landtype in constants.landuse:
+    for landtype in constants_old.landuse:
         luarea_ts[landtype].append(
             total(boolean2scalar(
-                lu_arr == constants.landuse_map[landtype]
+                lu_arr == constants_old.landuse_map[landtype]
             )) * pixelsize
         )
 
-    for idx, sc in enumerate(constants.scname_para):
+    for idx, sc in enumerate(constants_old.scname_para):
         sum = 0
-        for landtype in constants.land_single_stage:
+        for landtype in constants_old.land_single_stage:
             sclarea[sc][landtype] = total(
                 boolean2scalar(
                     (subcatchment_arr == idx) &
-                    (landcoverage_arr == constants.landcover_map[landtype]))
+                    (landcoverage_arr == constants_old.landcover_map[landtype]))
             ) * pixelsize
             sum += sclarea[sc][landtype]
-        for landtype in constants.land_multile_stages:
-            for land_stage in constants.lcage[landtype]:
+        for landtype in constants_old.land_multile_stages:
+            for land_stage in constants_old.lcage[landtype]:
                 sclarea[sc][landtype][land_stage] = total(
                     boolean2scalar(
                         (subcatchment_arr == idx) &
                         (landcoverage_arr ==
-                         constants.landcover_map[landtype][land_stage]))
+                         constants_old.landcover_map[landtype][land_stage]))
                 ) * pixelsize
                 sum += sclarea[sc][landtype][land_stage]
         scarea[sc] = sum
 
-    for idx, sc in enumerate(constants.scname_para):
+    for idx, sc in enumerate(constants_old.scname_para):
         scarea_ts[sc].append(total(
             boolean2scalar(subcatchment_arr == idx)
         ) * pixelsize)
 
-    for sc in constants.scname_para:
-        for landtype in constants.land_single_stage:
+    for sc in constants_old.scname_para:
+        for landtype in constants_old.land_single_stage:
             sclareafract_ts[sc][landtype].append(
                 sclarea[sc][landtype]/scarea[sc] if scarea[sc] > 0 else 0)
-        for landtype in constants.land_multile_stages:
-            for land_stage in constants.lcage[landtype]:
+        for landtype in constants_old.land_multile_stages:
+            for land_stage in constants_old.lcage[landtype]:
                 sclareafract_ts[sc][landtype][land_stage].append(
                     sclarea[sc][landtype][land_stage] / scarea[sc] if
                     scarea[sc] > 0 else 0)
     marginalagriculture_arr = copy.deepcopy(inverse_area_arr)
     marginalAF_arr = copy.deepcopy(inverse_area_arr)
     criticalzone_arr = copy.deepcopy(inverse_area_arr)
-    for land_stage in constants.lcage['forest']:
+    for land_stage in constants_old.lcage['forest']:
         criticalzone_arr |= (
-            lc_arr == constants.landcover_map['forest'][land_stage])
-    for landtype in constants.trees_based:
+                lc_arr == constants_old.landcover_map['forest'][land_stage])
+    for landtype in constants_old.trees_based:
         criticalzone_arr |= (
-        lc_arr ==
-        constants.landcover_map[landtype][constants.lcage[landtype][-1]])
+                lc_arr ==
+                constants_old.landcover_map[landtype][constants_old.lcage[landtype][-1]])
     criticalzone_arr |= (marginalagriculture_arr | marginalAF_arr |
                          inverse_reserve_arr)
     totcritzonearea = total(boolean2scalar(criticalzone_arr))
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         critzonearea_ts[livetype].append(
             (agentprop['farmer 1']['population fraction'] *
              landfrac_mv[livetype]['farmer 1'] +
@@ -515,7 +515,7 @@ for time in range(0, simulation_time):
     randcritzone_arr = arrayfill(uniform(criticalzone_arr), 1) * area_arr
     allnewplots_arr = copy.deepcopy(inverse_area_arr)
     sumcrit_arr = (1.0 * boolean2scalar(inverse_area_arr)).astype(np.float32)
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         critzoneprob_mv[livetype] = (
             critzonearea_ts[livetype][time]/totcritzonearea
             if totcritzonearea > 0 else 0)
@@ -529,30 +529,30 @@ for time in range(0, simulation_time):
 
     phzone_arr['off/non-farm'] = copy.deepcopy(inverse_area_arr)
     phzone_arr['timber'] = copy.deepcopy(logzone_arr)
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         if livetype in ['off/non-farm', 'timber']:
             pass
         else:
             print livetype
-            if livetype in constants.crops:
+            if livetype in constants_old.crops:
                 phzone_arr[livetype] = (
-                    (lc_arr == constants.landcover_map[livetype]) &
-                    inverse_reserve_arr)
+                        (lc_arr == constants_old.landcover_map[livetype]) &
+                        inverse_reserve_arr)
             elif livetype == 'non-timber forest product':
-                for land_stage in constants.lcage['forest']:
+                for land_stage in constants_old.lcage['forest']:
                     phzone_arr[livetype] |= (
                         (lc_arr ==
-                         constants.landcover_map['forest'][land_stage])
+                         constants_old.landcover_map['forest'][land_stage])
                     )
             else:
-                for land_stage in constants.lcage[livetype]:
+                for land_stage in constants_old.lcage[livetype]:
                     phzone_arr[livetype] |= (
                         (lc_arr ==
-                         constants.landcover_map[livetype][land_stage])
+                         constants_old.landcover_map[livetype][land_stage])
                     )
         phzone_arr[livetype] &= inverse_reserve_arr
     phzone_arr['non-timber forest product'] |= nfptzone_arr
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         harvestingarea_mv[livetype] = (
             total(boolean2scalar(phzone_arr[livetype])))
         dexistingplit_arrs[livetype] = (
@@ -560,28 +560,28 @@ for time in range(0, simulation_time):
         )
     soildepletionrate_arr = 0.0 * area_arr
     soilrecoverytime_arr = 0.0 * area_arr
-    for landtype in constants.land_single_stage:
+    for landtype in constants_old.land_single_stage:
         soildepletionrate_arr += (
-            boolean2scalar(lc_arr == constants.landcover_map[landtype]) *
-            arrayuper(
+                boolean2scalar(lc_arr == constants_old.landcover_map[landtype]) *
+                arrayuper(
                     arraystat(
                             area_arr,
                             soilstat['depletion rate']['mean'][landtype],
                             soilstat['depletion rate']['cv'][landtype]), 0))
         soilrecoverytime_arr += (
-            boolean2scalar(lc_arr == constants.landcover_map[landtype]) *
-            arrayuper(
+                boolean2scalar(lc_arr == constants_old.landcover_map[landtype]) *
+                arrayuper(
                     arraystat(
                             area_arr,
                             soilstat['half time recovery']['mean'][landtype],
                             soilstat['half time recovery']['cv'][landtype]), 0
             )
         )
-    for landtype in constants.land_multile_stages:
-        for land_stage in constants.lcage[landtype]:
+    for landtype in constants_old.land_multile_stages:
+        for land_stage in constants_old.lcage[landtype]:
             soildepletionrate_arr += (
-                boolean2scalar(lc_arr == constants.landcover_map[landtype]) *
-                arrayuper(
+                    boolean2scalar(lc_arr == constants_old.landcover_map[landtype]) *
+                    arrayuper(
                     arraystat(
                             area_arr,
                             soilstat['depletion rate']['mean']
@@ -589,8 +589,8 @@ for time in range(0, simulation_time):
                             soilstat['depletion rate']['cv']
                             [landtype][land_stage]), 0))
         soilrecoverytime_arr += (
-            boolean2scalar(lc_arr == constants.landcover_map[landtype]) *
-            arrayuper(
+                boolean2scalar(lc_arr == constants_old.landcover_map[landtype]) *
+                arrayuper(
                     arraystat(
                             area_arr,
                             soilstat['half time recovery']
@@ -604,12 +604,12 @@ for time in range(0, simulation_time):
     soildepletion_arr = arrayuper(soildepletion_arr, 0)
     totlaborcosts = 0
     totnonlaborcosts = 0
-    for crop in constants.crops:
-        croparea_arr |= (lc_arr == constants.landcover_map[crop])
+    for crop in constants_old.crops:
+        croparea_arr |= (lc_arr == constants_old.landcover_map[crop])
 
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         pyield_arrs[livetype] = 0.0
-        if livetype in constants.crops:
+        if livetype in constants_old.crops:
             pyield_arrs[livetype] = arraystat(
                 area_arr,
                 yieldstat['mean'][livetype],
@@ -623,13 +623,13 @@ for time in range(0, simulation_time):
             pyield_arrs[livetype] = arraystat(area_arr, 0, 0)
         else:
             landtype = 'forest' if livetype == 'timber' else livetype
-            for land_stage in constants.lcage[landtype]:
+            for land_stage in constants_old.lcage[landtype]:
                 pyield_arrs[livetype] += arraystat(
                     area_arr,
                     yieldstat['mean'][landtype][land_stage],
                     yieldstat['cv'][landtype][land_stage])
 
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         nlabcosts_arrs[livetype] = 0.0
         if livetype == 'off/non-farm':
             nlabcosts_arrs[livetype] = (
@@ -637,31 +637,31 @@ for time in range(0, simulation_time):
                     area_arr,
                     nonlaborcoststat['mean'][livetype],
                     nonlaborcoststat['cv'][livetype]) *
-                boolean2scalar(lc_arr == constants.landcover_map['settlement']))
+                boolean2scalar(lc_arr == constants_old.landcover_map['settlement']))
         elif livetype == 'non-timber forest product':
             nlabcosts_arrs[livetype] = arraystat(
                 area_arr,
                 nonlaborcoststat['mean'][livetype],
                 nonlaborcoststat['cv'][livetype])
-        elif livetype in constants.crops:
+        elif livetype in constants_old.crops:
             nlabcosts_arrs[livetype] = (
                 arraystat(
                     area_arr,
                     nonlaborcoststat['mean'][livetype],
                     nonlaborcoststat['cv'][livetype]) *
-                boolean2scalar(lc_arr == constants.landcover_map[livetype]))
+                boolean2scalar(lc_arr == constants_old.landcover_map[livetype]))
         else:
             landtype = 'forest' if livetype == 'timber' else livetype
-            for land_stage in constants.lcage[landtype]:
+            for land_stage in constants_old.lcage[landtype]:
                 nlabcosts_arrs[livetype] += (
                     arraystat(area_arr,
                               nonlaborcoststat['mean'][livetype][land_stage],
                               nonlaborcoststat['cv'][livetype][land_stage]) *
                     boolean2scalar(
                         lc_arr ==
-                        constants.landcover_map[landtype][land_stage]))
+                        constants_old.landcover_map[landtype][land_stage]))
 
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         potyield_ts[livetype].append(
             total(pyield_arrs[livetype] *
                   boolean2scalar(phzone_arr[livetype])))
@@ -671,7 +671,7 @@ for time in range(0, simulation_time):
                 harvestingefficiency_mv[livetype])
         )
 
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         potyield_ts[livetype].append(
             total(pyield_arrs[livetype] *
                   boolean2scalar(phzone_arr[livetype])))
@@ -711,72 +711,72 @@ for time in range(0, simulation_time):
     payofftolabor_ts['off/non-farm'][time] = max(
         payofftolabor_ts['off/non-farm'][time], 0)
 
-    for crop in constants.crops:
+    for crop in constants_old.crops:
         if ((expayofftoland['farmer 1'][crop] < 0 and
                 expayofftoland['farmer2'][crop]) or
             (expayofftolabour['farmer 1'][crop] < 0 and
                 expayofftolabour['farmer 2'][crop] < 0)):
-            marginalagriculture_arr |=\
-                (lc_arr == constants.landcover_map[crop]) &\
+            marginalagriculture_arr |= \
+                (lc_arr == constants_old.landcover_map[crop]) & \
                 (pyield_arrs[crop] <= 0.5 * pixelsize)
 
-    for tree in constants.trees_based:
+    for tree in constants_old.trees_based:
         if profit_ts[tree][time] < 0:
             marginalAF_arr |= (
-                (lc_arr == constants.landcover_map[tree]['peak production']) |
-                (lc_arr == constants.landcover_map[tree]['post production']))
+                    (lc_arr == constants_old.landcover_map[tree]['peak production']) |
+                    (lc_arr == constants_old.landcover_map[tree]['post production']))
 
     floorbiomassfraction_arr = 1.0 * zero_arr
     pfireescape_arr = 1.0 * zero_arr
     agbiomass_arr = 1.0 * zerolc_arr
 
-    for landtype in constants.land_single_stage:
+    for landtype in constants_old.land_single_stage:
         agbiomass_arr += (
-            boolean2scalar(
-                lc_arr == constants.landcover_map[landtype]) *
+                boolean2scalar(
+                    lc_arr == constants_old.landcover_map[landtype]) *
                 arraystat(
                     area_arr,
                     lcprostat['aboveground biomass']['mean'][landtype],
                     lcprostat['aboveground biomass']['cv'][landtype]))
         floorbiomassfraction_arr += (
-            boolean2scalar(
-                lc_arr == constants.landcover_map[landtype]) *
+                boolean2scalar(
+                    lc_arr == constants_old.landcover_map[landtype]) *
                 arraystat(
                     area_arr,
                     lcprostat['floor biomass fraction']['mean'][landtype],
                     lcprostat['floor biomass fraction']['cv'][landtype]))
         pfireescape_arr += (
-            boolean2scalar(
-                lc_arr == constants.landcover_map[landtype]) *
-            arraystat(
+                boolean2scalar(
+                    lc_arr == constants_old.landcover_map[landtype]) *
+                arraystat(
                 area_arr,
                 lcprostat['probability of fire spreading']['mean'][landtype],
                 lcprostat['probability of fire spreading']['cv'][landtype]))
 
-    for landtype in constants.land_multile_stages:
-        for land_stage in constants.lcage[landtype]:
+    for landtype in constants_old.land_multile_stages:
+        for land_stage in constants_old.lcage[landtype]:
             agbiomass_arr += (
-                boolean2scalar(
-                    lc_arr == constants.landcover_map[landtype][land_stage]) *
-                arraystat(
+                    boolean2scalar(
+                        lc_arr == constants_old.landcover_map[landtype][land_stage]) *
+                    arraystat(
                     area_arr,
                     lcprostat['aboveground biomass']['mean'][
                         landtype][land_stage],
                     lcprostat['aboveground biomass']['cv'][
                         landtype][land_stage]))
             floorbiomassfraction_arr += (
-                boolean2scalar(
-                    lc_arr == constants.landcover_map[landtype][land_stage]) *
-                arraystat(
+                    boolean2scalar(
+                        lc_arr == constants_old.landcover_map[landtype][land_stage]) *
+                    arraystat(
                     area_arr,
                     lcprostat['floor biomass fraction']['mean'][
                         landtype][land_stage],
                     lcprostat['floor biomass fraction']['cv'][
                         landtype][land_stage]))
             pfireescape_arr += (
-                boolean2scalar(
-                    lc_arr == constants.landcover_map[landtype][land_stage]) *
-                arraystat(
+                    boolean2scalar(
+                        lc_arr == constants_old.landcover_map[landtype][land_stage]) *
+                    arraystat(
                     area_arr,
                     lcprostat['probability of fire spreading']['mean'][
                         landtype][land_stage],
@@ -797,7 +797,7 @@ for time in range(0, simulation_time):
     floorbiom_arr = agbiomass_arr * floorbiomassfraction_arr
     totagb_ts.append(total(agbiomass_arr))
     totagc_ts.append(total(agcarbon_arr))
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         store[livetype] = max(0,
                               store[livetype] *
                               (1 - float(storeprop['loss fraction'][livetype])) +
@@ -805,14 +805,14 @@ for time in range(0, simulation_time):
 
     zfert_arr = standardize(soilfert_arr)
     zfb = standardize(floorbiom_arr)
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         zdplot_arrs[livetype] = standardize(dexistingplit_arrs[livetype])
 
     maxy = attyield_ts['off/non-farm'][time]
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         maxy = max(maxy, attyield_ts[livetype][time])
 
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         zyield[livetype] = (
             0 if maxy == 0 else attyield_ts[livetype][time] / maxy)
 
@@ -821,7 +821,7 @@ for time in range(0, simulation_time):
 
     suitable = {}
     nonsuitable = {}
-    for livetype in constants.livelihood[1:]:
+    for livetype in constants_old.livelihood[1:]:
         suitable[livetype] = (
             spatialw['soil fertility'][livetype] * zfert_arr +
             spatialw['land prod.'][livetype] * zyield[livetype])
@@ -834,13 +834,13 @@ for time in range(0, simulation_time):
             spatialw['slope'][livetype] * slope_arr +
             spatialw['floor biomass'][livetype] * zfb)
 
-        if livetype in constants.crops:
+        if livetype in constants_old.crops:
             a = (boolean2scalar(critzone_arrs[livetype]) *
                  boolean2scalar(~(marginalagriculture_arr)))
             suitable[livetype] += (
                 spatialw['land suitability'][livetype] * sui_arrs[livetype])
             attr_arrs[livetype] = a * suitable[livetype]/nonsuitable[livetype]
-        elif livetype in constants.trees_based:
+        elif livetype in constants_old.trees_based:
             a = (boolean2scalar(critzone_arrs[livetype]) *
                  boolean2scalar(~(marginalAF_arr)))
             suitable[livetype] += (
@@ -852,7 +852,7 @@ for time in range(0, simulation_time):
             attr_arrs[livetype] = a * suitable[livetype]/nonsuitable[livetype]
 
     attr_arrs['off/non-farm'] = 0 * zero_arr
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         n = total(boolean2scalar(critzone_arrs[livetype]))
         s = total(attr_arrs[livetype])
         ss = total(np.square(attr_arrs[livetype]))
@@ -867,7 +867,7 @@ for time in range(0, simulation_time):
             zattr_arrs[livetype] = arrayfull(area_arr, -5)
             zattr_arrs[livetype] = np.ma.masked_where(
                 zattr_arrs[livetype] == -9999, zattr_arrs[livetype])
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         zattrclass_arrs[livetype]['z1'] = zattr_arrs[livetype] < 0
         zattrclass_arrs[livetype]['z2'] = (
             (zattr_arrs[livetype] >= 0) & (zattr_arrs[livetype] < 1))
@@ -876,20 +876,20 @@ for time in range(0, simulation_time):
         zattrclass_arrs[livetype]['z4'] = (
             (zattr_arrs[livetype] >= 2) & (zattr_arrs[livetype] < 3))
         zattrclass_arrs[livetype]['z5'] = zattr_arrs[livetype] >= 3
-    for livetype in constants.livelihood:
-        for z in constants.zclass:
+    for livetype in constants_old.livelihood:
+        for z in constants_old.zclass:
             zfreq_arrs[livetype][z] = total(
                 boolean2scalar(zattrclass_arrs[livetype][z]))
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         zexc_arrs[livetype]['z5'] = 0
         for z in invz:
-            idx = constants.zclass.index(z)
+            idx = constants_old.zclass.index(z)
             zexc_arrs[livetype][z] = (
-                zexc_arrs[livetype][constants.zclass[idx + 1]] +
-                zfreq_arrs[livetype][constants.zclass[idx + 1]])
-    for livetype in constants.livelihood:
+                    zexc_arrs[livetype][constants_old.zclass[idx + 1]] +
+                    zfreq_arrs[livetype][constants_old.zclass[idx + 1]])
+    for livetype in constants_old.livelihood:
         temp = 0
-        for agent in constants.agent_type:
+        for agent in constants_old.agent_type:
             temp += labormoneyfrac_mv[livetype][agent] * balance
         if usingtimeseries == 1:
             temp += (
@@ -898,7 +898,7 @@ for time in range(0, simulation_time):
         else:
             temp += subsidy['established subsidy'][livetype]
         availablemoney_ts[livetype].append(temp)
-    for livetype in constants.livelihood[1:]:
+    for livetype in constants_old.livelihood[1:]:
         exparealabor_ts[livetype].append(
             availablelabor_ts[livetype][time] / estlabor_mv[livetype]
             if estlabor_mv[livetype] > 0 else 0)
@@ -910,8 +910,8 @@ for time in range(0, simulation_time):
                 exparealabor_ts[livetype][time],
                 critzonearea_ts[livetype][time]))
     exparea_ts['off/non-farm'].append(0)
-    for livetype in constants.livelihood:
-        for z in constants.zclass:
+    for livetype in constants_old.livelihood:
+        for z in constants_old.zclass:
             expprob_arrs[livetype][z] = (
                 max(0,
                     min(zfreq_arrs[livetype][z],
@@ -923,9 +923,9 @@ for time in range(0, simulation_time):
 
 
     allfireignition_arr = copy.deepcopy(inverse_area_arr)
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         expansionprobability[livetype] = 0
-        for z in constants.zclass:
+        for z in constants_old.zclass:
             expansionprobability[livetype] += (
                 expprob_arrs[livetype][z] +
                 scalar2boolean(zattrclass_arrs[livetype][z]))
@@ -945,12 +945,12 @@ for time in range(0, simulation_time):
 
     allnewplots_arr = copy.deepcopy(inverse_area_arr)
     cost = 0
-    for livetype in constants.livelihood[3:]:
+    for livetype in constants_old.livelihood[3:]:
         allnewplots_arr |= newplot_arrs[livetype]
         cost += estcost_mv[livetype] * total(newplot_arrs[livetype])
     totestcost_ts.append(cost)
     total_demand = {}
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         total_demand[livetype] = (
             totpop_ts[time] * storeprop['demand per capita'][livetype])
         price = balance/price_ts[livetype][time] if price_ts[livetype][time] > 0 else 0
@@ -994,13 +994,13 @@ for time in range(0, simulation_time):
         (totpop_ts[time] *
         (1 + float(demography['annual growth rate']))) *
         (1 - (disasterimpactonhuman / 100)))
-    for livetype in constants.livelihood:
+    for livetype in constants_old.livelihood:
         if usingtimeseries == 1:
             exavail_mv[livetype] = input_ex[livetype][time]
         else:
             exavail_mv[livetype] = extensionprop['cultural influence']['off/non-farm']
-    for agent in constants.agent_type:
-        for livetype in constants.livelihood:
+    for agent in constants_old.agent_type:
+        for livetype in constants_old.livelihood:
             if payofftolabor_ts[livetype][time] <= 0:
                 expayofftolabour[agent][livetype] = 0.0
             else:
@@ -1046,19 +1046,19 @@ for time in range(0, simulation_time):
         disasterimpactzone_arr |
         nonselectedagricplot_arr)
     plot_arr = (
-        (
-            (lu_arr == constants.landuse_map['settlement']) *
-            constants.landuse_map['settlement']) +
-        (
-            (lu_arr == constants.landuse_map['forest']) *
-            constants.landuse_map['forest']))
-    for landtype in constants.landuse[2:]:
+            (
+                    (lu_arr == constants_old.landuse_map['settlement']) *
+                    constants_old.landuse_map['settlement']) +
+            (
+                    (lu_arr == constants_old.landuse_map['forest']) *
+                    constants_old.landuse_map['forest']))
+    for landtype in constants_old.landuse[2:]:
         plot_arr += (
-            (lu_arr == constants.landuse_map[landtype]) *
-            constants.landuse_map[landtype])
+                (lu_arr == constants_old.landuse_map[landtype]) *
+                constants_old.landuse_map[landtype])
     lu_arr = plot_arr + boolean2scalar(~(plot_arr > 0)) * lu_arr
     age_stat = {}
-    for forest_stage in constants.lcage['forest']:
+    for forest_stage in constants_old.lcage['forest']:
         age_stat[forest_stage] = arraystat(
             area_arr,
             initlcagestat['mean']['forest'][forest_stage],

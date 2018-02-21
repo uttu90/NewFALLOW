@@ -7,8 +7,8 @@ import ConfigParser
 import xlrd as wb
 
 from FALLOW.operations.maps import *
-from FALLOW.excel_utils import read_file
-from FALLOW.constants import  *
+from FALLOW.excel_utils import data_from_file
+from FALLOW.constants_old import  *
 from FALLOW.operations import utils
 
 masked_value = -9999
@@ -43,28 +43,28 @@ class SimulatingThread(QtCore.QThread):
         input_file = os.path.join(self.project, 'input_parameters.xls')
         book = wb.open_workbook(input_file)
         sheet = book.sheet_by_name('Sheet1')
-        self.biophysic1 = read_file.read_table(sheet, landcover,
-                                               1, 16, 24, 27, 77)
-        self.biophysic2 = read_file.read_table(sheet, livelihood,
-                                               1, 14, 81, 83, 98)
-        self.economic1 = read_file.read_table(sheet, livelihood,
-                                              1, 17, 102, 105, 120)
-        self.economic2 = read_file.read_table(sheet, livelihood_age,
-                                              3, 5, 122, 124, 175)
-        self.social1 = read_file.read_table(sheet, livelihood, 3,
-                                            6, 178, 180, 195)
-        self.social2 = read_file.read_table(sheet, social_disaster_para,
-                                            3, 4, 215, 216, 224)
-        self.demography = read_file.read_table(sheet, demography_para,
-                                               4, 5, 199, 200, 206)
-        self.farmer_property1 = read_file.read_table(sheet, farmer_property_para,
-                                                    4, 6, 209, 210, 214)
-        self.price_ts = read_file.read_timeseries(sheet, livelihood,
-                                                  231, 1, 101)
-        self.ex_ts = read_file.read_timeseries(sheet, livelihood,
-                                               250, 1, 101)
-        self.sub_ts = read_file.read_timeseries(sheet, livelihood,
-                                                269, 1, 101)
+        self.biophysic1 = data_from_file.read_table(sheet, landcover,
+                                                    1, 16, 24, 27, 77)
+        self.biophysic2 = data_from_file.read_table(sheet, livelihood,
+                                                    1, 14, 81, 83, 98)
+        self.economic1 = data_from_file.read_table(sheet, livelihood,
+                                                   1, 17, 102, 105, 120)
+        self.economic2 = data_from_file.read_table(sheet, livelihood_age,
+                                                   3, 5, 122, 124, 175)
+        self.social1 = data_from_file.read_table(sheet, livelihood, 3,
+                                                 6, 178, 180, 195)
+        self.social2 = data_from_file.read_table(sheet, social_disaster_para,
+                                                 3, 4, 215, 216, 224)
+        self.demography = data_from_file.read_table(sheet, demography_para,
+                                                    4, 5, 199, 200, 206)
+        self.farmer_property1 = data_from_file.read_table(sheet, farmer_property_para,
+                                                          4, 6, 209, 210, 214)
+        self.price_ts = data_from_file.read_timeseries(sheet, livelihood,
+                                                       231, 1, 101)
+        self.ex_ts = data_from_file.read_timeseries(sheet, livelihood,
+                                                    250, 1, 101)
+        self.sub_ts = data_from_file.read_timeseries(sheet, livelihood,
+                                                     269, 1, 101)
 
     def run(self):
         self.timeseries_output = copy.deepcopy(timeseries_maps)

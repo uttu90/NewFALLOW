@@ -61,7 +61,7 @@ class Node(object):
 
 if __name__ == '__main__':
     import json
-    from FALLOW.constants import maps
+    from FALLOW.constants_old import maps
 
     with open('maps.json', 'rb') as file:
         x_root = json.load(file)

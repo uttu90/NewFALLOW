@@ -6,7 +6,7 @@ import time
 
 import numpy
 
-from FALLOW.constants import output_maps_key_ref, timeseries_key_ref
+from FALLOW.constants_old import output_maps_key_ref, timeseries_key_ref
 from FALLOW.models import tree
 
 from PyQt4 import QtGui, QtCore
