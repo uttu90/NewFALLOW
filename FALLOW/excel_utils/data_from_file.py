@@ -59,3 +59,5 @@ environment = excel_utils.read_column(
     constants.ENVIRONMENT_PROPERTY,
     ws.col_values(3, 216, 224)
 )
+
+print environment

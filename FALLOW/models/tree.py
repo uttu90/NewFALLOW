@@ -1,6 +1,6 @@
 from PyQt4 import QtCore
 import json
-import node
+from FALLOW.models import node
 
 from FALLOW.operations import utils
 
@@ -135,7 +135,6 @@ class TreModel(QtCore.QAbstractItemModel):
 
 if __name__ == '__main__':
     import sys
-    import os
 
     from PyQt4.QtCore import *
     from PyQt4.QtGui import *

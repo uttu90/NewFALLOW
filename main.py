@@ -1,10 +1,10 @@
 import sys
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtWidgets
 
 from FALLOW.gui.uis import mainwindow
 
-app = QtGui.QApplication(sys.argv)
-form = mainwindow.MainWindow()
-form.show()
-app.exec_()
-del form
+window = QtWidgets.QApplication(sys.argv)
+app = mainwindow.App()
+app.show()
+window.exec_()
+del app

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>693</height>
+    <width>1633</width>
+    <height>1053</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,28 +38,6 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QTextEdit" name="textEdit">
-         <property name="geometry">
-          <rect>
-           <x>550</x>
-           <y>0</y>
-           <width>231</width>
-           <height>181</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border-image: url(:/background/text_background.jpg);</string>
-         </property>
-         <property name="html">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#00ff00;&quot;&gt;FALLOW&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;FALLOW (Forest, Agroforest, Low-value Lands Or Waste?) model was designed (van Noordwijk, 2001) to simulate land-cover change at landscape level driven by stakeholder decisions on labour and land allocation, and its consequence to local people's income and carbon storage in the landscape.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-        </widget>
        </widget>
       </item>
      </layout>
@@ -67,49 +45,26 @@ p, li { white-space: pre-wrap; }
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="action_Maps"/>
-   <addaction name="separator"/>
-   <addaction name="action_Social"/>
-   <addaction name="action_Economy"/>
-   <addaction name="action_Biophysics"/>
-   <addaction name="action_Other"/>
-   <addaction name="separator"/>
-   <addaction name="action_Input_Timeseries"/>
-   <addaction name="separator"/>
-   <addaction name="action_Play"/>
-   <addaction name="separator"/>
-  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>21</height>
+     <width>1633</width>
+     <height>38</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuInput">
     <property name="title">
      <string>Input</string>
     </property>
-    <addaction name="action_Maps"/>
-    <addaction name="action_Input_Timeseries"/>
+    <addaction name="inputMap"/>
    </widget>
    <widget class="QMenu" name="menuSimulation">
     <property name="title">
      <string>Simulation</string>
     </property>
-    <addaction name="action_Play"/>
+    <addaction name="play"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -128,17 +83,24 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>Project</string>
     </property>
-    <addaction name="actionOpen_project"/>
-    <addaction name="actionCreate_new_project"/>
-    <addaction name="actionClone_project"/>
+    <addaction name="openProject"/>
+    <addaction name="createProject"/>
+   </widget>
+   <widget class="QMenu" name="menuImport">
+    <property name="title">
+     <string>Import</string>
+    </property>
+    <addaction name="importData"/>
+    <addaction name="reload"/>
    </widget>
    <addaction name="menuProject"/>
    <addaction name="menuInput"/>
+   <addaction name="menuImport"/>
    <addaction name="menuSimulation"/>
    <addaction name="menuHelp"/>
    <addaction name="menuLanguages"/>
   </widget>
-  <action name="action_Maps">
+  <action name="inputMap">
    <property name="icon">
     <iconset>
      <normaloff>:/MainWindowIcons/icon/map.png</normaloff>
@@ -217,7 +179,7 @@ p, li { white-space: pre-wrap; }
     <string>Ctrl+T</string>
    </property>
   </action>
-  <action name="action_Play">
+  <action name="play">
    <property name="icon">
     <iconset>
      <normaloff>:/MainWindowIcons/icon/transparent/play.png</normaloff>:/MainWindowIcons/icon/transparent/play.png</iconset>
@@ -266,14 +228,20 @@ p, li { white-space: pre-wrap; }
     <string>Vietnamese</string>
    </property>
   </action>
-  <action name="actionOpen_project">
+  <action name="openProject">
    <property name="text">
     <string>Open project</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
-  <action name="actionCreate_new_project">
+  <action name="createProject">
    <property name="text">
     <string>Create new project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
   <action name="actionClone_project">
@@ -284,6 +252,22 @@ p, li { white-space: pre-wrap; }
   <action name="actionLand_cover">
    <property name="text">
     <string>Land cover</string>
+   </property>
+  </action>
+  <action name="importData">
+   <property name="text">
+    <string>Choose data file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="reload">
+   <property name="text">
+    <string>Reload</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
    </property>
   </action>
  </widget>

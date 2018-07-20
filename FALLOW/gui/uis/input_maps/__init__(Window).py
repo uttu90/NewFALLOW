@@ -4,9 +4,9 @@ import sys
 import warnings
 
 import numpy
-from PyQt5 import QtCore, QtWidgets
-# from PyQt5 import QtGui
-# from PyQt5 import QtWidgets
+from PyQt5 import QtCore
+from PyQt5 import QtGui
+from PyQt5 import QtWidgets
 import tree_model
 from matplotlib import cm as cms
 from matplotlib.cbook import MatplotlibDeprecationWarning
@@ -20,7 +20,7 @@ from matplotlib.backends.backend_qt4agg import (
     NavigationToolbar2QT as NavigationToolbar)
 from matplotlib.backends import qt_compat
 
-import inputMaps_dialog_ui
+import MapInputUI
 import model
 # from FALLOW.models import tree
 
@@ -80,22 +80,19 @@ COLORS = {
 }
 
 
-class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
-    def __init__(self, parent=None, input_directory=''):
-        super(MapsDialog, self).__init__(parent)
+class MainWindow(QtWidgets.QMainWindow, MapInputUI.Ui_MainWindow):
+    def __init__(self, parent=None, directory=None):
+        QtWidgets.QMainWindow.__init__(self, parent)
         self.setupUi(self)
         # self.activeIndex = None
-        # self.create_plot_frame()
-        self.path = input_directory or  os.path.dirname(__file__)
-        self.map_file = os.path.join(self.path, 'maps.json')
-
-        map_model = tree_model.TreeModel(
-            parent=None,
-            headers=['text', 'path', 'description', 'type']
-        )
-        self.active_node = None
-        self.maps_treeView.setModel(map_model)
-        self.root = map_model.root_item
+        self.create_plot_frame()
+        self.directory = directory or  os.path.dirname(__file__)
+        self.map_file = os.path.join(self.directory, 'maps.json')
+        # self.directory = directory
+        self.changed = False
+        model = tree_model.TreeModel(parent=None, headers=['text', 'path', 'description', 'type'])
+        self.mapTree.setModel(model)
+        self.root = model.rootItem
         # if os.path.isfile(self.map_file):
         #     self.MapInputModel = tree.TreModel(HEADER,
         #                                        FLAGS,
@@ -113,91 +110,48 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
         # self.connect(self.action_Save,
         #              QtCore.SIGNAL("triggered()"),
         #              self.on_save_clicked)
-        self.maps_treeView.clicked.connect(self.on_row_clicked)
-        self.maps_treeView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
-        self.maps_treeView.customContextMenuRequested.connect(
-            self.on_open_context_menu
-        )
-
-
-        # self.openMap.triggered.connect(self.on_open_clicked)
-
+        self.mapTree.clicked.connect(self.row_clicked)
+        self.mapTree.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+        self.mapTree.customContextMenuRequested.connect(self.on_open_context_menu)
+        # self.connect(self.openMap, QtCore.SIGNAL("trigge"))
+        self.openMap.triggered.connect(self.on_open_clicked)
+        self.save.triggered.connect(self.on_save_clicked)
         # QtCore.QObject.connect(self.mapTree,
         #                        QtCore.SIGNAL("clicked (QModelIndex)"),
         #                        self.row_clicked)
-        # SAMPLE_FILE = 'C:\Users\uttu\NewFALLOW\FALLOW\projects\samples\INPUT\maps\BK_area.tif'
-        # self.active_index = None
-        # self._display_map(SAMPLE_FILE)
-
-        # Define action:
-        self.open_map = QtWidgets.QAction('Open map', self)
-        self.set_description = QtWidgets.QAction('Set description', self)
-        self.select_type = QtWidgets.QAction('Select type', self)
-
-        # Connect action:
-        self.open_map.triggered.connect(self.on_open_map)
-        self.set_description.triggered.connect(self.on_set_description)
-        self.select_type.triggered.connect(self.on_select_type)
+        SAMPLE_FILE = 'C:\Users\uttu\NewFALLOW\FALLOW\projects\samples\INPUT\maps\BK_area.tif'
+        self.activeIndex = None
+        self._changed = False
+        self._display_map(SAMPLE_FILE)
 
         self.popMenu = QtWidgets.QMenu(self)
-        self.popMenu.addAction(self.open_map)
-        self.popMenu.addAction(self.set_description)
-        self.popMenu.addAction(self.select_type)
-        # self.popMenu.addAction(self.openMap)
-        # self.popMenu.addAction(QtWidgets.QAction('test2', self))
+        self.popMenu.addAction(QtWidgets.QAction('test0', self))
+        self.popMenu.addAction(QtWidgets.QAction('test1', self))
+        self.popMenu.addSeparator()
+        self.popMenu.addAction(self.openMap)
+        self.popMenu.addAction(QtWidgets.QAction('test2', self))
 
     def on_open_context_menu(self, point):
-        selected_indexes = self.maps_treeView.selectedIndexes()
+        # print 'Hello world'
+        print point
+        indexes = self.mapTree.selectedIndexes()
+        print indexes
         try:
-            active_index = selected_indexes[0]
-            active_node = active_index.internalPointer()
-            if active_node.rows() == 0:
-                self.active_node = active_node
-                self.popMenu.exec_(
-                    self.maps_treeView.viewport().mapToGlobal(point)
-                )
-            else:
-                self.active_node = None
-        except IndexError:
-            self.active_node = None
+            for index in indexes:
+                print index.internalPointer()
+                # print index.connectlumn(), index.row(), index.data()
+        except:
+            print 'error'
 
-    def on_open_map(self):
-        options = QtWidgets.QFileDialog.Options()
-        if self.active_node:
-            filename = QtWidgets.QFileDialog.getOpenFileName(
-                        self,
-                        "QFileDialog.getOpenFileName()",
-                        "",
-                        "All Files (*);;Map Files (*.tif)",
-                        options=options)
-            self.active_node.set_data('path', filename[0])
-
-    def on_set_description(self):
-        if not self.active_node:
-            return
-        text, ok = QtWidgets.QInputDialog.getText(
-                    self,
-                    "Set description",
-                    "Input map description: ",
-                    QtWidgets.QLineEdit.Normal,
-                    self.active_node.data['description']
-                )
-        if ok:
-            self.active_node.set_data('description', text)
-
-    def on_select_type(self):
-        items = ("linear", "bool", "landcover", "landuse")
-
-        item, ok = QtWidgets.QInputDialog.getItem(
-                        self,
-                        "Select map type",
-                        "Type: ",
-                        items,
-                        0,
-                        False)
-
-        if ok and item:
-            self.active_node.set_data('type', item)
+    def _display_message(self, title, message, promt):
+        m_dialg = QtWidgets.QMessageBox(self)
+        yesbtn = m_dialg.addButton(QtWidgets.QMessageBox.Yes)
+        m_dialg.setWindowTitle(title)
+        m_dialg.setText(message)
+        QtCore.QObject.connect(yesbtn, QtCore.SIGNAL("clicked()"),
+                               promt)
+        m_dialg.addButton(QtWidgets.QMessageBox.No)
+        m_dialg.show()
 
     @staticmethod
     def _get_type(node):
@@ -206,7 +160,7 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
             parent = parent.parent()
         return parent.name
 
-    def on_row_clicked(self, index):
+    def row_clicked(self, index):
         node = index.internalPointer()
         print node
         # print index.column(), index.row()
@@ -214,9 +168,9 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
             return
         if index.column() == 0:
             print 'abc'
-            self.active_index = index
+            self.activeIndex = index
             # self._display_message('abc')
-        # self.active_index = index
+        # self.activeIndex = index
         # active_node = index.internalPointer()
         # if len(active_node.children()) == 0:
             data = node.data['path']
@@ -232,18 +186,18 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
         #         self._display_message(m_title, m_message, self.on_open_clicked)
 
     def on_open_clicked(self):
-        # print self.active_index
+        # print self.activeIndex
         options = QtWidgets.QFileDialog.Options()
 
-        if self.active_index:
-            active_node = self.active_index.internalPointer()
+        if self.activeIndex:
+            active_node = self.activeIndex.internalPointer()
             filename  = QtWidgets.QFileDialog.getOpenFileName(self, "QFileDialog.getOpenFileName()", "","All Files (*);;Python Files (*.py)", options=options)
                 # filter=filters,
                 # directory=self.directory)
             active_node.set_data('path', filename[0])
 
             self._changed = True
-            if self.active_index.column() == 0:
+            if self.activeIndex.column() == 0:
                 data = active_node.data['path']
                 self._display_map(data)
 
@@ -355,10 +309,8 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
-    dialog = MapsDialog()
-    dialog.show()
+    form = MainWindow()
+    form.show()
     app.exec_()
-
-
 if __name__ == '__main__':
     main()

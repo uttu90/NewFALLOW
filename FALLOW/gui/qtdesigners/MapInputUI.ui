@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>990</width>
-    <height>600</height>
+    <width>1551</width>
+    <height>982</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,9 +53,8 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="action_Open"/>
-   <addaction name="action_Save"/>
-   <addaction name="action_Compare"/>
+   <addaction name="openMap"/>
+   <addaction name="save"/>
   </widget>
   <widget class="QDockWidget" name="dockWidget">
    <property name="sizePolicy">
@@ -66,8 +65,8 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>368</width>
-     <height>139</height>
+     <width>386</width>
+     <height>260</height>
     </size>
    </property>
    <property name="features">
@@ -97,7 +96,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="pixelsize_lineedit">
+        <widget class="QLineEdit" name="inputPixelSize">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -140,7 +139,7 @@
       </layout>
      </item>
      <item row="1" column="0">
-      <widget class="QTreeView" name="MapInputTreeView">
+      <widget class="QTreeView" name="mapTree">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -194,7 +193,7 @@
     </layout>
    </widget>
   </widget>
-  <action name="action_Open">
+  <action name="openMap">
    <property name="text">
     <string>&amp;Open</string>
    </property>
@@ -205,7 +204,7 @@
     <string>Ctrl+O</string>
    </property>
   </action>
-  <action name="action_Save">
+  <action name="save">
    <property name="text">
     <string>&amp;Save</string>
    </property>

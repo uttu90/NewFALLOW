@@ -1,5 +1,4 @@
 
-
 class Node(object):
     def __init__(self, name, parent=None, **kwargs):
         if parent is not None:
@@ -59,28 +58,28 @@ class Node(object):
             for child in self.children():
                 child.to_json(sub_dict[self.name])
 
-if __name__ == '__main__':
-    import json
-    from FALLOW.constants_old import maps
-
-    with open('maps.json', 'rb') as file:
-        x_root = json.load(file)
-    root = Node('root')
-
-
-    def make_node(parent, list_dict):
-        for a_dict in list_dict:
-            key = a_dict.keys()[0]
-            if isinstance(a_dict[key], dict):
-                Node(key, parent, **a_dict[key])
-            else:
-                sub_node = Node(key, parent)
-                make_node(sub_node, a_dict[key])
-
-    make_node(root, maps)
-
-    d = {}
-    root.to_dict(d)
-
-    with open('1maps.json', 'wb') as file:
-        json.dump(d, file)
+# if __name__ == '__main__':
+    # import json
+    # # from FALLOW.constants_old import maps
+    #
+    # with open('maps.json', 'rb') as file:
+    #     x_root = json.load(file)
+    # root = Node('root')
+    #
+    #
+    # def make_node(parent, list_dict):
+    #     for a_dict in list_dict:
+    #         key = a_dict.keys()[0]
+    #         if isinstance(a_dict[key], dict):
+    #             Node(key, parent, **a_dict[key])
+    #         else:
+    #             sub_node = Node(key, parent)
+    #             make_node(sub_node, a_dict[key])
+    #
+    # make_node(root, maps)
+    #
+    # d = {}
+    # root.to_dict(d)
+    #
+    # with open('1maps.json', 'wb') as file:
+    #     json.dump(d, file)
