@@ -51,7 +51,7 @@ class NodeModel:
 
     def to_json(self, init_list):
         if not self.children:
-            init_list.append({self.data['text']: self.data})
+            init_list.append(self.data)
         else:
             try:
                 key = self.data['text']

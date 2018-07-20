@@ -22,6 +22,7 @@ from matplotlib.backends import qt_compat
 
 import inputMaps_dialog_ui
 import model
+from FALLOW import map_models
 # from FALLOW.models import tree
 
 warnings.simplefilter(action="ignore", category=MatplotlibDeprecationWarning)
@@ -88,14 +89,10 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
         # self.create_plot_frame()
         self.path = input_directory or  os.path.dirname(__file__)
         self.map_file = os.path.join(self.path, 'maps.json')
-
-        map_model = tree_model.TreeModel(
-            parent=None,
-            headers=['text', 'path', 'description', 'type']
-        )
+        abstract_model = self.load()
         self.active_node = None
-        self.maps_treeView.setModel(map_model)
-        self.root = map_model.root_item
+        self.maps_treeView.setModel(abstract_model)
+        self.root = abstract_model.root_item
         # if os.path.isfile(self.map_file):
         #     self.MapInputModel = tree.TreModel(HEADER,
         #                                        FLAGS,
@@ -150,6 +147,24 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
         self.mpl_toolbar = None
 
         self.create_plot_frame()
+
+    def load(self):
+        try:
+            with open(self.map_file) as model_file:
+                map_model = json.load(model_file)
+                abstract_model = tree_model.TreeModel(
+                    parent=None,
+                    headers=['text', 'path', 'description', 'type'],
+                    input_model=map_model
+                )
+        except IOError:
+            abstract_model = tree_model.TreeModel(
+                parent=None,
+                headers=['text', 'path', 'description', 'type'],
+                input_model=map_models.map_model
+            )
+
+        return abstract_model
 
     def on_open_context_menu(self, point):
         selected_indexes = self.maps_treeView.selectedIndexes()
@@ -275,63 +290,38 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
             self.fig.colorbar(**self._get_color_bar(map_type))
 
             self.canvas.draw()
-            self.canvas.mpl_connect('button_press_event', self.onclick)
+            self.canvas.mpl_connect('button_press_event', self.on_click)
 
     def on_key_press(self, event):
         key_press_handler(event, self.canvas, self.mpl_toolbar)
 
-    def onclick(self, event):
+    def on_click(self, event):
         if event.button == 2:
-            xdata = event.xdata
-            ydata = event.ydata
+            x_data = event.xdata
+            y_data = event.ydata
             try:
-                float(self.elevationm[ydata][xdata])
+                float(self.elevationm[y_data][x_data])
                 abc = 'x=%.3f, y=%.3f, value = %.3f' % (
-                    xdata, ydata, self.elevationm[ydata+0.5][xdata+0.5])
+                    x_data,
+                    y_data,
+                    self.elevationm[y_data+0.5][x_data+0.5])
             except:
                 abc = 'x=%.3f, y=%.3f, value = nv' % (
-                    xdata, ydata)
-            message = QtGui.QMessageBox(self)
+                    x_data, y_data)
+            message = QtWidgets.QMessageBox(self)
             message.setWindowTitle("Value")
             message.setText(abc)
-            message.setStyleSheet("QMessageBox { messagebox-text-interaction-flags: 5; }")
+            message.setStyleSheet(
+                "QMessageBox { messagebox-text-interaction-flags: 5; }"
+            )
             message.show()
 
-    def on_save_clicked(self):
-        self.changed = False
+    def accept(self):
         map_data = []
         self.root.to_json(map_data)
         with open(self.map_file, 'wb') as map_file:
             json.dump(map_data[0]['root'], map_file, indent=2)
-        self._changed = False
-
-    def format_coord(self, xdata, ydata):
-        try:
-            float(self.elevationm[ydata][xdata])
-            abc = 'x=%.3f, y=%.3f ' % (
-                xdata, ydata)
-        except:
-            abc = 'x=%.3f, y=%.3f, value = nv' % (xdata, ydata)
-        return abc
-
-    def closeEvent(self, event):
-        if self.changed:
-            reply = QtGui.QMessageBox.question(
-                self,
-                'Message',
-                "Do you want to save your input before quitting?",
-                QtGui.QMessageBox.Yes,
-                QtGui.QMessageBox.No,
-                QtGui.QMessageBox.Cancel)
-            if reply == QtGui.QMessageBox.Yes:
-                self.save()
-                event.accept()
-            elif reply == QtGui.QMessageBox.Cancel:
-                event.ignore()
-            else:
-                event.accept()
-        else:
-            event.accept()
+        super(MapsDialog, self).accept()
 
 
 def main():

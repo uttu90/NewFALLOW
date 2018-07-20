@@ -1,14 +1,14 @@
 from PyQt5.QtCore import QAbstractItemModel, QFile, QIODevice, QModelIndex, Qt
 from PyQt5.QtWidgets import QApplication, QTreeView
 import model
-from FALLOW import map_models
+# from FALLOW import map_models
 
 
 class TreeModel(QAbstractItemModel):
-    def __init__(self, parent=None, headers=[]):
+    def __init__(self, parent=None, headers=[], input_model=[]):
         super(TreeModel, self).__init__(parent)
         root_item = model.NodeModel()
-        model.make_node(root_item, map_models.map_model)
+        model.make_node(root_item, input_model)
         self.root_item = root_item
         self.headers = headers
 

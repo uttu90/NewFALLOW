@@ -1,300 +1,238 @@
 [
   {
-    "Simulating area": {
-      "text": "Simulating area", 
-      "path": "C:/Users/uttu/NewFALLOW/FALLOW/projects/samples/BK_luse_2010.tif", 
-      "type": "bool", 
-      "description": "", 
-      "name": "area"
-    }
+    "text": "Simulating area", 
+    "path": "", 
+    "type": "bool", 
+    "description": "", 
+    "name": "area"
   }, 
   {
-    "Initial Landcover": {
-      "text": "Initial Landcover", 
-      "path": "", 
-      "type": "landcover", 
-      "description": "", 
-      "name": "landcover"
-    }
+    "text": "Initial Landcover", 
+    "path": "", 
+    "type": "landcover", 
+    "description": "", 
+    "name": "landcover"
   }, 
   {
-    "Sub-catchment area": {
-      "text": "Sub-catchment area", 
-      "path": "", 
-      "type": "linear", 
-      "description": "", 
-      "name": "subcatchment"
-    }
+    "text": "Sub-catchment area", 
+    "path": "", 
+    "type": "linear", 
+    "description": "", 
+    "name": "subcatchment"
   }, 
   {
-    "Initial logging area": {
-      "text": "Initial logging area", 
-      "path": "", 
-      "type": "linear", 
-      "description": "", 
-      "name": "logging"
-    }
+    "text": "Initial logging area", 
+    "path": "", 
+    "type": "linear", 
+    "description": "", 
+    "name": "logging"
   }, 
   {
     "Soil Fertility": [
       {
-        "Initial soil fertility": {
-          "text": "Initial soil fertility", 
-          "path": "C:/Users/uttu/NewFALLOW/FALLOW/projects/samples/INPUT/maps/BK_area.tif", 
-          "type": "fertility", 
-          "description": "", 
-          "name": "initial fertility"
-        }
+        "text": "Initial soil fertility", 
+        "path": "", 
+        "type": "fertility", 
+        "description": "", 
+        "name": "initial fertility"
       }, 
       {
-        "Maximum soil fertility": {
-          "text": "Maximum soil fertility", 
-          "path": "", 
-          "type": "fertility", 
-          "description": "", 
-          "name": "fertility"
-        }
+        "text": "Maximum soil fertility", 
+        "path": "", 
+        "type": "fertility", 
+        "description": "", 
+        "name": "fertility"
       }
     ]
   }, 
   {
-    "Slope": {
-      "text": "Slope", 
-      "path": "", 
-      "type": "linear", 
-      "description": "", 
-      "name": "slope"
-    }
+    "text": "Slope", 
+    "path": "C:/Users/uttu/NewFALLOW/FALLOW/projects/samples/BK_luse_2010.tif", 
+    "type": "linear", 
+    "description": "", 
+    "name": "slope"
   }, 
   {
     "Suitable area": [
       {
-        "Annual crop 1": {
-          "text": "Annual crop 1", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "annual crop 1"
-        }
+        "text": "Annual crop 1", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "annual crop 1"
       }, 
       {
-        "Annual crop 2": {
-          "text": "Annual crop 2", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "annual crop 2"
-        }
+        "text": "Annual crop 2", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "annual crop 2"
       }, 
       {
-        "Annual crop 3": {
-          "text": "Annual crop 3", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "annual crop 3"
-        }
+        "text": "Annual crop 3", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "annual crop 3"
       }, 
       {
-        "Annual crop 4": {
-          "text": "Annual crop 4", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "annual crop 4"
-        }
+        "text": "Annual crop 4", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "annual crop 4"
       }, 
       {
-        "Tree-based system 1": {
-          "text": "Tree-based system 1", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "tree-based system 1"
-        }
+        "text": "Tree-based system 1", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 1"
       }, 
       {
-        "Tree-based system 2": {
-          "text": "Tree-based system 2", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "tree-based system 2"
-        }
+        "text": "Tree-based system 2", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 2"
       }, 
       {
-        "Tree-based system 3": {
-          "text": "Tree-based system 3", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "tree-based system 3"
-        }
+        "text": "Tree-based system 3", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 3"
       }, 
       {
-        "Tree-based system 4": {
-          "text": "Tree-based system 4", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "tree-based system 4"
-        }
+        "text": "Tree-based system 4", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 4"
       }, 
       {
-        "Tree-based system 5": {
-          "text": "Tree-based system 5", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "tree-based system 5"
-        }
+        "text": "Tree-based system 5", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 5"
       }, 
       {
-        "Tree-based system 6": {
-          "text": "Tree-based system 6", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "tree-based system 6"
-        }
+        "text": "Tree-based system 6", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 6"
       }, 
       {
-        "Tree-based system 7": {
-          "text": "Tree-based system 7", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "tree-based system 7"
-        }
+        "text": "Tree-based system 7", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 7"
       }, 
       {
-        "Tree-based system 8": {
-          "text": "Tree-based system 8", 
-          "path": "", 
-          "type": "bool", 
-          "description": "", 
-          "name": "tree-based system 8"
-        }
+        "text": "Tree-based system 8", 
+        "path": "", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 8"
       }
     ]
   }, 
   {
     "Distance to road": [
       {
-        "Period 1": {
-          "text": "Period 1", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 1", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 2": {
-          "text": "Period 2", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 2", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 3": {
-          "text": "Period 3", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 3", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 4": {
-          "text": "Period 4", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 4", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }
     ]
   }, 
   {
     "Distance to market": [
       {
-        "Period 1": {
-          "text": "Period 1", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 1", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 2": {
-          "text": "Period 2", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 2", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 3": {
-          "text": "Period 3", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 3", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 4": {
-          "text": "Period 4", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 4", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }
     ]
   }, 
   {
     "Distance to river": [
       {
-        "Period 1": {
-          "text": "Period 1", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 1", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 2": {
-          "text": "Period 2", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 2", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 3": {
-          "text": "Period 3", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 3", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 4": {
-          "text": "Period 4", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 4", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }
     ]
   }, 
@@ -303,400 +241,320 @@
       {
         "Non-timber forest products": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }, 
       {
         "Timber": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }, 
       {
         "Tree-based system 1": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }, 
       {
         "Tree-based system 2": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }, 
       {
         "Tree-based system 3": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }, 
       {
         "Tree-based system 4": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }, 
       {
         "Tree-based system 5": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }, 
       {
         "Tree-based system 6": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }, 
       {
         "Tree-based system 7": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }, 
       {
         "Tree-based system 8": [
           {
-            "Period 1": {
-              "text": "Period 1", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 1", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 2": {
-              "text": "Period 2", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 2", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 3": {
-              "text": "Period 3", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 3", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }, 
           {
-            "Period 4": {
-              "text": "Period 4", 
-              "path": "", 
-              "type": "linear", 
-              "description": "", 
-              "name": "period"
-            }
+            "text": "Period 4", 
+            "path": "", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period"
           }
         ]
       }
@@ -705,59 +563,47 @@
   {
     "Distance to settlement": [
       {
-        "Period 1": {
-          "text": "Period 1", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 1", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 2": {
-          "text": "Period 2", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 2", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 3": {
-          "text": "Period 3", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 3", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }, 
       {
-        "Period 4": {
-          "text": "Period 4", 
-          "path": "", 
-          "type": "linear", 
-          "description": "", 
-          "name": "period"
-        }
+        "text": "Period 4", 
+        "path": "", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
       }
     ]
   }, 
   {
-    "Protected Area": {
-      "text": "Protected Area", 
-      "path": "", 
-      "type": "bool", 
-      "description": "", 
-      "name": "protected"
-    }
+    "text": "Protected Area", 
+    "path": "", 
+    "type": "bool", 
+    "description": "", 
+    "name": "protected"
   }, 
   {
-    "Disastered Area": {
-      "text": "Disastered Area", 
-      "path": "", 
-      "type": "bool", 
-      "description": "", 
-      "name": "disastered"
-    }
+    "text": "Disastered Area", 
+    "path": "", 
+    "type": "bool", 
+    "description": "", 
+    "name": "disastered"
   }
 ]
