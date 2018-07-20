@@ -130,6 +130,8 @@ class MainWindow(QtWidgets.QMainWindow, MapInputUI.Ui_MainWindow):
         self.popMenu.addSeparator()
         self.popMenu.addAction(self.openMap)
         self.popMenu.addAction(QtWidgets.QAction('test2', self))
+        # self.MapInputWidget
+        # self.main_frame
 
     def on_open_context_menu(self, point):
         # print 'Hello world'
@@ -243,7 +245,7 @@ class MainWindow(QtWidgets.QMainWindow, MapInputUI.Ui_MainWindow):
             band = ds.GetRasterBand(1)
             elevation = band.ReadAsArray()
             self.elevationm= numpy.ma.masked_where(elevation<=-9999,elevation)
-            self.fig.clear()
+            # self.fig.clear()
             self.axes = self.fig.add_subplot(111)
             self.fig.colorbar(**self._get_color_bar(map_type))
 

@@ -84,7 +84,7 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
     def __init__(self, parent=None, input_directory=''):
         super(MapsDialog, self).__init__(parent)
         self.setupUi(self)
-        # self.activeIndex = None
+
         # self.create_plot_frame()
         self.path = input_directory or  os.path.dirname(__file__)
         self.map_file = os.path.join(self.path, 'maps.json')
@@ -143,8 +143,13 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
         self.popMenu.addAction(self.open_map)
         self.popMenu.addAction(self.set_description)
         self.popMenu.addAction(self.select_type)
-        # self.popMenu.addAction(self.openMap)
-        # self.popMenu.addAction(QtWidgets.QAction('test2', self))
+
+        self.main_frame = None
+        self.fig = None
+        self.canvas = None
+        self.mpl_toolbar = None
+
+        self.create_plot_frame()
 
     def on_open_context_menu(self, point):
         selected_indexes = self.maps_treeView.selectedIndexes()
@@ -171,6 +176,7 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
                         "All Files (*);;Map Files (*.tif)",
                         options=options)
             self.active_node.set_data('path', filename[0])
+            self._display_map()
 
     def on_set_description(self):
         if not self.active_node:
@@ -198,6 +204,7 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
 
         if ok and item:
             self.active_node.set_data('type', item)
+            self._display_map()
 
     @staticmethod
     def _get_type(node):
@@ -208,47 +215,14 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
 
     def on_row_clicked(self, index):
         node = index.internalPointer()
-        print node
-        # print index.column(), index.row()
         if node.rows() > 0:
             return
         if index.column() == 0:
-            print 'abc'
-            self.active_index = index
-            # self._display_message('abc')
-        # self.active_index = index
-        # active_node = index.internalPointer()
-        # if len(active_node.children()) == 0:
-            data = node.data['path']
-            if os.path.isfile(data):
-                self._display_map(data)
-            # elif not data:
-        #         m_title = 'No file selected'
-        #         m_message = 'Would you like to choose a map file?'
-        #         self._display_message(m_title, m_message, self.on_open_clicked)
-        #     else:
-        #         m_title = 'Your file path is invalid'
-        #         m_message = 'Would you like to chooes another file?'
-        #         self._display_message(m_title, m_message, self.on_open_clicked)
-
-    def on_open_clicked(self):
-        # print self.active_index
-        options = QtWidgets.QFileDialog.Options()
-
-        if self.active_index:
-            active_node = self.active_index.internalPointer()
-            filename  = QtWidgets.QFileDialog.getOpenFileName(self, "QFileDialog.getOpenFileName()", "","All Files (*);;Python Files (*.py)", options=options)
-                # filter=filters,
-                # directory=self.directory)
-            active_node.set_data('path', filename[0])
-
-            self._changed = True
-            if self.active_index.column() == 0:
-                data = active_node.data['path']
-                self._display_map(data)
+            self.active_node = node
+            self._display_map()
 
     def create_plot_frame(self):
-        self.main_frame = self.MapInputWidget
+        self.main_frame = self.map_frame
         self.fig = Figure((1.0, 1.0), dpi=60)
         self.canvas = FigureCanvas(self.fig)
         self.canvas.setParent(self.main_frame)
@@ -283,12 +257,19 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
                 aspect='equal')
         return result
 
-    def _display_map(self, filename, map_type=None):
-        if filename:
-            ds = gdal.Open(filename)
+    def _display_map(self):
+        if not self.active_node:
+            return
+        file_name = self.active_node.data['path']
+        map_type = self.active_node.data['type'] or 'linear'
+
+        if file_name:
+            ds = gdal.Open(file_name)
             band = ds.GetRasterBand(1)
             elevation = band.ReadAsArray()
-            self.elevationm= numpy.ma.masked_where(elevation<=-9999,elevation)
+            self.elevationm = numpy.ma.masked_where(
+                elevation<=-9999,
+                elevation)
             self.fig.clear()
             self.axes = self.fig.add_subplot(111)
             self.fig.colorbar(**self._get_color_bar(map_type))
