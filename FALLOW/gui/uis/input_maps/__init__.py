@@ -5,8 +5,6 @@ import warnings
 
 import numpy
 from PyQt5 import QtCore, QtWidgets
-# from PyQt5 import QtGui
-# from PyQt5 import QtWidgets
 import tree_model
 from matplotlib import cm as cms
 from matplotlib.cbook import MatplotlibDeprecationWarning
@@ -23,7 +21,6 @@ from matplotlib.backends import qt_compat
 import inputMaps_dialog_ui
 import model
 from FALLOW import map_models
-# from FALLOW.models import tree
 
 warnings.simplefilter(action="ignore", category=MatplotlibDeprecationWarning)
 warnings.simplefilter(action="ignore", category=RuntimeWarning)
@@ -93,38 +90,12 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
         self.active_node = None
         self.maps_treeView.setModel(abstract_model)
         self.root = abstract_model.root_item
-        # if os.path.isfile(self.map_file):
-        #     self.MapInputModel = tree.TreModel(HEADER,
-        #                                        FLAGS,
-        #                                        file=self.map_file)
-        #     self.MapInputTreeView.setModel(self.MapInputModel)
-        # else:
-        #     self.MapInputModel = tree.TreModel(HEADER,
-        #                                        FLAGS,
-        #                                        file='maps.json')
-        #     self.MapInputTreeView.setModel(self.MapInputModel)
-        # self.root = self.MapInputModel.rootNode
-        # self.connect(self.action_Open,
-        #              QtCore.SIGNAL("triggered()"),
-        #              self.on_open_clicked)
-        # self.connect(self.action_Save,
-        #              QtCore.SIGNAL("triggered()"),
-        #              self.on_save_clicked)
+
         self.maps_treeView.clicked.connect(self.on_row_clicked)
         self.maps_treeView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
         self.maps_treeView.customContextMenuRequested.connect(
             self.on_open_context_menu
         )
-
-
-        # self.openMap.triggered.connect(self.on_open_clicked)
-
-        # QtCore.QObject.connect(self.mapTree,
-        #                        QtCore.SIGNAL("clicked (QModelIndex)"),
-        #                        self.row_clicked)
-        # SAMPLE_FILE = 'C:\Users\uttu\NewFALLOW\FALLOW\projects\samples\INPUT\maps\BK_area.tif'
-        # self.active_index = None
-        # self._display_map(SAMPLE_FILE)
 
         # Define action:
         self.open_map = QtWidgets.QAction('Open map', self)
@@ -232,9 +203,8 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
         node = index.internalPointer()
         if node.rows() > 0:
             return
-        if index.column() == 0:
-            self.active_node = node
-            self._display_map()
+        self.active_node = node
+        self._display_map()
 
     def create_plot_frame(self):
         self.main_frame = self.map_frame

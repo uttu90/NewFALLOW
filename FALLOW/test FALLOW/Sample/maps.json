@@ -1,7 +1,7 @@
 [
   {
     "text": "Simulating area", 
-    "path": "C:/Users/uttu/NewFALLOW/FALLOW/projects/samples/INPUT/maps/BK_area.tif", 
+    "path": "C:/Users/uttu/NewFALLOW/FALLOW/projects/samples/BK_luse_2010.tif", 
     "type": "bool", 
     "description": "", 
     "name": "area"
@@ -47,7 +47,7 @@
   }, 
   {
     "text": "Slope", 
-    "path": "C:/Users/uttu/NewFALLOW/FALLOW/projects/samples/BK_luse_2010.tif", 
+    "path": "", 
     "type": "linear", 
     "description": "", 
     "name": "slope"

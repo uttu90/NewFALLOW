@@ -232,7 +232,7 @@ ENVIRONMENT_PROPERTY = [
 
 BIOPHYSIC_PROPERTY = [
     {'harvesting prod. (ton/pd)': ['mean', 'cv']},
-    {'storage properties': ['demand per capita (ton)', 'probability to sell (0-1)', 'soil fertility']},
+    {'storage properties': ['demand per capita (ton)', 'probability to sell (0-1)']},
     {'plot factors': [
         'soil fertility',
         'land prod.',

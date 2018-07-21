@@ -1,7 +1,14 @@
+import sys
+
 
 def get_table(sheet, start_col, start_row, end_col, end_row):
     return [sheet.col_values(_, start_row, end_row)
             for _ in range(start_col, end_col)]
+
+
+def get_table_by_row(sheet, start_col, start_row, end_col, end_row):
+    return [sheet.row_values(_, start_col, end_col)
+            for _ in range(start_row, end_row)]
 
 
 def read_column(keys, values):
@@ -41,20 +48,24 @@ def read_table(keys, properties, values):
             subProperty = property.keys()[0]
             value[subProperty] = dict()
             for childProperty in property[subProperty]:
-                if type(childProperty) is dict:
-                    grandChildrenProperty = childProperty.keys()[0]
-                    value[subProperty][grandChildrenProperty] = dict()
-                    for grandChildProperty in \
-                            childProperty[grandChildrenProperty]:
-                        value[subProperty][grandChildrenProperty][
-                            grandChildProperty
+                try:
+                    if type(childProperty) is dict:
+                        grandChildrenProperty = childProperty.keys()[0]
+                        value[subProperty][grandChildrenProperty] = dict()
+                        for grandChildProperty in \
+                                childProperty[grandChildrenProperty]:
+                            value[subProperty][grandChildrenProperty][
+                                grandChildProperty
+                            ] = read_column(keys, values[valueIndex])
+                            valueIndex += 1
+                    else:
+                        value[subProperty][
+                            childProperty
                         ] = read_column(keys, values[valueIndex])
                         valueIndex += 1
-                else:
-                    value[subProperty][
-                        childProperty
-                    ] = read_column(keys, values[valueIndex])
-                    valueIndex += 1
+                except:
+                    print ("Unexpected error:", sys.exc_info()[0])
+                    raise
         else:
             value[property] = read_column(keys, values[valueIndex])
             valueIndex += 1
@@ -62,11 +73,18 @@ def read_table(keys, properties, values):
     return value
 
 
+def read_time_series(keys, values):
+    value = {}
+    for index, key in enumerate(keys):
+        value[key] = values[index]
+    return value
+
+
 if __name__ == '__main__':
     import xlrd
     from FALLOW import constants
 
-    DATA_FILE = 'Book1.xls'
+    DATA_FILE = '../../Book1.xls'
     SHEET = 'Sheet1'
     wb = xlrd.open_workbook(DATA_FILE)
     ws = wb.sheet_by_name(SHEET)
