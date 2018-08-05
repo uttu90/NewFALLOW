@@ -242,28 +242,28 @@ map_model = [
             {
                 'Non-timber forest products': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',
@@ -274,28 +274,28 @@ map_model = [
             {
                 'Timber': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',
@@ -306,28 +306,28 @@ map_model = [
             {
                 'Tree-based system 1': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',
@@ -338,28 +338,28 @@ map_model = [
             {
                 'Tree-based system 2': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',
@@ -370,28 +370,28 @@ map_model = [
             {
                 'Tree-based system 3': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',
@@ -402,28 +402,28 @@ map_model = [
             {
                 'Tree-based system 4': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',
@@ -434,28 +434,28 @@ map_model = [
             {
                 'Tree-based system 5': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',
@@ -466,28 +466,28 @@ map_model = [
             {
                 'Tree-based system 6': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',
@@ -498,28 +498,28 @@ map_model = [
             {
                 'Tree-based system 7': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',
@@ -530,28 +530,28 @@ map_model = [
             {
                 'Tree-based system 8': [
                     {
-                        'name': 'period',
+                        'name': 'period 1',
                         'text': 'Period 1',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 2',
                         'text': 'Period 2',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 3',
                         'text': 'Period 3',
                         'path': '',
                         'description': '',
                         'type': 'linear'
                     },
                     {
-                        'name': 'period',
+                        'name': 'period 4',
                         'text': 'Period 4',
                         'path': '',
                         'description': '',

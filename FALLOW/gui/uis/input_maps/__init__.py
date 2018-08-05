@@ -22,6 +22,8 @@ import inputMaps_dialog_ui
 import model
 from FALLOW import map_models
 
+import pcraster
+
 warnings.simplefilter(action="ignore", category=MatplotlibDeprecationWarning)
 warnings.simplefilter(action="ignore", category=RuntimeWarning)
 
@@ -251,10 +253,24 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
         if file_name:
             ds = gdal.Open(file_name)
             band = ds.GetRasterBand(1)
+            # print band
             elevation = band.ReadAsArray()
+            # print(ds.GetGeoTransform())
+            geoTransform = ds.GetGeoTransform()
+            # print elevation.shape(0)
+            # print(elevation)
+            print(elevation.shape)
+            print(elevation)
+            print(elevation)
+            pcraster.setclone(elevation.shape[0], elevation.shape[1], geoTransform[1], geoTransform[0], geoTransform[3])
+
             self.elevationm = numpy.ma.masked_where(
                 elevation<=-9999,
                 elevation)
+            abc = (elevation == 1) * 1.0
+            farr = numpy.ma.filled(abc, -9999)
+
+            n2p = pcraster.numpy2pcr(pcraster.Nominal, farr, -9999)
             self.fig.clear()
             self.axes = self.fig.add_subplot(111)
             self.fig.colorbar(**self._get_color_bar(map_type))

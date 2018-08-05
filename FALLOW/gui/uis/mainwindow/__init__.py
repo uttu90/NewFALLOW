@@ -1,4 +1,5 @@
 import sys
+import imp
 import json
 from os import path
 from PyQt5 import QtWidgets, QtCore
@@ -20,6 +21,7 @@ class App(QtWidgets.QMainWindow, MainWindowUI.Ui_MainWindow):
 
         self.data = {}
         self.config = {}
+        self.maps = {}
 
         self.openProject.triggered.connect(self.on_open_project)
         self.inputMap.triggered.connect(self.on_input_map)
@@ -27,6 +29,7 @@ class App(QtWidgets.QMainWindow, MainWindowUI.Ui_MainWindow):
         self.reload.triggered.connect(self.on_reload)
         self.play.triggered.connect(self.on_play)
 
+        # self.project_check.setCheckable(False)
         self.project_check.setCheckable(False)
         self.data_check.setCheckable(False)
         self.map_check.setCheckable(False)
@@ -77,6 +80,11 @@ class App(QtWidgets.QMainWindow, MainWindowUI.Ui_MainWindow):
             )
             self.config['map'] = path.join(self.path, 'maps.json')
             self.update_config()
+            self._load_map_file()
+
+    def _load_map_file(self):
+        with open(path.join(self.path, 'maps.json'), 'r') as map_file:
+            self.maps = json.load(map_file)
 
     def on_import_data(self):
         options = QtWidgets.QFileDialog.Options()
@@ -111,12 +119,28 @@ class App(QtWidgets.QMainWindow, MainWindowUI.Ui_MainWindow):
             )
             return
 
-        if not self.data_path:
+        if not self.data:
             self.show_message(
                 'Missing data',
                 'Please find a data file'
             )
             return
+
+        if not self.maps:
+            self.show_message(
+                'Missing maps',
+                'Please add maps'
+            )
+            return
+        # print(self.data, self.maps)
+        self.simulation_module = imp.load_source(
+            'model', path.join(self.path, 'model.py')
+        )
+        self.simulation = self.simulation_module.SimulatingThread(
+            data=self.data,
+            maps=self.maps
+        )
+        self.simulation.start()
 
     @staticmethod
     def show_message(title, content):

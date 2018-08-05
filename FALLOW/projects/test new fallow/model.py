@@ -13,6 +13,26 @@ from FALLOW.constants_old import  *
 # from FALLOW.operations import utils
 
 masked_value = -9999
+AREA = 0
+INITIAL_LANDCOVER= 1
+SUBCATCHMENT_AREA = 2
+INITIAL_LOGGING = 3
+SOIL_FERTILITY = 4
+SLOPE = 5
+SUITABLE_AREA = 6
+DISTANCE_TO_ROAD = 7
+DISTANCE_TO_MARKET = 8
+DISTANCE_TO_RIVER = 9
+DISTANCE_TO_FACTORY = 10
+DISTANCE_TO_SETTLEMENT = 11
+PROTECTED_AREA = 12
+DISASTERED_AREA = 13
+
+INITIAL_SOIL_FERTILITY = 0
+MAXIMUM_SOIL_FERTILITY = 1
+
+SOIL_FERTILITY_KEY = "Soil Fertility"
+
 
 
 class SimulatingThread(QtCore.QThread):
@@ -20,6 +40,9 @@ class SimulatingThread(QtCore.QThread):
         super(SimulatingThread, self).__init__()
         self.data = data
         self.maps = maps
+
+        self.ts_output = {}
+        self.maps_outpput = {}
         # self.project = project
         # self.model_file = os.path.join(project, 'area.xxx')
         # self.config = ConfigParser.RawConfigParser()
@@ -69,54 +92,63 @@ class SimulatingThread(QtCore.QThread):
         # self.sub_ts = data_from_file.read_timeseries(sheet, livelihood,
         #                                              269, 1, 101)
     def run(self):
-        self.timeseries_output = copy.deepcopy(timeseries_maps)
-        self.maps_output = {}
-        self._loading_config()
-        self._load_input()
-        self._loading_maps()
-        self.maps_output = copy.deepcopy(output_maps_maps)
-        self.maps_output['Land cover'] = []
-        self.maps_output['Land use'] = []
-        self.maps_output['Aboveground biomass'] = []
-        self.maps_output['Aboveground carbon'] = []
-        self.maps_output['Fire area'] = []
-        self.maps_output['Soil fertility'] = []
-        area_map = mapopen(self.maps['Simulated area']['Path'])
+        # self.timeseries_output = {}
+        # self.maps_output = {}
+        # self._loading_config()
+        # self._load_input()
+        # self._loading_maps()
+        # self.maps_output = copy.deepcopy(output_maps_maps)
+        # self.maps_output['Land cover'] = []
+        # self.maps_output['Land use'] = []
+        # self.maps_output['Aboveground biomass'] = []
+        # self.maps_output['Aboveground carbon'] = []
+        # self.maps_output['Fire area'] = []
+        # self.maps_output['Soil fertility'] = []
+        # area_map = mapopen(self.maps['Simulated area']['Path'])
         # initlanduse_map = mapopen(self.maps['Initial landcover']['Path'])
-        area_arr = map2array(area_map)
-        initlanduse_arr = map2array(
-            mapopen(self.maps['Initial landcover']['Path']))
-        subcatchment_arr = map2array(
-            mapopen(self.maps['Sub-catchment area']['Path']))
-        logzone_arr = scalar2boolean(
-            map2array(mapopen(self.maps['Initial logging area']['Path'])))
+        print("Start")
+        area_arr = map2array(mapopen(self.maps[AREA]['path']))
+        initlanduse_arr = map2array(mapopen(
+            self.maps[INITIAL_LANDCOVER]['path'])
+        )
+        subcatchment_arr = map2array(mapopen(
+            self.maps[SUBCATCHMENT_AREA]['path'])
+        )
+        logzone_arr = scalar2boolean(map2array(mapopen(
+            self.maps[INITIAL_LOGGING]['path']))
+        )
         soilfert_arr = map2array(mapopen(
-            self.maps['Soil fertility']['Initial soil fertility']['Path']))
-        maxsoilfert_arr = map2array(
-            mapopen(
-                self.maps['Soil fertility']['Maximum soil fertility']['Path']))
-        slope_arr = map2array(mapopen(self.maps['Slope']['Path']))
-        disaster_arr = map2array(mapopen(self.maps['Disastered area']['Path']))
-        reserve_arr = map2array(mapopen(self.maps['Protected area']['Path']))
+            self.maps[SOIL_FERTILITY][SOIL_FERTILITY_KEY][
+                INITIAL_SOIL_FERTILITY
+            ]['path'])
+        )
+        maxsoilfert_arr = map2array(mapopen(
+                self.maps[SOIL_FERTILITY][SOIL_FERTILITY_KEY][
+                    MAXIMUM_SOIL_FERTILITY
+                ]['path'])
+        )
+        slope_arr = map2array(mapopen(self.maps[SLOPE]['path']))
+        disaster_arr = map2array(mapopen(self.maps[DISASTERED_AREA]['path']))
+        reserve_arr = map2array(mapopen(self.maps[PROTECTED_AREA]['path']))
         inverse_reserve_arr = ~(reserve_arr == 1)
 
         sui_arrs = {}
-        load_map(self.maps['Suitable area'], sui_arrs)
+        load_map(self.maps[SUITABLE_AREA], sui_arrs)
 
         d_road_arrs = {}
-        load_map(self.maps['Distance to road'], d_road_arrs)
+        load_map(self.maps[DISTANCE_TO_ROAD], d_road_arrs)
 
         d_market_arrs = {}
-        load_map(self.maps['Distance to market'], d_market_arrs)
+        load_map(self.maps[DISTANCE_TO_MARKET], d_market_arrs)
 
         d_river_arrs = {}
-        load_map(self.maps['Distance to river'], d_river_arrs)
+        load_map(self.maps[DISTANCE_TO_RIVER], d_river_arrs)
 
         d_settlement_arrs = {}
-        load_map(self.maps['Distance to settlement'], d_settlement_arrs)
+        load_map(self.maps[DISTANCE_TO_SETTLEMENT], d_settlement_arrs)
 
         d_factory_arrs = {}
-        load_map(self.maps['Distance to factory'], d_factory_arrs)
+        load_map(self.maps[DISTANCE_TO_FACTORY], d_factory_arrs)
 
         # Standardized maps
 

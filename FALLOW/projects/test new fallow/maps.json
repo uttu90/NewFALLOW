@@ -1,0 +1,609 @@
+[
+  {
+    "text": "Simulating area", 
+    "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_border.tif", 
+    "type": "bool", 
+    "description": "", 
+    "name": "area"
+  }, 
+  {
+    "text": "Initial Landcover", 
+    "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/newluse_2010_4ha.tif", 
+    "type": "landcover", 
+    "description": "", 
+    "name": "landcover"
+  }, 
+  {
+    "text": "Sub-catchment area", 
+    "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_border.tif", 
+    "type": "linear", 
+    "description": "", 
+    "name": "subcatchment"
+  }, 
+  {
+    "text": "Initial logging area", 
+    "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_logging.tif", 
+    "type": "linear", 
+    "description": "", 
+    "name": "logging"
+  }, 
+  {
+    "Soil Fertility": [
+      {
+        "text": "Initial soil fertility", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_soil_fertility.tif", 
+        "type": "fertility", 
+        "description": "", 
+        "name": "initial fertility"
+      }, 
+      {
+        "text": "Maximum soil fertility", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_soil_fertility.tif", 
+        "type": "fertility", 
+        "description": "", 
+        "name": "fertility"
+      }
+    ]
+  }, 
+  {
+    "text": "Slope", 
+    "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/bk_slope_pr.tif", 
+    "type": "linear", 
+    "description": "", 
+    "name": "slope"
+  }, 
+  {
+    "Suitable area": [
+      {
+        "text": "Annual crop 1", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_rice_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "annual crop 1"
+      }, 
+      {
+        "text": "Annual crop 2", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_mixedcrops_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "annual crop 2"
+      }, 
+      {
+        "text": "Annual crop 3", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_shfitingcultivation_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "annual crop 3"
+      }, 
+      {
+        "text": "Annual crop 4", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_border.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "annual crop 4"
+      }, 
+      {
+        "text": "Tree-based system 1", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 1"
+      }, 
+      {
+        "text": "Tree-based system 2", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 2"
+      }, 
+      {
+        "text": "Tree-based system 3", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 3"
+      }, 
+      {
+        "text": "Tree-based system 4", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 4"
+      }, 
+      {
+        "text": "Tree-based system 5", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 5"
+      }, 
+      {
+        "text": "Tree-based system 6", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 6"
+      }, 
+      {
+        "text": "Tree-based system 7", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 7"
+      }, 
+      {
+        "text": "Tree-based system 8", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_sui.tif", 
+        "type": "bool", 
+        "description": "", 
+        "name": "tree-based system 8"
+      }
+    ]
+  }, 
+  {
+    "Distance to road": [
+      {
+        "text": "Period 1", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_road.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 2", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_road.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 3", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_road.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 4", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_road.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }
+    ]
+  }, 
+  {
+    "Distance to market": [
+      {
+        "text": "Period 1", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 2", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 3", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 4", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }
+    ]
+  }, 
+  {
+    "Distance to river": [
+      {
+        "text": "Period 1", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_stream.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 2", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_stream.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 3", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_stream.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 4", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_stream.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }
+    ]
+  }, 
+  {
+    "Distance to factory": [
+      {
+        "Non-timber forest products": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }, 
+      {
+        "Timber": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }, 
+      {
+        "Tree-based system 1": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }, 
+      {
+        "Tree-based system 2": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }, 
+      {
+        "Tree-based system 3": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }, 
+      {
+        "Tree-based system 4": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }, 
+      {
+        "Tree-based system 5": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }, 
+      {
+        "Tree-based system 6": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }, 
+      {
+        "Tree-based system 7": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }, 
+      {
+        "Tree-based system 8": [
+          {
+            "text": "Period 1", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 1"
+          }, 
+          {
+            "text": "Period 2", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 2"
+          }, 
+          {
+            "text": "Period 3", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 3"
+          }, 
+          {
+            "text": "Period 4", 
+            "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_market.tif", 
+            "type": "linear", 
+            "description": "", 
+            "name": "period 4"
+          }
+        ]
+      }
+    ]
+  }, 
+  {
+    "Distance to settlement": [
+      {
+        "text": "Period 1", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_settlement.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 2", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_settlement.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 3", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_settlement.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }, 
+      {
+        "text": "Period 4", 
+        "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_settlement.tif", 
+        "type": "linear", 
+        "description": "", 
+        "name": "period"
+      }
+    ]
+  }, 
+  {
+    "text": "Protected Area", 
+    "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_reserve.tif", 
+    "type": "bool", 
+    "description": "", 
+    "name": "protected"
+  }, 
+  {
+    "text": "Disastered Area", 
+    "path": "C:/Users/uttu/Downloads/Data-20180805T112650Z-001/Data/BK_forest_boundary.tif", 
+    "type": "bool", 
+    "description": "", 
+    "name": "disastered"
+  }
+]

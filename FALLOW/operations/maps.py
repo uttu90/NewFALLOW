@@ -94,14 +94,17 @@ def standardize(array):
 
 
 def load_map(maps, init_dict):
-    for key in maps.keys():
-        if 'Path' in maps[key]:
-            init_dict[key.lower()] = map2array(
-                mapopen(maps[key]['Path']), -9999)
+    map_values = maps.values()[0]
+    for map_dict in map_values:
+        if 'path' in map_dict:
+            init_dict[map_dict['name']] = map2array(mapopen(
+                map_dict['path']), -9999
+            )
         else:
-            init_dict[key.lower()] = {}
-            sub_dict = init_dict[key.lower()]
-            load_map(maps[key], sub_dict)
+            key = map_dict.keys()[0].lower()
+            init_dict[key] = {}
+            sub_dict = init_dict[key]
+            load_map(map_dict, sub_dict)
 
 
 def standardized_maps(maps, init_dict):
