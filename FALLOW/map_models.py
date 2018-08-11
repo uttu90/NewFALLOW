@@ -143,28 +143,28 @@ map_model = [
     {
         'Distance to road': [
             {
-                'name': 'period',
+                'name': 'period 1',
                 'text': 'Period 1',
                 'path': '',
                 'description': '',
                 'type': 'linear'
             },
             {
-                'name': 'period',
+                'name': 'period 2',
                 'text': 'Period 2',
                 'path': '',
                 'description': '',
                 'type': 'linear'
             },
             {
-                'name': 'period',
+                'name': 'period 3',
                 'text': 'Period 3',
                 'path': '',
                 'description': '',
                 'type': 'linear'
             },
             {
-                'name': 'period',
+                'name': 'period 4',
                 'text': 'Period 4',
                 'path': '',
                 'description': '',
@@ -175,28 +175,28 @@ map_model = [
     {
         'Distance to market': [
             {
-                'name': 'period',
+                'name': 'period 1',
                 'text': 'Period 1',
                 'path': '',
                 'description': '',
                 'type': 'linear'
             },
             {
-                'name': 'period',
+                'name': 'period 2',
                 'text': 'Period 2',
                 'path': '',
                 'description': '',
                 'type': 'linear'
             },
             {
-                'name': 'period',
+                'name': 'period 3',
                 'text': 'Period 3',
                 'path': '',
                 'description': '',
                 'type': 'linear'
             },
             {
-                'name': 'period',
+                'name': 'period 4',
                 'text': 'Period 4',
                 'path': '',
                 'description': '',
@@ -208,28 +208,28 @@ map_model = [
         'Distance to river':
         [
             {
-                'name': 'period',
+                'name': 'period 1',
                 'text': 'Period 1',
                 'path': '',
                 'description': '',
                 'type': 'linear'
             },
             {
-                'name': 'period',
+                'name': 'period 2',
                 'text': 'Period 2',
                 'path': '',
                 'description': '',
                 'type': 'linear'
             },
             {
-                'name': 'period',
+                'name': 'period 3',
                 'text': 'Period 3',
                 'path': '',
                 'description': '',
                 'type': 'linear'
             },
             {
-                'name': 'period',
+                'name': 'period 4',
                 'text': 'Period 4',
                 'path': '',
                 'description': '',
@@ -240,7 +240,167 @@ map_model = [
     {
         'Distance to factory': [
             {
-                'Non-timber forest products': [
+                'Non-timber forest product': [
+                    {
+                        'name': 'period 1',
+                        'text': 'Period 1',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 2',
+                        'text': 'Period 2',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 3',
+                        'text': 'Period 3',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 4',
+                        'text': 'Period 4',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                ]
+            },
+            {
+                'Annual crop 1': [
+                    {
+                        'name': 'period 1',
+                        'text': 'Period 1',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 2',
+                        'text': 'Period 2',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 3',
+                        'text': 'Period 3',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 4',
+                        'text': 'Period 4',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                ]
+            },
+            {
+                'Annual crop 2': [
+                    {
+                        'name': 'period 1',
+                        'text': 'Period 1',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 2',
+                        'text': 'Period 2',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 3',
+                        'text': 'Period 3',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 4',
+                        'text': 'Period 4',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                ]
+            },
+            {
+                'Annual crop 3': [
+                    {
+                        'name': 'period 1',
+                        'text': 'Period 1',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 2',
+                        'text': 'Period 2',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 3',
+                        'text': 'Period 3',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 4',
+                        'text': 'Period 4',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                ]
+            },
+            {
+                'Annual crop 3': [
+                    {
+                        'name': 'period 1',
+                        'text': 'Period 1',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 2',
+                        'text': 'Period 2',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 3',
+                        'text': 'Period 3',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                    {
+                        'name': 'period 4',
+                        'text': 'Period 4',
+                        'path': '',
+                        'description': '',
+                        'type': 'linear'
+                    },
+                ]
+            },
+            {
+                'Annual crop 4': [
                     {
                         'name': 'period 1',
                         'text': 'Period 1',
@@ -565,28 +725,28 @@ map_model = [
         'Distance to settlement':
             [
                 {
-                    'name': 'period',
+                    'name': 'period 1',
                     'text': 'Period 1',
                     'path': '',
                     'description': '',
                     'type': 'linear'
                 },
                 {
-                    'name': 'period',
+                    'name': 'period 2',
                     'text': 'Period 2',
                     'path': '',
                     'description': '',
                     'type': 'linear'
                 },
                 {
-                    'name': 'period',
+                    'name': 'period 3',
                     'text': 'Period 3',
                     'path': '',
                     'description': '',
                     'type': 'linear'
                 },
                 {
-                    'name': 'period',
+                    'name': 'period 4',
                     'text': 'Period 4',
                     'path': '',
                     'description': '',

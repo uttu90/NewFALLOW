@@ -138,7 +138,8 @@ class App(QtWidgets.QMainWindow, MainWindowUI.Ui_MainWindow):
         )
         self.simulation = self.simulation_module.SimulatingThread(
             data=self.data,
-            maps=self.maps
+            maps=self.maps,
+            project=self.path
         )
         self.simulation.start()
 

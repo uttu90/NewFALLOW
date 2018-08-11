@@ -159,13 +159,13 @@ LANDAGE_PROPERTY = [
         {'depletion rate (0-1)': [
             'mean',
             'cv'
-        ]}
-    ]},
-    {'landcover property': [
+        ]},
         {'half time recovery (year)': [
             'mean',
             'cv'
-        ]},
+        ]}
+    ]},
+    {'landcover property': [
         {'aboveground biomass (ton/ha)': [
             'mean',
             'cv'
@@ -232,7 +232,7 @@ ENVIRONMENT_PROPERTY = [
 
 BIOPHYSIC_PROPERTY = [
     {'harvesting prod. (ton/pd)': ['mean', 'cv']},
-    {'storage properties': ['demand per capita (ton)', 'probability to sell (0-1)']},
+    {'storage properties': ['demand per capita (ton)', 'probability to sell (0-1)', 'loss fraction']},
     {'plot factors': [
         'soil fertility',
         'land prod.',
@@ -241,7 +241,6 @@ BIOPHYSIC_PROPERTY = [
         'plot maintenance',
         'slope',
         'floor biomass',
-        'pfireuse'
     ]}
 ]
 

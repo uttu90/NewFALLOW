@@ -125,8 +125,14 @@ def uniform(array, file_map='area.xxx'):
     return result
 
 
-def spreadmap(array, file_map='area.xxx'):
-    pcraster.setclone(file_map)
+def spreadmap(array, prototype):
+    elevation = prototype.GetRasterBand(1).ReadAsArray()
+    geoTransform = prototype.GetGeoTransform()
+    # print band
+    # elevation = band.ReadAsArray()
+    # pcraster.setclone(file_map)
+    pcraster.setclone(elevation.shape[0], elevation.shape[1], geoTransform[1],
+                      geoTransform[0], geoTransform[3])
     sarray = 1.0 * array
     farr = np.ma.filled(sarray, -9999)
     n2p = pcraster.numpy2pcr(pcraster.Nominal, farr, -9999)

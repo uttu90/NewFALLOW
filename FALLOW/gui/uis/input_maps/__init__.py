@@ -259,9 +259,9 @@ class MapsDialog(QtWidgets.QDialog, inputMaps_dialog_ui.Ui_Dialog):
             geoTransform = ds.GetGeoTransform()
             # print elevation.shape(0)
             # print(elevation)
-            print(elevation.shape)
-            print(elevation)
-            print(elevation)
+            # print(elevation.shape)
+            # print(elevation)
+            # print(elevation)
             pcraster.setclone(elevation.shape[0], elevation.shape[1], geoTransform[1], geoTransform[0], geoTransform[3])
 
             self.elevationm = numpy.ma.masked_where(
